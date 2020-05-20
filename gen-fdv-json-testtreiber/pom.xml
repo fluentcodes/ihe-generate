@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.fluentcodes.ihe</groupId>
+    <artifactId>gen-fdv-json-testtreiber</artifactId>
+    <name>generated fdv json testtreiber</name>
+    <version>1.1.1.8</version>
+    <description>OpenAPI generated classes for the testtreiber fdv interface. </description>
+
+    <parent>
+        <groupId>org.fluentcodes.ihe</groupId>
+        <artifactId>ihe-generate</artifactId>
+        <version>0.1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.10.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-bundle-jaxrs</artifactId>
+            <scope>provided</scope>
+            <version>2.7.18</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jaxrs</artifactId>
+            <scope>provided</scope>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <scope>provided</scope>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- options see https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/jaxrs-cxf.md -->
+            <!-- options see https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-maven-plugin -->
+            <!-- snapshots see https://oss.sonatype.org/content/repositories/snapshots/org/openapitools/openapi-generator-maven-plugin/ -->
+            <plugin>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>4.3.0</version>
+                <groupId>org.openapitools</groupId>
+                <executions>
+                    <execution>
+                        <id>generate-openapi-fdvB</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+
+                            <inputSpec>${project.basedir}/schema/testtreiber_fdv.yaml</inputSpec>
+                            <generatorName>jaxrs-cxf</generatorName>
+                            <output>${project.basedir}</output>
+                            <addCompileSourceRoot>false</addCompileSourceRoot>
+                            <configOptions>
+                                <java8>true</java8>
+                                <sourceFolder>src/main/java</sourceFolder>
+                            </configOptions>
+                            <modelPackage>org.fluentcodes.ihe.gematik.fdv.model</modelPackage>
+                            <apiPackage>org.fluentcodes.ihe.gematik.fdv.api</apiPackage>
+                            <!-- java 8 type mapping -->
+                            <!--https://stackoverflow.com/questions/56237650/use-java-time-instant-to-represent-datetime-instead-of-offsetdatetime-->
+                            <typeMappings>
+                                <typeMapping>DateTime=Instant</typeMapping>
+                                <typeMapping>Date=LocalDate</typeMapping>
+                                <typeMapping>OffsetDateTime=LocalDateTime</typeMapping>
+                                <typeMapping>OffsetDate=LocalDate</typeMapping>
+                            </typeMappings>
+                            <importMappings>
+                                <importMapping>Instant=java.time.Instant</importMapping>
+                                <importMapping>LocalDate=java.time.LocalDate</importMapping>
+                                <importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>
+                                <importMapping>java.time.OffsetDate=java.time.LocalDate</importMapping>
+                            </importMappings>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

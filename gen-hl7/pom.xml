@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.fluentcodes.ihe</groupId>
+	<artifactId>gen-hl7</artifactId>
+	<version>3.1</version>
+	<name>Generated hl7 codes</name>
+	<description>Jaxb generated sources hl7 v3</description>
+
+	<parent>
+		<groupId>org.fluentcodes.ihe</groupId>
+		<artifactId>ihe-generate</artifactId>
+		<version>0.1.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<directory>${target-deploy}</directory>
+		<plugins>
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb23-plugin</artifactId>
+				<version>0.14.0</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<args>
+						<arg>-Xdefault-value</arg>
+					</args>
+					<plugins>
+						<plugin>
+							<groupId>org.jvnet.jaxb2_commons</groupId>
+							<artifactId>jaxb2-default-value</artifactId>
+							<version>1.1</version>
+						</plugin>
+					</plugins>
+					<schemaDirectory>${basedir}/schema</schemaDirectory>
+					<bindingDirectory>${basedir}/src/main/resources</bindingDirectory>
+					<generateDirectory>${basedir}/src/main/java</generateDirectory>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<noFileHeader>true</noFileHeader>
+					<episode>false</episode>
+					<schemaIncludes>
+						<include>coreschemas/*.xsd</include>
+						<include>multicacheschemas/*.xsd</include>
+					</schemaIncludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
