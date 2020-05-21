@@ -39,6 +39,7 @@
 		<module>gen-hl7</module>
 		<!--module>gen-cda</module-->
 		<module>gen-ebrs</module>
+		<module>gen-xacml</module>
 		<module>gen-fdv-json-testtreiber</module>
 	</modules>
 

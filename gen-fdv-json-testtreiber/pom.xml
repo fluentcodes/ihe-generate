@@ -8,7 +8,7 @@
     <artifactId>gen-fdv-json-testtreiber</artifactId>
     <name>generated fdv json testtreiber</name>
     <version>1.1.1.8</version>
-    <description>OpenAPI generated classes for the testtreiber fdv interface. </description>
+    <description>OpenAPI generated classes with Java 8 for the testtreiber fdv interface. </description>
 
     <parent>
         <groupId>org.fluentcodes.ihe</groupId>

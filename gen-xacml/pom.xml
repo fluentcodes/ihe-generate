@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.fluentcodes.ihe</groupId>
-	<artifactId>contracts-ebRS</artifactId>
-	<version>3.1.0</version>
+	<artifactId>gen-xacml</artifactId>
+	<version>2.0.0</version>
 
-	<name>contracts ebXML</name>
-	<description>Jaxb generated sources from ebRS 3.0 schema files from 2005 https://docs.oasis-open.org/regrep/v3.0/specs/regrep-rim-3.0-os.pdf</description>
+	<name>generated xacml policies</name>
+	<description>Jaxb generated sources from xacml schema files</description>
 
 	<parent>
 		<groupId>org.fluentcodes.ihe</groupId>
@@ -62,11 +62,8 @@
 					<noFileHeader>true</noFileHeader>
 					<episode>false</episode>
 					<schemaIncludes>
-						<include>cms.xsd</include>
-						<include>lcm.xsd</include>
-						<include>query.xsd</include>
-						<include>rim.xsd</include>
-						<include>rs.xsd</include>
+						<include>*.xsd</include>
+						<include>access-control-xacml-2.0-policy-schema-os.xsd</include>
 					</schemaIncludes>
 				</configuration>
 			</plugin>

@@ -33,7 +33,7 @@ There is a value define some classification called **FormatCode** with a value "
         </ns:Name>
     </ns:Classification>
     
-## mvn repositoris
+## mvn repositories
 You can find the generated code in the following maven repositories with 
 a version code  
 

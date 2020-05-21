@@ -67,8 +67,8 @@ public class IVLTS
      * <p>
      * Sie rufen diese "catch-all"-Eigenschaft aus folgendem Grund ab: 
      * Der Feldname "High" wird von zwei verschiedenen Teilen eines Schemas verwendet. Siehe: 
-     * Zeile 1758 von file:/Users/werner.diwischek/Dropbox/fluentcodes/ihe/gen-hl7/schema/coreschemas/datatypes-base.xsd
-     * Zeile 1749 von file:/Users/werner.diwischek/Dropbox/fluentcodes/ihe/gen-hl7/schema/coreschemas/datatypes-base.xsd
+     * Zeile 1758 von file:/C:/Users/wdi/dev/ihe/gen-hl7/schema/coreschemas/datatypes-base.xsd
+     * Zeile 1749 von file:/C:/Users/wdi/dev/ihe/gen-hl7/schema/coreschemas/datatypes-base.xsd
      * <p>
      * Um diese Eigenschaft zu entfernen, wenden Sie eine Eigenschaftenanpassung für eine
      * der beiden folgenden Deklarationen an, um deren Namen zu ändern: 

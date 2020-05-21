@@ -6,9 +6,9 @@
 
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>gen-hl7</artifactId>
-	<version>3.1</version>
-	<name>Generated hl7 codes</name>
-	<description>Jaxb generated sources hl7 v3</description>
+	<version>3.1.0</version>
+	<name>IHE: Generated hl7 codes</name>
+	<description>IHE: Jaxb generated sources hl7 v3</description>
 
 	<parent>
 		<groupId>org.fluentcodes.ihe</groupId>
@@ -31,7 +31,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<directory>${target-deploy}</directory>
 		<plugins>
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
@@ -40,6 +39,7 @@
 				<executions>
 					<execution>
 						<id>generate</id>
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>generate</goal>
 						</goals>
@@ -58,6 +58,7 @@
 					</plugins>
 					<schemaDirectory>${basedir}/schema</schemaDirectory>
 					<bindingDirectory>${basedir}/src/main/resources</bindingDirectory>
+					<cleanPackageDirectories>true</cleanPackageDirectories>
 					<generateDirectory>${basedir}/src/main/java</generateDirectory>
 					<encoding>${project.build.sourceEncoding}</encoding>
 					<noFileHeader>true</noFileHeader>
