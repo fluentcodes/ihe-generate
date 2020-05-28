@@ -1,4 +1,4 @@
-package de.fluentcodes.ihe;
+package org.fluentcodes.ihe.ebrs;
 
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectFactory;

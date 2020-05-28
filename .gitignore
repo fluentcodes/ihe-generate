@@ -6,7 +6,8 @@
 .settings
 .springBeans
 .sts4-cache
-
+gen-ihe/**
+gen-cda/**
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -14,7 +15,7 @@
 *.ipr
 gen-fdv-json-testtreiber/.openapi-generator/testtreiber_fdv.yaml.sha256
 **/.openapi-generator**
-gen-cda/**
+
 
 ### NetBeans ###
 /nbproject/private/

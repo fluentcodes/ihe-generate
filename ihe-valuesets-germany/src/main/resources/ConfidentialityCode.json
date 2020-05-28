@@ -1,0 +1,82 @@
+[ {
+  "code" : "PV",
+  "codeSystem" : "1.3.6.1.4.1.19376.3.276.1.5.10",
+  "displayName" : "gesperrt",
+  "level" : "0",
+  "type" : "L",
+  "desc" : [ {
+    "language" : "de-DE",
+    "content" : "Aus Sicht der Betroffenen sind die Daten so sensibel, dass sie für praktisch niemanden außer ihr selbst sichtbar sein sollten."
+  } ]
+}, {
+  "code" : "PR",
+  "codeSystem" : "1.3.6.1.4.1.19376.3.276.1.5.10",
+  "displayName" : "erhöhte Vertraulichkeit",
+  "level" : "0",
+  "type" : "L",
+  "desc" : [ {
+    "language" : "de-DE",
+    "content" : "Aus Sicht der Betroffenen sind die Daten sensibel genug, dass für sie besondere Zugriffsregelungen gelten sollen, die den Kreis der Zugriffsberechtigten signifikant einschränken.&lt;br clear=\"none\"/&gt;"
+  } ]
+}, {
+  "code" : "PN",
+  "codeSystem" : "1.3.6.1.4.1.19376.3.276.1.5.10",
+  "displayName" : "übliche Vertraulichkeit",
+  "level" : "0",
+  "type" : "L",
+  "desc" : [ {
+    "language" : "de-DE",
+    "content" : "Aus Sicht der Betroffenen sind die Daten nicht sensibler als andere Gesundheitsdaten und können daher nach den gleichen Regeln benutzt werden&lt;br clear=\"none\"/&gt;"
+  } ]
+}, {
+  "code" : "N",
+  "codeSystem" : "2.16.840.1.113883.5.25",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "normal",
+  "level" : "0",
+  "type" : "L"
+}, {
+  "code" : "R",
+  "codeSystem" : "2.16.840.1.113883.5.25",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "restricted",
+  "level" : "0",
+  "type" : "L"
+}, {
+  "code" : "V",
+  "codeSystem" : "2.16.840.1.113883.5.25",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "very restricted",
+  "level" : "0",
+  "type" : "L"
+}
+, {
+  "code" : "LEI",
+  "codeSystem" : "1.2.276.0.76.5.491",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "Dokument einer Leistungserbringerinstitution",
+  "level" : "0",
+  "type" : "L"
+}
+, {
+  "code" : "KTR",
+  "codeSystem" : "1.2.276.0.76.5.491",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "Dokument eines Kostenträgers",
+  "level" : "0",
+  "type" : "L"
+}, {
+  "code" : "PAT",
+  "codeSystem" : "1.2.276.0.76.5.491",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "Dokument eines Versicherten",
+  "level" : "0",
+  "type" : "L"
+}, {
+  "code" : "LEÄ",
+  "codeSystem" : "1.2.276.0.76.5.491",
+  "codeSystemName" : "Confidentiality",
+  "displayName" : "Leistungserbringeräquivalentes Dokument eines Versicherten oder Kostenträgers",
+  "level" : "0",
+  "type" : "L"
+}]

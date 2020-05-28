@@ -1,4 +1,4 @@
-package de.fluentcodes.ihe;
+package org.fluentcodes.ihe;
 
 import org.junit.Assert;
 import org.junit.Test;

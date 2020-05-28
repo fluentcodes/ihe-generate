@@ -1,0 +1,6 @@
+{
+  "slotList": {
+    "modelKeys": "HashMap",
+    "description": "To store the slot values as List of List"
+  }
+}

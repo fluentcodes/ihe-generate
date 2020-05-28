@@ -20,6 +20,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.13.2</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.1</version>
@@ -30,46 +35,86 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.fluentcodes.tools/xpect-gson-->
+		<dependency>
+			<groupId>org.fluentcodes.tools</groupId>
+			<artifactId>xpect-gson</artifactId>
+			<version>0.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.fluentcodes.tools</groupId>
+			<artifactId>xpect-jaxb</artifactId>
+			<version>0.5.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>3.16.1</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb23-plugin</artifactId>
-				<version>0.14.0</version>
-				<executions>
-					<execution>
-						<id>generate</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<args>
-						<arg>-Xdefault-value</arg>
-					</args>
-					<plugins>
-						<plugin>
-							<groupId>org.jvnet.jaxb2_commons</groupId>
-							<artifactId>jaxb2-default-value</artifactId>
-							<version>1.1</version>
-						</plugin>
-					</plugins>
-					<schemaDirectory>${basedir}/schema</schemaDirectory>
-					<generateDirectory>${project.build.sourceDirectory}</generateDirectory>
-					<encoding>${project.build.sourceEncoding}</encoding>
-					<noFileHeader>true</noFileHeader>
-					<episode>false</episode>
-					<schemaIncludes>
-						<include>cms.xsd</include>
-						<include>lcm.xsd</include>
-						<include>query.xsd</include>
-						<include>rim.xsd</include>
-						<include>rs.xsd</include>
-					</schemaIncludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<profiles>
+		<profile>
+			<id>gen</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.8.1</version>
+						<configuration>
+							<source>11</source>
+							<target>11</target>
+							<excludes>
+								<exclude>**/org/fluentcodes/**</exclude>
+							</excludes>
+							<testExcludes>
+								<exclude>**/org/fluentcodes/**</exclude>
+							</testExcludes>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.jvnet.jaxb2.maven2</groupId>
+						<artifactId>maven-jaxb23-plugin</artifactId>
+						<version>0.14.0</version>
+						<executions>
+							<execution>
+								<id>generate</id>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<args>
+								<arg>-Xdefault-value</arg>
+							</args>
+							<plugins>
+								<plugin>
+									<groupId>org.jvnet.jaxb2_commons</groupId>
+									<artifactId>jaxb2-default-value</artifactId>
+									<version>1.1</version>
+								</plugin>
+							</plugins>
+							<schemaDirectory>${basedir}/schema</schemaDirectory>
+							<generateDirectory>${project.build.sourceDirectory}</generateDirectory>
+							<encoding>${project.build.sourceEncoding}</encoding>
+							<noFileHeader>true</noFileHeader>
+							<episode>false</episode>
+							<schemaIncludes>
+								<include>cms.xsd</include>
+								<include>lcm.xsd</include>
+								<include>query.xsd</include>
+								<include>rim.xsd</include>
+								<include>rs.xsd</include>
+								<include>IHE/*.xsd</include>
+							</schemaIncludes>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

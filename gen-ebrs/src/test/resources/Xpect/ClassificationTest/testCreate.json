@@ -1,0 +1,226 @@
+{
+  "classificationNode": "classificationNode1",
+  "classificationScheme": "classificationScheme1",
+  "classifiedObject": "classifiedObject1",
+  "nodeRepresentation": "nodeRepresentation1",
+  "id": "id1",
+  "slotMap": {
+    "key1": {
+      "values": [
+        [
+          "value11",
+          "value12",
+          "value13"
+        ]
+      ],
+      "name": "key1",
+      "errors": {
+        "errorList": []
+      }
+    },
+    "key2": {
+      "values": [
+        [
+          "value21",
+          "value22",
+          "value23"
+        ]
+      ],
+      "name": "key2",
+      "errors": {
+        "errorList": []
+      }
+    },
+    "key3": {
+      "values": [
+        [
+          "val11",
+          "val12"
+        ],
+        [
+          "val21",
+          "val22"
+        ]
+      ],
+      "name": "key3",
+      "errors": {
+        "errorList": []
+      }
+    }
+  },
+  "classificationMap": {
+    "classificationScheme1": {
+      "values": [
+        {
+          "classificationNode": "classificationNode1",
+          "classificationScheme": "classificationScheme1",
+          "classifiedObject": "classifiedObject1",
+          "nodeRepresentation": "nodeRepresentation1",
+          "id": "id1",
+          "slotMap": {
+            "key1": {
+              "values": [
+                [
+                  "value11",
+                  "value12",
+                  "value13"
+                ]
+              ],
+              "name": "key1",
+              "errors": {
+                "errorList": []
+              }
+            },
+            "key2": {
+              "values": [
+                [
+                  "value21",
+                  "value22",
+                  "value23"
+                ]
+              ],
+              "name": "key2",
+              "errors": {
+                "errorList": []
+              }
+            },
+            "key3": {
+              "values": [
+                [
+                  "val11",
+                  "val12"
+                ],
+                [
+                  "val21",
+                  "val22"
+                ]
+              ],
+              "name": "key3",
+              "errors": {
+                "errorList": []
+              }
+            }
+          },
+          "classificationMap": {},
+          "externalIdentifierMap": {}
+        }
+      ],
+      "scheme": "classificationScheme1"
+    },
+    "classificationScheme2": {
+      "values": [
+        {
+          "classificationScheme": "classificationScheme2",
+          "classifiedObject": "classifiedObject2",
+          "nodeRepresentation": "nodeRepresentation2",
+          "id": "id2",
+          "slotMap": {
+            "key1": {
+              "values": [
+                [
+                  "value11",
+                  "value12",
+                  "value13"
+                ]
+              ],
+              "name": "key1",
+              "errors": {
+                "errorList": []
+              }
+            },
+            "key2": {
+              "values": [
+                [
+                  "value21",
+                  "value22",
+                  "value23"
+                ]
+              ],
+              "name": "key2",
+              "errors": {
+                "errorList": []
+              }
+            },
+            "key3": {
+              "values": [
+                [
+                  "val11",
+                  "val12"
+                ],
+                [
+                  "val21",
+                  "val22"
+                ]
+              ],
+              "name": "key3",
+              "errors": {
+                "errorList": []
+              }
+            }
+          },
+          "classificationMap": {},
+          "externalIdentifierMap": {}
+        }
+      ],
+      "scheme": "classificationScheme2"
+    },
+    "classificationNode3": {
+      "values": [
+        {
+          "classificationNode": "classificationNode3",
+          "classifiedObject": "classifiedObject3",
+          "nodeRepresentation": "nodeRepresentation3",
+          "id": "id3",
+          "slotMap": {
+            "key1": {
+              "values": [
+                [
+                  "value11",
+                  "value12",
+                  "value13"
+                ]
+              ],
+              "name": "key1",
+              "errors": {
+                "errorList": []
+              }
+            },
+            "key2": {
+              "values": [
+                [
+                  "value21",
+                  "value22",
+                  "value23"
+                ]
+              ],
+              "name": "key2",
+              "errors": {
+                "errorList": []
+              }
+            },
+            "key3": {
+              "values": [
+                [
+                  "val11",
+                  "val12"
+                ],
+                [
+                  "val21",
+                  "val22"
+                ]
+              ],
+              "name": "key3",
+              "errors": {
+                "errorList": []
+              }
+            }
+          },
+          "classificationMap": {},
+          "externalIdentifierMap": {}
+        }
+      ],
+      "scheme": "classificationNode3"
+    }
+  },
+  "externalIdentifierMap": {}
+}
