@@ -28,6 +28,9 @@ public abstract class InternationalStringCommon<RESULT> extends MetaFieldRegistr
     }
 
     public void addFromParentType(InternationalStringType parent) {
+        if (parent == null) {
+            return;
+        }
         for (LocalizedStringType stringType: parent.getLocalizedString()) {
             add(new LocalizedStringWrapper(stringType));
         }

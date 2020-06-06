@@ -1,5 +1,6 @@
 package org.fluentcodes.ihe.ebrs.metafields.registry;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.Expose;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.*;
 import org.apache.logging.log4j.LogManager;
@@ -59,59 +60,58 @@ public class RegistryObject {
         return metaFields.containsKey(property.getIdentifier());
     }
 
-    private void setMetaField(final MetaFieldProperty property) {
-        if (!metaFields.containsKey(property.getIdentifier())) {
-            MetaField metaField = property.createMetaField(this);
-            metaFields.put(property.getIdentifier(), metaField);
+    private MetaField addMetaField(final String identifier) {
+        return addMetaField(identifier, true);
+    }
+
+    private MetaField addMetaField(final String identifier, final boolean check) {
+        if (metaFields.containsKey(identifier)) {
+            return metaFields.get(identifier);
         }
-    }
-
-    private void setMetaField(final String identifier) {
-        setMetaField(identifier, true);
-    }
-
-    private void setMetaField(final String identifier, final boolean check) {
-        if (!metaFields.containsKey(identifier)) {
+        try {
             MetaFieldProperty property = properties.findProperty(identifier);
-            if (property == null && check) {
-                throw new IheException("No property found for '" + identifier + "'.");
-            }
             MetaField metaField = property.createMetaField(this);
             if (metaField instanceof MetaFieldNamed) {
                 ((MetaFieldNamed) metaField).setIdentifier(identifier);
             }
             metaFields.put(property.getIdentifier(), metaField);
+            return metaField;
+        }
+        catch (IheException e) {
+            //if (check) {
+                throw new IheException("No property found for '" + identifier + "'.");
+            //}
         }
     }
 
     private MetaField getMetaField(final String identifier) {
-        setMetaField(identifier);
-        return metaFields.get(identifier);
-
+        if (metaFields.containsKey(identifier)) {
+            return metaFields.get(identifier);
+        }
+        return addMetaField(identifier);
     }
 
     protected Object getMetaFieldValue(final String identifier) {
-        return getMetaField(identifier).get();
+        try {
+            return getMetaField(identifier).get();
+        }
+        catch (IheException e) {
+            LOG.error("Could set value on a metafield without entry properties.", e);
+            return null;
+        }
     }
 
-    protected void setMetaField(final String identifier, final Object value) {
+    protected void setMetaFieldValue(final String identifier, final Object value) {
         try {
-            setMetaField(identifier);
-            metaFields.get(identifier).set(value);
+            getMetaField(identifier).set(value);
         }
-        catch (Exception e) {
+        catch (IheException e) {
             LOG.error("Could set value on a metafield without entry properties.", e);
         }
     }
 
     private void setMetaField(final MetaFieldProperty property, final RegistryObjectType parent) {
-        setMetaField(property);
-        metaFields.get(property.getIdentifier()).setFromParentType(parent);
-    }
-
-    private void setMetaField(final MetaFieldProperty property, final Object value) {
-        setMetaField(property);
-        metaFields.get(property.getIdentifier()).set(value);
+        getMetaField(property.getIdentifier()).addFromParentType(parent);
     }
 
     public boolean hasName() {
@@ -127,15 +127,17 @@ public class RegistryObject {
     }
 
     public void setHome(String home) {
-        setMetaField(HOME, home);
+        setMetaFieldValue(HOME, home);
     }
 
+    @JsonIgnore
     public VersionInfoType getVersionInfo() {
         return (VersionInfoType) getMetaField(VERSION_INFO);
     }
 
+    @JsonIgnore
     public RegistryObject setVersionInfo(VersionInfoType versionInfo) {
-        setMetaField(VERSION_INFO, versionInfo);
+        setMetaFieldValue(VERSION_INFO, versionInfo);
         return this;
     }
 
@@ -145,7 +147,7 @@ public class RegistryObject {
     }
 
     public RegistryObject setName(List<LocalizedStringType> name) {
-        setMetaField(NAME, name);
+        setMetaFieldValue(NAME, name);
         return this;
     }
 
@@ -154,7 +156,7 @@ public class RegistryObject {
     }
 
     public RegistryObject setDescription(List<LocalizedStringType> description) {
-        setMetaField(DESCRIPTION, description);
+        setMetaFieldValue(DESCRIPTION, description);
         return this;
     }
 
@@ -163,7 +165,7 @@ public class RegistryObject {
     }
 
     public RegistryObject setId(String id) {
-        setMetaField(ID, id);
+        setMetaFieldValue(ID, id);
         return this;
     }
 
@@ -172,7 +174,7 @@ public class RegistryObject {
     }
 
     public RegistryObject setStatus(String status) {
-        setMetaField(STATUS, status);
+        setMetaFieldValue(STATUS, status);
         return this;
     }
 
@@ -181,7 +183,7 @@ public class RegistryObject {
     }
 
     public RegistryObject setObjectType(String objectType) {
-        setMetaField(OBJECT_TYPE, objectType);
+        setMetaFieldValue(OBJECT_TYPE, objectType);
         return this;
     }
 
@@ -190,7 +192,7 @@ public class RegistryObject {
     }
 
     public RegistryObject setLid(String lid) {
-        setMetaField(LID, lid);
+        setMetaFieldValue(LID, lid);
         return this;
     }
 
@@ -204,9 +206,6 @@ public class RegistryObject {
                 if (identifier == null) {
                     identifier = "NOT_SPECIFIED";
                 }
-                if (hasMetaField(identifier)) {  // already set by properties..
-                    continue;
-                }
                 if (properties.isMetaFieldProperty(this, identifier)) {
                     continue;
                 }
@@ -219,9 +218,6 @@ public class RegistryObject {
                 if (identifier == null) {
                     identifier = "NOT_SPECIFIED";
                 }
-                if (hasMetaField(identifier)) {  // already set by properties..
-                    continue;
-                }
                 if (properties.isMetaFieldProperty(this, identifier)) {
                     continue;
                 }
@@ -233,9 +229,6 @@ public class RegistryObject {
                 String identifier = slotType1.getName();
                 if (identifier == null) {
                     identifier = "NOT_SPECIFIED";
-                }
-                if (hasMetaField(identifier)) {  // already set by properties..
-                    continue;
                 }
                 if (properties.isMetaFieldProperty(this, identifier)) {
                     continue;
@@ -301,7 +294,7 @@ public class RegistryObject {
             untypedSlot.setIdentifier(identifier);
             metaFields.put(identifier, untypedSlot);
         }
-        ((SlotList)getMetaField(identifier)).add(slot);
+        ((SlotList)addMetaField(identifier, false)).add(slot);
         return this;
     }
 

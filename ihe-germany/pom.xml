@@ -6,7 +6,7 @@
 
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>ihe-valusets-germany</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 
 	<name>IHE Valuesets Germany</name>
 	<description>The IHE valuesets for the german eHealth System with MetaData</description>
@@ -14,7 +14,7 @@
 	<parent>
 		<groupId>org.fluentcodes.ihe</groupId>
 		<artifactId>ihe-generate</artifactId>
-		<version>0.1.0</version>
+		<version>0.2.0</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 

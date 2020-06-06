@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ClassificationType classificationScheme="classificationScheme1" classifiedObject="classifiedObject1" classificationNode="classificationNode1" nodeRepresentation="nodeRepresentation1" id="id1" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:Classification classificationScheme="classificationScheme1" classifiedObject="classifiedObject1" classificationNode="classificationNode1" nodeRepresentation="nodeRepresentation1" id="id1"/>
-    <ns:Classification classificationScheme="classificationScheme2" classifiedObject="classifiedObject2" nodeRepresentation="nodeRepresentation2" id="id2"/>
-    <ns:Classification classifiedObject="classifiedObject3" classificationNode="classificationNode3" nodeRepresentation="nodeRepresentation3" id="id3"/>
-</ClassificationType>

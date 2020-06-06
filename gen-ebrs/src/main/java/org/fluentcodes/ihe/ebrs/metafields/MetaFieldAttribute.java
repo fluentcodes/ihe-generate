@@ -14,7 +14,7 @@ public abstract class MetaFieldAttribute extends MetaFieldCommon<String> {
     }
     public void set(final String value) {this.value = value;}
 
-    public void addFromParentType(RegistryObjectType registryObject) {
-        throw new IheException("Could not add to String value " + this.getClass().getSimpleName());
+    public void addFromParentType(RegistryObjectType parent) {
+        setFromParentType(parent);
     }
 }

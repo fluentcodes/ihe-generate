@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ClassificationType classificationScheme="classificationScheme2" classifiedObject="classifiedObject2" nodeRepresentation="nodeRepresentation2" id="id2" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+    <ns:Slot name="key2">
+        <ns:ValueList>
+            <ns:Value>value21</ns:Value>
+            <ns:Value>value22</ns:Value>
+            <ns:Value>value23</ns:Value>
+        </ns:ValueList>
+    </ns:Slot>
+</ClassificationType>

@@ -23,7 +23,7 @@ public class ClassificationWrapper extends RegistryObject {
     }
 
     public ClassificationWrapper setClassificationNode(String id) {
-        setMetaField(CLASSIFICATION_NODE, id);
+        setMetaFieldValue(CLASSIFICATION_NODE, id);
         return this;
     }
 
@@ -33,7 +33,7 @@ public class ClassificationWrapper extends RegistryObject {
     }
 
     public ClassificationWrapper setClassificationScheme(String classificationScheme) {
-        setMetaField(CLASSIFICATION_SCHEME, classificationScheme);
+        setMetaFieldValue(CLASSIFICATION_SCHEME, classificationScheme);
         return this;
     }
 
@@ -42,7 +42,7 @@ public class ClassificationWrapper extends RegistryObject {
     }
 
     public ClassificationWrapper setClassifiedObject(String classifiedObject) {
-        setMetaField(CLASSIFIED_OBJECT, classifiedObject);
+        setMetaFieldValue(CLASSIFIED_OBJECT, classifiedObject);
         return this;
     }
 
@@ -51,7 +51,7 @@ public class ClassificationWrapper extends RegistryObject {
     }
 
     public ClassificationWrapper setNodeRepresentation(String nodeRepresentation) {
-        setMetaField(NODE_REPRESENTATION, nodeRepresentation);
+        setMetaFieldValue(NODE_REPRESENTATION, nodeRepresentation);
         return this;
     }
 

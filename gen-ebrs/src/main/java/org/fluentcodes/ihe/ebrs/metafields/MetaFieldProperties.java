@@ -1,5 +1,8 @@
 package org.fluentcodes.ihe.ebrs.metafields;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.fluentcodes.ihe.ebrs.IheException;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 import org.fluentcodes.ihe.ebrs.metafields.registry.*;
 import org.fluentcodes.ihe.ebrs.metafields.classifications.*;
@@ -7,8 +10,11 @@ import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.ExternalIdentifie
 import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.IdentificationScheme;
 import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.RegistryObjectAttribute;
 import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.Value;
+import org.fluentcodes.ihe.ebrs.metafields.tags.DescriptionList;
+import org.fluentcodes.ihe.ebrs.metafields.tags.NameList;
 import org.fluentcodes.tools.xpect.IOJsonGson;
 import org.fluentcodes.tools.xpect.IOJsonJackson;
+import org.fluentcodes.tools.xpect.IORuntimeException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,6 +22,9 @@ import java.util.List;
 import java.util.Map;
 
 public class MetaFieldProperties {
+    private static final Logger LOG = LogManager.getLogger(MetaFieldProperties.class);
+    private static final String FILE_NAME = "MetaFieldProperties.json";
+
     private final static List<MetaFieldProperty> metaFieldProperties = init();
     private final static Map<String, MetaFieldProperty> nameMap = initNameMap();
     private final static Map<Class <? extends RegistryObject>, List<String>> classNameMap = initClassNameMap();
@@ -28,6 +37,8 @@ public class MetaFieldProperties {
         metaFieldProperties.add(new MetaFieldProperty("home", Home.class));
         metaFieldProperties.add(new MetaFieldProperty("status", Status.class));
         metaFieldProperties.add(new MetaFieldProperty("objectType", ObjectType.class));
+        metaFieldProperties.add(new MetaFieldProperty("name", NameList.class));
+        metaFieldProperties.add(new MetaFieldProperty("description", DescriptionList.class));
         metaFieldProperties.add(new MetaFieldProperty("classificationNode", ClassificationNode.class, ClassificationWrapper.class));
         metaFieldProperties.add(new MetaFieldProperty("classificationScheme", ClassificationScheme.class, ClassificationWrapper.class));
         metaFieldProperties.add(new MetaFieldProperty("nodeRepresentation", NodeRepresentation.class, ClassificationWrapper.class));
@@ -35,17 +46,22 @@ public class MetaFieldProperties {
         metaFieldProperties.add(new MetaFieldProperty("value", Value.class, ExternalIdentifierWrapper.class));
         metaFieldProperties.add(new MetaFieldProperty("registryObject", RegistryObjectAttribute.class, ExternalIdentifierWrapper.class));
         metaFieldProperties.add(new MetaFieldProperty("identificationScheme", IdentificationScheme.class, ExternalIdentifierWrapper.class));
-        List<MetaFieldProperty> properties = new IOJsonJackson<List<MetaFieldProperty>>()
-                .setMappingClasses(List.of(List.class, MetaFieldProperty.class))
-                .setFileName("MetaFieldProperties.json")
-                .readList();
-        if (properties!=null) {
-            for (MetaFieldProperty property: properties) {
-                if (property == null) {
-                    continue;
+        try {
+            List<MetaFieldProperty> properties = new IOJsonJackson<List<MetaFieldProperty>>()
+                    .setMappingClasses(List.of(List.class, MetaFieldProperty.class))
+                    .setFileName(FILE_NAME)
+                    .readList();
+            if (properties != null) {
+                for (MetaFieldProperty property : properties) {
+                    if (property == null) {
+                        continue;
+                    }
+                    metaFieldProperties.add(property);
                 }
-                metaFieldProperties.add(property);
             }
+        }
+        catch (IORuntimeException e) {
+            LOG.info("No configuration files found");
         }
         return metaFieldProperties;
     }
@@ -112,7 +128,11 @@ public class MetaFieldProperties {
     }
 
     public static MetaFieldProperty findProperty(final String identifier) {
-        return nameMap.get(identifier);
+        MetaFieldProperty property = nameMap.get(identifier);
+        if (property == null) {
+            throw new IheException("Could not find property for '" + identifier + "'.");
+        }
+        return property;
     }
 
 }

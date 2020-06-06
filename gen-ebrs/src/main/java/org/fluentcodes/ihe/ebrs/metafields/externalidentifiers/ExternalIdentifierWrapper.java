@@ -24,7 +24,7 @@ public class ExternalIdentifierWrapper extends RegistryObject {
     }
 
     public ExternalIdentifierWrapper setIdentificationScheme(String identificationScheme) {
-        setMetaField(IDENTIFICATION_SCHEME, identificationScheme);
+        setMetaFieldValue(IDENTIFICATION_SCHEME, identificationScheme);
         return this;
     }
 
@@ -33,7 +33,7 @@ public class ExternalIdentifierWrapper extends RegistryObject {
     }
 
     public ExternalIdentifierWrapper setRegistryObject(String registryObject) {
-        setMetaField(REGISTRY_OBJECT, registryObject);
+        setMetaFieldValue(REGISTRY_OBJECT, registryObject);
         return this;
     }
 
@@ -42,7 +42,7 @@ public class ExternalIdentifierWrapper extends RegistryObject {
     }
 
     public ExternalIdentifierWrapper setValue(String value) {
-        setMetaField(VALUE, value);
+        setMetaFieldValue(VALUE, value);
         return this;
     }
 

@@ -6,10 +6,10 @@
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>ihe-generate</artifactId>
 	<name>ihe Root Module</name>
-	<version>0.1.0</version>
+	<version>0.2.0</version>
 	<packaging>pom</packaging>
 
-	<description>fluentcodes xpect library root</description>
+	<description>ihe stuff root module</description>
 	<url>https://github.com/fluentcodes/ihe-generate</url>
 
 	<repositories>
@@ -36,13 +36,13 @@
 	</developers>
 
 	<modules>
-		<module>gen-hl7</module>
+		<!--module>gen-hl7</module-->
 		<!--module>gen-cda</module-->
-		<module>gen-ebrs</module>
-		<module>gen-xacml</module>
+		<!--module>gen-xacml</module-->
 		<module>gen-fdv-json-testtreiber</module>
-		<module>ihe-valuesets-germany</module>
-		<module>gen-ihe</module>
+		<module>gen-ebrs</module>
+		<!--module>gen-ihe</module-->
+		<!--module>ihe-germany</module-->
 	</modules>
 
 	<properties>

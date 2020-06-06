@@ -7,4 +7,11 @@
             <ns:Value>value13</ns:Value>
         </ns:ValueList>
     </ns:Slot>
+    <ns:Slot name="key1">
+        <ns:ValueList>
+            <ns:Value>value11</ns:Value>
+            <ns:Value>value12</ns:Value>
+            <ns:Value>value13</ns:Value>
+        </ns:ValueList>
+    </ns:Slot>
 </ClassificationType>
