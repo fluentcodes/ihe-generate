@@ -1,15 +1,10 @@
 package org.fluentcodes.ihe.iti;
 
-import org.fluentcodes.ihe.ebrs.AssociationWrapper;
-import org.fluentcodes.ihe.ebrs.ClassificationWrapper;
-import org.fluentcodes.ihe.ebrs.ExternalIdentifierWrapper;
-import org.fluentcodes.ihe.ebrs.RegistryObject;
-
 public enum MetaFields {
 
     //https://gazelle.ihe.net/XDStarClient/docum/templates/templateDescriptor.seam;jsessionid=wgLxoY-N9nTnLw5XNu4R48xU?templateId=urn%3Auuid%3Aa7058bb9-b4e4-4307-ba5b-e3f0ab85e12d&pack=rimihe
 
-    ID("id", IheDocument.class, SubmissionSet.class, CodeClassification.class, ClassificationWrapper.class, Author.class, ExternalIdentifierWrapper.class, AssociationWrapper.class ),
+    /*ID("id", IheDocument.class, SubmissionSet.class, CodeClassification.class, ClassificationWrapper.class, Author.class, ExternalIdentifierWrapper.class, AssociationWrapper.class ),
     LID("lid", IheDocument.class, SubmissionSet.class),
     HOME("home", IheDocument.class, SubmissionSet.class, ExternalIdentifierWrapper.class),
     STATUS("status", IheDocument.class, SubmissionSet.class),
@@ -141,4 +136,6 @@ public enum MetaFields {
     public String getName() {
         return name;
     }
+    */
+
 }
