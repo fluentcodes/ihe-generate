@@ -1,6 +1,7 @@
-package org.fluentcodes.ihe.ebrs;
+package org.fluentcodes.ihe.ebrs.metafields.registrypackage;
 
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType;
+import org.fluentcodes.ihe.ebrs.IheHelper;
+import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public class RegistryPackageWrapper extends RegistryObject {
     public RegistryPackageWrapper() {
@@ -13,7 +14,7 @@ public class RegistryPackageWrapper extends RegistryObject {
 
     public oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType createType() {
         oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType registryPackageType = IheHelper.OF_RIM.createRegistryPackageType();
-        super.addType(registryPackageType);
+        super.addToParentType(registryPackageType);
         return registryPackageType;
     }
 }

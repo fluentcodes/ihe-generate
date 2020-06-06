@@ -1,15 +1,11 @@
 package org.fluentcodes.ihe.ebrs;
 
-import org.fluentcodes.ihe.ebrs.ClassificationWrapper;
-import org.fluentcodes.ihe.ebrs.SlotWrapper;
-import org.fluentcodes.tools.xpect.IOJsonGson;
+import org.fluentcodes.ihe.ebrs.metafields.slots.SlotWrapper;
 import org.fluentcodes.tools.xpect.XpectGson;
 import org.fluentcodes.tools.xpect.XpectJaxb;
 import org.junit.Test;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class SlotWrapperTest {
 
@@ -20,7 +16,7 @@ public class SlotWrapperTest {
         return new SlotWrapper("key2").add(List.of("value21", "value22", "value23"));
     }
     public static SlotWrapper createExampleSlotWrapper3() {
-        return new SlotWrapper("key3").setValues(List.of(List.of("val11","val12"), List.of("val21", "val22")));
+        return new SlotWrapper("key3").setValues(List.of("value31", "value32", "value33"));
     }
 
     @Test

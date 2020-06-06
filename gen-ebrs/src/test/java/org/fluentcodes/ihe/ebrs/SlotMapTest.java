@@ -1,12 +1,11 @@
 package org.fluentcodes.ihe.ebrs;
 
-import org.fluentcodes.ihe.ebrs.ClassificationWrapper;
-import org.fluentcodes.ihe.ebrs.SlotWrapper;
+import org.fluentcodes.ihe.ebrs.metafields.classifications.ClassificationWrapper;
+import org.fluentcodes.ihe.ebrs.metafields.slots.SlotWrapper;
 import org.fluentcodes.tools.xpect.IOJsonGson;
 import org.junit.Test;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 public class SlotMapTest {
@@ -24,7 +23,7 @@ public class SlotMapTest {
         Map<String, SlotWrapper> slotMap = createExampleSlotMap();
 
         ClassificationWrapper classification = new ClassificationWrapper();
-        classification.setSlotMap(slotMap);
+        //classification.setSlotMap(slotMap);
         new IOJsonGson()
                 .setFileName("src/test/resources/SlotWrapper.json")
                 .write(slotMap);

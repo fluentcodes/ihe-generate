@@ -38,13 +38,19 @@
 		<!-- https://mvnrepository.com/artifact/org.fluentcodes.tools/xpect-gson-->
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
+			<artifactId>xpect-jackson</artifactId>
+			<version>0.6.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-gson</artifactId>
-			<version>0.5.0</version>
+			<version>0.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-jaxb</artifactId>
-			<version>0.5.0</version>
+			<version>0.6.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->

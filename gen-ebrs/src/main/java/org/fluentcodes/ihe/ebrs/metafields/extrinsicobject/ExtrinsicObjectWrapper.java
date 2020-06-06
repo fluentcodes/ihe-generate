@@ -1,25 +1,24 @@
-package org.fluentcodes.ihe.ebrs;
+package org.fluentcodes.ihe.ebrs.metafields.extrinsicobject;
 
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.VersionInfoType;
+import org.fluentcodes.ihe.ebrs.IheHelper;
+import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public class ExtrinsicObjectWrapper extends RegistryObject {
+    public static String MIME_TYPE = "mimeType";
+    public static final String CONTENT_VERSION_INFO = "contentVersionInfo";
+
     public ExtrinsicObjectWrapper() {
         super();
     }
-    private String mimeType;
-    private VersionInfoType contentVersionInfo;
     public ExtrinsicObjectWrapper(final ExtrinsicObjectType type) {
         super(type);
-        this.mimeType = type.getMimeType();
-        this.contentVersionInfo = type.getContentVersionInfo();
     }
 
+    @Override
     public ExtrinsicObjectType createType() {
         ExtrinsicObjectType extrinsicObjectType = IheHelper.OF_RIM.createExtrinsicObjectType();
-        extrinsicObjectType.setMimeType(mimeType);
-        extrinsicObjectType.setContentVersionInfo(contentVersionInfo);
-        super.addType(extrinsicObjectType);
+        super.addToParentType(extrinsicObjectType);
         return extrinsicObjectType;
     }
 }

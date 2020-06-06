@@ -16,7 +16,7 @@ public class YamlGen {
     @Test
     public void readModelsYaml() throws Exception {
         try {
-            List<String> propertyNames = List.of("objectName", "fieldName", "required", "type", "$ref", "minLength", "maxLength","default","enum","format","maxItems","minItems","description","example");
+            List<String> propertyNames = List.of("objectName", "fieldName", "required", "type", "item", "minLength", "maxLength","default","enum","format","maxItems","minItems","description","example");
             Map<String, Object> obj = new Yaml().load(new FileInputStream(new File("schema/testtreiber_fdv.yaml")));
             List<Map<String,Object>> objectList = new ArrayList<>();
             Map<String, Object> components = (Map<String, Object>) obj.get("components");
@@ -45,14 +45,29 @@ public class YamlGen {
                         }
                     }
                     else {
-                        propertyMap.put("required", true);
+                        propertyMap.put("required", false);
                     }
                     Map<String, Object> field = (Map<String, Object>) objectProperties.get(fieldName);
                     if (field.containsKey("items")) {
-                        field.putAll((Map<String, Object>) field.get("items"));
+                        Map<String, Object> items = (Map<String, Object>) field.get("items");
+                        for (String propertyName : items.keySet()) {
+                            if (propertyName.equals("type")) {
+                                field.put("item", items.get("type"));
+                            }
+                            else if (propertyName.equals("$ref")) {
+                                field.put("item", ((String)items.get("$ref")).replaceAll("#/components/schemas/",""));
+                            }
+                            else {
+                                field.put(propertyName, items.get(propertyName));
+                            }
+                        }
                     }
                     for (String propertyName : field.keySet()) {
                         if (propertyName.equals("items")) {
+                            continue;
+                        }
+                        else if (propertyName.equals("$ref")) {
+                            field.put("type", ((String)field.get("$ref")).replaceAll("#/components/schemas/",""));
                             continue;
                         }
                         if (!propertyNames.contains(propertyName)) {

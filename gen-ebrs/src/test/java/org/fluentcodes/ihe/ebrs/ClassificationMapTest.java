@@ -8,17 +8,5 @@ import java.util.Map;
 
 public class ClassificationMapTest {
 
-    public static Map<String, ClassificationListWrapper> createClassificationMap () {
-        return RegistryObject.createClassificationMap(List.of(
-                ClassificationTest.createExampleClassification1(),
-                ClassificationTest.createExampleClassification2(),
-                ClassificationTest.createExampleClassification3()));
-    }
-
-    @Test
-    public void testClassificationExample() {
-        new XpectGson<>()
-                .compareAsString(createClassificationMap());
-    }
 
 }
