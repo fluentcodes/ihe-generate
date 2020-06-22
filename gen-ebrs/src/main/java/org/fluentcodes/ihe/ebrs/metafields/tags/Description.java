@@ -1,32 +1,31 @@
 package org.fluentcodes.ihe.ebrs.metafields.tags;
 
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
-import org.fluentcodes.ihe.ebrs.IheHelper;
+import org.fluentcodes.ihe.ebrs.EbXmlHelper;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public abstract class Description<RESULT> extends InternationalStringCommon<RESULT> {
-    public Description(RegistryObject parentObject) {
-        super(parentObject);
+    public Description(final RegistryObject parentRO) {
+        super(parentRO);
     }
 
-    public void addFromParentType(RegistryObjectType registryObject) {
-        super.addFromParentType(registryObject.getDescription());
+    public void addFromParentType(RegistryObjectType parentType) {
+        super.addFromParentType(parentType.getDescription());
     }
 
-    public void setFromParentType(RegistryObjectType parentObject) {
+    public void setFromParentType(RegistryObjectType parentType) {
         reset();
-        addFromParentType(parentObject);
+        addFromParentType(parentType);
     }
 
-    public void addToParentType(RegistryObjectType parentObject) {
+    public void addToParentType(RegistryObjectType parentRO) {
         if (isEmpty()) {
             return;
         }
-        if (parentObject.getDescription() == null) {
-            parentObject.setDescription(IheHelper.OF_RIM.createInternationalStringType());
+        if (parentRO.getDescription() == null) {
+            parentRO.setDescription(EbXmlHelper.OF_RIM.createInternationalStringType());
         }
-        super.addToParentType(parentObject.getDescription());
+        super.addToParentType(parentRO.getDescription());
     }
 
 }

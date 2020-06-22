@@ -1,8 +1,8 @@
 package org.fluentcodes.ihe.ebrs.metafields.tags;
 
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType;
-import org.fluentcodes.ihe.ebrs.ErrorListWrapper;
-import org.fluentcodes.ihe.ebrs.IheHelper;
+import org.fluentcodes.ihe.ebrs.EbXmlHelper;
+import org.fluentcodes.ihe.ebrs.metafields.ErrorListWrapper;
 
 public class LocalizedStringWrapper extends ErrorListWrapper {
     private LocalizedStringType values;
@@ -12,7 +12,7 @@ public class LocalizedStringWrapper extends ErrorListWrapper {
     }
     public LocalizedStringWrapper(String value) {
         super();
-        LocalizedStringType values = IheHelper.OF_RIM.createLocalizedStringType();
+        LocalizedStringType values = EbXmlHelper.OF_RIM.createLocalizedStringType();
         values.setValue(value);
         this.values = values;
     }

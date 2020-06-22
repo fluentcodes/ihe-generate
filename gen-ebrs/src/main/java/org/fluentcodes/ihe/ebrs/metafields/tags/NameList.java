@@ -6,8 +6,8 @@ import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 import java.util.List;
 
 public class NameList extends Name<List<LocalizedStringType>> {
-    public NameList(RegistryObject parentObject) {
-        super(parentObject);
+    public NameList(final RegistryObject parentRO) {
+        super(parentRO);
     }
 
     public List<LocalizedStringType> get() {

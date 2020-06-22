@@ -3,9 +3,10 @@ package org.fluentcodes.ihe.ebrs.metafields.tags;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public class DescriptionString extends Description<String> {
-    public DescriptionString(RegistryObject parentObject) {
-        super(parentObject);
+    public DescriptionString(final RegistryObject parentRO) {
+        super(parentRO);
     }
+
     public String get() {
         return getFirst().getValues().getValue();
     }

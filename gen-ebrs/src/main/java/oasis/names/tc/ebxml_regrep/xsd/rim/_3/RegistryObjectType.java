@@ -1,22 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java-Klasse für RegistryObjectType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="RegistryObjectType"&gt;
  *   &lt;complexContent&gt;
@@ -35,8 +29,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RegistryObjectType", propOrder = {
@@ -91,11 +85,11 @@ public class RegistryObjectType
 
     /**
      * Ruft den Wert der name-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link InternationalStringType }
-     *     
+     *
      */
     public InternationalStringType getName() {
         return name;
@@ -103,11 +97,11 @@ public class RegistryObjectType
 
     /**
      * Legt den Wert der name-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link InternationalStringType }
-     *     
+     *
      */
     public void setName(InternationalStringType value) {
         this.name = value;
@@ -115,11 +109,11 @@ public class RegistryObjectType
 
     /**
      * Ruft den Wert der description-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link InternationalStringType }
-     *     
+     *
      */
     public InternationalStringType getDescription() {
         return description;
@@ -127,11 +121,11 @@ public class RegistryObjectType
 
     /**
      * Legt den Wert der description-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link InternationalStringType }
-     *     
+     *
      */
     public void setDescription(InternationalStringType value) {
         this.description = value;
@@ -139,11 +133,11 @@ public class RegistryObjectType
 
     /**
      * Ruft den Wert der versionInfo-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link VersionInfoType }
-     *     
+     *
      */
     public VersionInfoType getVersionInfo() {
         return versionInfo;
@@ -151,11 +145,11 @@ public class RegistryObjectType
 
     /**
      * Legt den Wert der versionInfo-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link VersionInfoType }
-     *     
+     *
      */
     public void setVersionInfo(VersionInfoType value) {
         this.versionInfo = value;
@@ -163,25 +157,25 @@ public class RegistryObjectType
 
     /**
      * Gets the value of the classification property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the classification property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getClassification().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ClassificationType }
-     * 
-     * 
+     *
+     *
      */
     public List<ClassificationType> getClassification() {
         if (classification == null) {
@@ -192,25 +186,25 @@ public class RegistryObjectType
 
     /**
      * Gets the value of the externalIdentifier property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the externalIdentifier property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getExternalIdentifier().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link ExternalIdentifierType }
-     * 
-     * 
+     *
+     *
      */
     public List<ExternalIdentifierType> getExternalIdentifier() {
         if (externalIdentifier == null) {
@@ -221,11 +215,11 @@ public class RegistryObjectType
 
     /**
      * Ruft den Wert der lid-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getLid() {
         return lid;
@@ -233,11 +227,11 @@ public class RegistryObjectType
 
     /**
      * Legt den Wert der lid-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setLid(String value) {
         this.lid = value;
@@ -245,11 +239,11 @@ public class RegistryObjectType
 
     /**
      * Ruft den Wert der objectType-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getObjectType() {
         return objectType;
@@ -257,11 +251,11 @@ public class RegistryObjectType
 
     /**
      * Legt den Wert der objectType-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setObjectType(String value) {
         this.objectType = value;
@@ -269,11 +263,11 @@ public class RegistryObjectType
 
     /**
      * Ruft den Wert der status-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getStatus() {
         return status;
@@ -281,11 +275,11 @@ public class RegistryObjectType
 
     /**
      * Legt den Wert der status-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setStatus(String value) {
         this.status = value;

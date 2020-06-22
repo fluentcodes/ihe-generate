@@ -1,22 +1,18 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.query._3;
 
-import java.math.BigInteger;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
+
+import javax.xml.bind.annotation.*;
+import java.math.BigInteger;
 
 
 /**
  * <p>Java-Klasse für anonymous complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -30,8 +26,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -51,11 +47,11 @@ public class AdhocQueryResponse
 
     /**
      * Ruft den Wert der registryObjectList-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link RegistryObjectListType }
-     *     
+     *
      */
     public RegistryObjectListType getRegistryObjectList() {
         return registryObjectList;
@@ -63,11 +59,11 @@ public class AdhocQueryResponse
 
     /**
      * Legt den Wert der registryObjectList-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link RegistryObjectListType }
-     *     
+     *
      */
     public void setRegistryObjectList(RegistryObjectListType value) {
         this.registryObjectList = value;
@@ -75,11 +71,11 @@ public class AdhocQueryResponse
 
     /**
      * Ruft den Wert der startIndex-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getStartIndex() {
         if (startIndex == null) {
@@ -91,11 +87,11 @@ public class AdhocQueryResponse
 
     /**
      * Legt den Wert der startIndex-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setStartIndex(BigInteger value) {
         this.startIndex = value;
@@ -103,11 +99,11 @@ public class AdhocQueryResponse
 
     /**
      * Ruft den Wert der totalResultCount-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getTotalResultCount() {
         return totalResultCount;
@@ -115,11 +111,11 @@ public class AdhocQueryResponse
 
     /**
      * Legt den Wert der totalResultCount-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setTotalResultCount(BigInteger value) {
         this.totalResultCount = value;

@@ -1,26 +1,21 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.datatype.Duration;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * A Subscription for specified Events in an ebXML V3+ registry.
- * 
+ *
  * <p>Java-Klasse für SubscriptionType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="SubscriptionType"&gt;
  *   &lt;complexContent&gt;
@@ -36,8 +31,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SubscriptionType", propOrder = {
@@ -62,26 +57,26 @@ public class SubscriptionType
 
     /**
      * Gets the value of the action property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the action property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getAction().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link JAXBElement }{@code <}{@link NotifyActionType }{@code >}
      * {@link JAXBElement }{@code <}{@link ActionType }{@code >}
-     * 
-     * 
+     *
+     *
      */
     public List<JAXBElement<? extends ActionType>> getAction() {
         if (action == null) {
@@ -92,11 +87,11 @@ public class SubscriptionType
 
     /**
      * Ruft den Wert der selector-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getSelector() {
         return selector;
@@ -104,11 +99,11 @@ public class SubscriptionType
 
     /**
      * Legt den Wert der selector-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setSelector(String value) {
         this.selector = value;
@@ -116,11 +111,11 @@ public class SubscriptionType
 
     /**
      * Ruft den Wert der startTime-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getStartTime() {
         return startTime;
@@ -128,11 +123,11 @@ public class SubscriptionType
 
     /**
      * Legt den Wert der startTime-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setStartTime(XMLGregorianCalendar value) {
         this.startTime = value;
@@ -140,11 +135,11 @@ public class SubscriptionType
 
     /**
      * Ruft den Wert der endTime-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getEndTime() {
         return endTime;
@@ -152,11 +147,11 @@ public class SubscriptionType
 
     /**
      * Legt den Wert der endTime-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setEndTime(XMLGregorianCalendar value) {
         this.endTime = value;
@@ -164,11 +159,11 @@ public class SubscriptionType
 
     /**
      * Ruft den Wert der notificationInterval-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Duration }
-     *     
+     *
      */
     public Duration getNotificationInterval() {
         return notificationInterval;
@@ -176,11 +171,11 @@ public class SubscriptionType
 
     /**
      * Legt den Wert der notificationInterval-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Duration }
-     *     
+     *
      */
     public void setNotificationInterval(Duration value) {
         this.notificationInterval = value;

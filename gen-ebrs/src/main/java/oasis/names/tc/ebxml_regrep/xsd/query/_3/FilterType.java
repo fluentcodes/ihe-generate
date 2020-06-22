@@ -1,18 +1,14 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.query._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java-Klasse für FilterType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="FilterType"&gt;
  *   &lt;complexContent&gt;
@@ -22,8 +18,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FilterType")
@@ -38,11 +34,11 @@ public class FilterType {
 
     /**
      * Ruft den Wert der negate-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Boolean }
-     *     
+     *
      */
     public boolean isNegate() {
         if (negate == null) {
@@ -54,11 +50,11 @@ public class FilterType {
 
     /**
      * Legt den Wert der negate-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *     
+     *
      */
     public void setNegate(Boolean value) {
         this.negate = value;

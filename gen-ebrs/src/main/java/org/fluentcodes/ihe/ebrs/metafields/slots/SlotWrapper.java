@@ -1,27 +1,53 @@
 package org.fluentcodes.ihe.ebrs.metafields.slots;
 
+import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType;
-import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError;
-import org.fluentcodes.ihe.ebrs.ErrorListWrapper;
-import org.fluentcodes.ihe.ebrs.IheHelper;
+import org.fluentcodes.ihe.ebrs.EbXmlHelper;
+import org.fluentcodes.ihe.ebrs.metafields.*;
+import org.fluentcodes.ihe.ebrs.metafields.registry.Element;
+import org.fluentcodes.ihe.ebrs.metafields.registry.NamedElement;
+import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class SlotWrapper extends ErrorListWrapper {
+public class SlotWrapper extends ErrorListWrapper implements Element<RegistryObjectType, SlotType1>, NamedElement {
     private List<String> values;
-    private String name;
-    public SlotWrapper(SlotType1 slotType) {
+    private MetaField metaField;
+
+    public SlotWrapper(final SlotType1 type) {
+        this(type, null);
+    }
+
+    public SlotWrapper(final SlotType1 type, RegistryObject parentRO) {
         super();
-        this.name = slotType.getName();
-        if (slotType.getValueList()!=null) {
-            this.values = slotType.getValueList().getValue();
+        String identifier = type.getName();
+        if (identifier == null) {
+            identifier = "NOT_SPECIFIED";
+        }
+        MetaField metaField = null;
+        if (parentRO != null) {
+            metaField = parentRO.getMetaField(identifier);
         }
         else {
-            this.values = new ArrayList<>();
+            if (Properties.list.isMetaFieldProperty(identifier, parentRO)) {
+                metaField = Properties.list.createMetaField(identifier, parentRO);
+            }
+            else {
+                if (isStrict()) {
+                    addError("Slot Identifier " + identifier + " not found as field for " + parentRO.getClass().getSimpleName());
+                }
+                metaField = RODefaultTypes.SLOT.createMetaField(identifier, parentRO);
+            }
+        }
+
+        if (type.getValueList() != null) {
+            this.values = type.getValueList().getValue();
+            ((SlotMetaCommon)metaField).add(this);
+            this.metaField = metaField;
         }
     }
 
@@ -30,36 +56,68 @@ public class SlotWrapper extends ErrorListWrapper {
         this.values = new ArrayList<>();
     }
 
-    public SlotWrapper(final String name) {
-        this();
-        this.name = name;
+    public void addFromParentType(RegistryObjectType registryObjectType, MetaField meta) {
+
+    }
+
+    public void addToParentType(RegistryObjectType registryObjectType) {
+
     }
 
     public SlotWrapper(final String name, String value) {
-        this(name);
-        this.values.add(value);
+       this(name, List.of(value));
     }
 
     public SlotWrapper(final String name, Set<String> value) {
-        this(name);
-        this.values = value.stream().collect(Collectors.toList());
+        this(name, value.stream().collect(Collectors.toList()));
     }
 
-
     public SlotWrapper(final String name, final List<String> values) {
-        this(name);
-        this.values.addAll(values);
+        super();
+        this.values = values;
+        metaField = new SlotMetaList(name);
+    }
+
+    public SlotWrapper(SlotMetaCommon metaField, final List<String> values) {
+        super();
+        this.values = values;
+        this.metaField = metaField;
+    }
+
+    public boolean isStrict() {
+        return false;
     }
 
     public boolean isEmpty() {
         return values==null || values.isEmpty();
     }
 
+    public String getMetaIdentifier() {
+        if (metaField == null) {
+            return null;
+        }
+        return metaField.getIdentifier();
+    }
+    public String getMetaName() {
+        getMetaIdentifier();
+    }
+
+    public boolean hasParentObject() {
+        return getParentObject() != null;
+    }
+
+    public RegistryObjectType getParentObject() {
+        if (metaField == null) {
+            return null;
+        }
+        return (RegistryObject)metaField.getParentObject();
+    }
+
     public SlotType1 createType (){
-        final SlotType1 slotType1 = IheHelper.OF_RIM.createSlotType1();
-        final ValueListType valueList = IheHelper.OF_RIM.createValueListType();
+        final SlotType1 slotType1 = EbXmlHelper.OF_RIM.createSlotType1();
+        final ValueListType valueList = EbXmlHelper.OF_RIM.createValueListType();
         slotType1.setValueList(valueList);
-        slotType1.setName(name);
+        slotType1.setName(getMetaIdentifier());
         valueList.getValue().addAll(values);
         return slotType1;
     }
@@ -83,13 +141,5 @@ public class SlotWrapper extends ErrorListWrapper {
         this.values = new ArrayList<>();
         this.values.addAll(values);
         return this;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

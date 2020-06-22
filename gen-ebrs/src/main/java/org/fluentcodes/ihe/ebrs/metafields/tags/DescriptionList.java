@@ -5,9 +5,9 @@ import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 import java.util.List;
 
-public class DescriptionList extends Name<List<LocalizedStringType>> {
-    public DescriptionList(RegistryObject parentObject) {
-        super(parentObject);
+public class DescriptionList extends Description<List<LocalizedStringType>> {
+    public DescriptionList(final RegistryObject parentRO) {
+        super(parentRO);
     }
 
     public List<LocalizedStringType> get() {

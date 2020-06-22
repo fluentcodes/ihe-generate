@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.query._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
  * <p>Java-Klasse für CompoundFilterType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="CompoundFilterType"&gt;
  *   &lt;complexContent&gt;
@@ -35,8 +31,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CompoundFilterType", propOrder = {
@@ -57,11 +53,11 @@ public class CompoundFilterType
 
     /**
      * Ruft den Wert der leftFilter-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link FilterType }
-     *     
+     *
      */
     public FilterType getLeftFilter() {
         return leftFilter;
@@ -69,11 +65,11 @@ public class CompoundFilterType
 
     /**
      * Legt den Wert der leftFilter-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link FilterType }
-     *     
+     *
      */
     public void setLeftFilter(FilterType value) {
         this.leftFilter = value;
@@ -81,11 +77,11 @@ public class CompoundFilterType
 
     /**
      * Ruft den Wert der rightFilter-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link FilterType }
-     *     
+     *
      */
     public FilterType getRightFilter() {
         return rightFilter;
@@ -93,11 +89,11 @@ public class CompoundFilterType
 
     /**
      * Legt den Wert der rightFilter-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link FilterType }
-     *     
+     *
      */
     public void setRightFilter(FilterType value) {
         this.rightFilter = value;
@@ -105,11 +101,11 @@ public class CompoundFilterType
 
     /**
      * Ruft den Wert der logicalOperator-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getLogicalOperator() {
         return logicalOperator;
@@ -117,11 +113,11 @@ public class CompoundFilterType
 
     /**
      * Legt den Wert der logicalOperator-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setLogicalOperator(String value) {
         this.logicalOperator = value;

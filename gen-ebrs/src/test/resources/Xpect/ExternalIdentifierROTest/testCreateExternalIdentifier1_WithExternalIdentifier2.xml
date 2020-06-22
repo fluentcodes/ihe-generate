@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExternalIdentifierType xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+    <ns:ExternalIdentifier registryObject="registryObject2" identificationScheme="identificationScheme2" value="value2" id="id2"/>
+</ExternalIdentifierType>

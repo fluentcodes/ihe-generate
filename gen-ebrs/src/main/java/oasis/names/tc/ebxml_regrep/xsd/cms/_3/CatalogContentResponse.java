@@ -1,19 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.cms._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java-Klasse für anonymous complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -25,8 +22,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -42,11 +39,11 @@ public class CatalogContentResponse
 
     /**
      * Ruft den Wert der catalogedContent-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link RegistryObjectListType }
-     *     
+     *
      */
     public RegistryObjectListType getCatalogedContent() {
         return catalogedContent;
@@ -54,11 +51,11 @@ public class CatalogContentResponse
 
     /**
      * Legt den Wert der catalogedContent-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link RegistryObjectListType }
-     *     
+     *
      */
     public void setCatalogedContent(RegistryObjectListType value) {
         this.catalogedContent = value;

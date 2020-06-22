@@ -1,21 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java-Klasse für ServiceBindingType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="ServiceBindingType"&gt;
  *   &lt;complexContent&gt;
@@ -30,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "ServiceBindingType", propOrder = {
@@ -53,25 +48,25 @@ public class ServiceBindingType
 
     /**
      * Gets the value of the specificationLink property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the specificationLink property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSpecificationLink().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link SpecificationLinkType }
-     * 
-     * 
+     *
+     *
      */
     public List<SpecificationLinkType> getSpecificationLink() {
         if (specificationLink == null) {
@@ -82,11 +77,11 @@ public class ServiceBindingType
 
     /**
      * Ruft den Wert der service-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getService() {
         return service;
@@ -94,11 +89,11 @@ public class ServiceBindingType
 
     /**
      * Legt den Wert der service-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setService(String value) {
         this.service = value;
@@ -106,11 +101,11 @@ public class ServiceBindingType
 
     /**
      * Ruft den Wert der accessURI-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getAccessURI() {
         return accessURI;
@@ -118,11 +113,11 @@ public class ServiceBindingType
 
     /**
      * Legt den Wert der accessURI-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setAccessURI(String value) {
         this.accessURI = value;
@@ -130,11 +125,11 @@ public class ServiceBindingType
 
     /**
      * Ruft den Wert der targetBinding-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getTargetBinding() {
         return targetBinding;
@@ -142,11 +137,11 @@ public class ServiceBindingType
 
     /**
      * Legt den Wert der targetBinding-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setTargetBinding(String value) {
         this.targetBinding = value;

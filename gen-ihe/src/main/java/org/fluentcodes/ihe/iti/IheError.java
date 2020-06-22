@@ -1,6 +1,6 @@
 package org.fluentcodes.ihe.iti;
 
-import org.fluentcodes.ihe.ebrs.ErrorListWrapper;
+import org.fluentcodes.ihe.ebrs.metafields.ErrorListWrapper;
 
 import java.util.Arrays;
 import java.util.List;

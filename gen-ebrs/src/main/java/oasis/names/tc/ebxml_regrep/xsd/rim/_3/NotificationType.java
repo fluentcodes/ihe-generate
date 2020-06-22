@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * Notification of registry events.
- * 
+ *
  * <p>Java-Klasse für NotificationType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="NotificationType"&gt;
  *   &lt;complexContent&gt;
@@ -27,8 +23,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NotificationType", propOrder = {
@@ -45,11 +41,11 @@ public class NotificationType
 
     /**
      * Ruft den Wert der registryObjectList-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link RegistryObjectListType }
-     *     
+     *
      */
     public RegistryObjectListType getRegistryObjectList() {
         return registryObjectList;
@@ -57,11 +53,11 @@ public class NotificationType
 
     /**
      * Legt den Wert der registryObjectList-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link RegistryObjectListType }
-     *     
+     *
      */
     public void setRegistryObjectList(RegistryObjectListType value) {
         this.registryObjectList = value;
@@ -69,11 +65,11 @@ public class NotificationType
 
     /**
      * Ruft den Wert der subscription-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getSubscription() {
         return subscription;
@@ -81,11 +77,11 @@ public class NotificationType
 
     /**
      * Legt den Wert der subscription-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setSubscription(String value) {
         this.subscription = value;

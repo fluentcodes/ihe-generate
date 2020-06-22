@@ -1,22 +1,17 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
  * An Event that forms an audit trail in ebXML Registry.
- * 
+ *
  * <p>Java-Klasse für AuditableEventType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="AuditableEventType"&gt;
  *   &lt;complexContent&gt;
@@ -32,8 +27,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AuditableEventType", propOrder = {
@@ -57,11 +52,11 @@ public class AuditableEventType
 
     /**
      * Ruft den Wert der affectedObjects-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ObjectRefListType }
-     *     
+     *
      */
     public ObjectRefListType getAffectedObjects() {
         return affectedObjects;
@@ -69,11 +64,11 @@ public class AuditableEventType
 
     /**
      * Legt den Wert der affectedObjects-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ObjectRefListType }
-     *     
+     *
      */
     public void setAffectedObjects(ObjectRefListType value) {
         this.affectedObjects = value;
@@ -81,11 +76,11 @@ public class AuditableEventType
 
     /**
      * Ruft den Wert der eventType-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEventType() {
         return eventType;
@@ -93,11 +88,11 @@ public class AuditableEventType
 
     /**
      * Legt den Wert der eventType-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setEventType(String value) {
         this.eventType = value;
@@ -105,11 +100,11 @@ public class AuditableEventType
 
     /**
      * Ruft den Wert der timestamp-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public XMLGregorianCalendar getTimestamp() {
         return timestamp;
@@ -117,11 +112,11 @@ public class AuditableEventType
 
     /**
      * Legt den Wert der timestamp-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *     
+     *
      */
     public void setTimestamp(XMLGregorianCalendar value) {
         this.timestamp = value;
@@ -129,11 +124,11 @@ public class AuditableEventType
 
     /**
      * Ruft den Wert der user-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getUser() {
         return user;
@@ -141,11 +136,11 @@ public class AuditableEventType
 
     /**
      * Legt den Wert der user-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setUser(String value) {
         this.user = value;
@@ -153,11 +148,11 @@ public class AuditableEventType
 
     /**
      * Ruft den Wert der requestId-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getRequestId() {
         return requestId;
@@ -165,11 +160,11 @@ public class AuditableEventType
 
     /**
      * Legt den Wert der requestId-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setRequestId(String value) {
         this.requestId = value;

@@ -1,22 +1,18 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
+import org.w3c.dom.Element;
+
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlMixed;
-import javax.xml.bind.annotation.XmlType;
-import org.w3c.dom.Element;
 
 
 /**
  * <p>Java-Klasse für QueryExpressionType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="QueryExpressionType"&gt;
  *   &lt;complexContent&gt;
@@ -29,8 +25,8 @@ import org.w3c.dom.Element;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "QueryExpressionType", propOrder = {
@@ -46,27 +42,27 @@ public class QueryExpressionType {
 
     /**
      * Gets the value of the content property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the content property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getContent().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Element }
      * {@link Object }
      * {@link String }
-     * 
-     * 
+     *
+     *
      */
     public List<Object> getContent() {
         if (content == null) {
@@ -77,11 +73,11 @@ public class QueryExpressionType {
 
     /**
      * Ruft den Wert der queryLanguage-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getQueryLanguage() {
         return queryLanguage;
@@ -89,11 +85,11 @@ public class QueryExpressionType {
 
     /**
      * Legt den Wert der queryLanguage-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setQueryLanguage(String value) {
         this.queryLanguage = value;

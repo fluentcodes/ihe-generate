@@ -1,22 +1,18 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * Mapping of the same named interface in ebRIM.
- * 
+ *
  * <p>Java-Klasse für OrganizationType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="OrganizationType"&gt;
  *   &lt;complexContent&gt;
@@ -32,8 +28,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "OrganizationType", propOrder = {
@@ -58,25 +54,25 @@ public class OrganizationType
 
     /**
      * Gets the value of the address property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the address property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getAddress().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link PostalAddressType }
-     * 
-     * 
+     *
+     *
      */
     public List<PostalAddressType> getAddress() {
         if (address == null) {
@@ -87,25 +83,25 @@ public class OrganizationType
 
     /**
      * Gets the value of the telephoneNumber property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the telephoneNumber property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getTelephoneNumber().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link TelephoneNumberType }
-     * 
-     * 
+     *
+     *
      */
     public List<TelephoneNumberType> getTelephoneNumber() {
         if (telephoneNumber == null) {
@@ -116,25 +112,25 @@ public class OrganizationType
 
     /**
      * Gets the value of the emailAddress property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the emailAddress property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getEmailAddress().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link EmailAddressType }
-     * 
-     * 
+     *
+     *
      */
     public List<EmailAddressType> getEmailAddress() {
         if (emailAddress == null) {
@@ -145,11 +141,11 @@ public class OrganizationType
 
     /**
      * Ruft den Wert der parent-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getParent() {
         return parent;
@@ -157,11 +153,11 @@ public class OrganizationType
 
     /**
      * Legt den Wert der parent-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setParent(String value) {
         this.parent = value;
@@ -169,11 +165,11 @@ public class OrganizationType
 
     /**
      * Ruft den Wert der primaryContact-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getPrimaryContact() {
         return primaryContact;
@@ -181,11 +177,11 @@ public class OrganizationType
 
     /**
      * Legt den Wert der primaryContact-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setPrimaryContact(String value) {
         this.primaryContact = value;

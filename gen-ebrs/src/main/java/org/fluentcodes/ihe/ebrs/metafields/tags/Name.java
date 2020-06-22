@@ -1,32 +1,32 @@
 package org.fluentcodes.ihe.ebrs.metafields.tags;
 
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
-import org.fluentcodes.ihe.ebrs.IheHelper;
+import org.fluentcodes.ihe.ebrs.EbXmlHelper;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public abstract class Name<RESULT> extends InternationalStringCommon<RESULT> {
-    public Name(RegistryObject parentObject) {
-        super(parentObject);
+    public Name(final RegistryObject parentRO) {
+        super(parentRO);
     }
 
-    public void addFromParentType(RegistryObjectType registryObject) {
-        super.addFromParentType(registryObject.getName());
+
+    public void addFromParentType(RegistryObjectType parentType) {
+        super.addFromParentType(parentType.getName());
     }
 
-    public void setFromParentType(RegistryObjectType parentObject) {
+    public void setFromParentType(RegistryObjectType parentType) {
         reset();
-        addFromParentType(parentObject);
+        addFromParentType(parentType);
     }
 
-    public void addToParentType(RegistryObjectType parentObject) {
+    public void addToParentType(RegistryObjectType parentType) {
         if (isEmpty()) {
             return;
         }
-        if (parentObject.getName() == null) {
-            parentObject.setName(IheHelper.OF_RIM.createInternationalStringType());
+        if (parentType.getName() == null) {
+            parentType.setName(EbXmlHelper.OF_RIM.createInternationalStringType());
         }
-        addToParentType(parentObject.getName());
+        addToParentType(parentType.getName());
     }
 
 }

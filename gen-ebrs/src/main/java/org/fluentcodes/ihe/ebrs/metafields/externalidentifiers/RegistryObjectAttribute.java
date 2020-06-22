@@ -2,19 +2,19 @@ package org.fluentcodes.ihe.ebrs.metafields.externalidentifiers;
 
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
-import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 import org.fluentcodes.ihe.ebrs.metafields.MetaFieldAttribute;
+import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public class RegistryObjectAttribute extends MetaFieldAttribute {
-    public RegistryObjectAttribute(RegistryObject parentObject) {
-        super(parentObject);
+    public RegistryObjectAttribute(final RegistryObject parentRO) {
+        super( parentRO);
     }
     @Override
     public void addToParentType(RegistryObjectType parentType) {
         ((ExternalIdentifierType)parentType).setRegistryObject(get());
     }
     @Override
-    public void setFromParentType(RegistryObjectType registryObject) {
-        super.set(((ExternalIdentifierType)registryObject).getRegistryObject());
+    public void setFromParentType(RegistryObjectType parentType) {
+        super.set(((ExternalIdentifierType)parentType).getRegistryObject());
     }
 }

@@ -1,22 +1,18 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.lcm._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType;
 
+import javax.xml.bind.annotation.*;
+
 
 /**
  * <p>Java-Klasse für anonymous complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -30,8 +26,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -52,11 +48,11 @@ public class RemoveObjectsRequest
 
     /**
      * Ruft den Wert der adhocQuery-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link AdhocQueryType }
-     *     
+     *
      */
     public AdhocQueryType getAdhocQuery() {
         return adhocQuery;
@@ -64,11 +60,11 @@ public class RemoveObjectsRequest
 
     /**
      * Legt den Wert der adhocQuery-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link AdhocQueryType }
-     *     
+     *
      */
     public void setAdhocQuery(AdhocQueryType value) {
         this.adhocQuery = value;
@@ -76,11 +72,11 @@ public class RemoveObjectsRequest
 
     /**
      * Ruft den Wert der objectRefList-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ObjectRefListType }
-     *     
+     *
      */
     public ObjectRefListType getObjectRefList() {
         return objectRefList;
@@ -88,11 +84,11 @@ public class RemoveObjectsRequest
 
     /**
      * Legt den Wert der objectRefList-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ObjectRefListType }
-     *     
+     *
      */
     public void setObjectRefList(ObjectRefListType value) {
         this.objectRefList = value;
@@ -100,11 +96,11 @@ public class RemoveObjectsRequest
 
     /**
      * Ruft den Wert der deletionScope-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDeletionScope() {
         if (deletionScope == null) {
@@ -116,11 +112,11 @@ public class RemoveObjectsRequest
 
     /**
      * Legt den Wert der deletionScope-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDeletionScope(String value) {
         this.deletionScope = value;

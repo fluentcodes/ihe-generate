@@ -41,7 +41,7 @@
 		<!--module>gen-xacml</module-->
 		<module>gen-fdv-json-testtreiber</module>
 		<module>gen-ebrs</module>
-		<!--module>gen-ihe</module-->
+		<module>gen-ihe</module>
 		<!--module>ihe-germany</module-->
 	</modules>
 

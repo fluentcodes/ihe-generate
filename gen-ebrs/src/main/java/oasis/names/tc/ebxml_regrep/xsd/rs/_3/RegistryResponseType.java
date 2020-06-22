@@ -1,25 +1,20 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rs._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.cms._3.ContentManagementServiceResponseType;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
 
+import javax.xml.bind.annotation.*;
+
 
 /**
  * Base type for all ebXML Registry responses
- * 
+ *
  * <p>Java-Klasse für RegistryResponseType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="RegistryResponseType"&gt;
  *   &lt;complexContent&gt;
@@ -34,8 +29,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RegistryResponseType", propOrder = {
@@ -60,11 +55,11 @@ public class RegistryResponseType {
 
     /**
      * Ruft den Wert der responseSlotList-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link SlotListType }
-     *     
+     *
      */
     public SlotListType getResponseSlotList() {
         return responseSlotList;
@@ -72,11 +67,11 @@ public class RegistryResponseType {
 
     /**
      * Legt den Wert der responseSlotList-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link SlotListType }
-     *     
+     *
      */
     public void setResponseSlotList(SlotListType value) {
         this.responseSlotList = value;
@@ -84,11 +79,11 @@ public class RegistryResponseType {
 
     /**
      * Ruft den Wert der registryErrorList-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link RegistryErrorList }
-     *     
+     *
      */
     public RegistryErrorList getRegistryErrorList() {
         return registryErrorList;
@@ -96,11 +91,11 @@ public class RegistryResponseType {
 
     /**
      * Legt den Wert der registryErrorList-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link RegistryErrorList }
-     *     
+     *
      */
     public void setRegistryErrorList(RegistryErrorList value) {
         this.registryErrorList = value;
@@ -108,11 +103,11 @@ public class RegistryResponseType {
 
     /**
      * Ruft den Wert der status-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getStatus() {
         return status;
@@ -120,11 +115,11 @@ public class RegistryResponseType {
 
     /**
      * Legt den Wert der status-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setStatus(String value) {
         this.status = value;
@@ -132,11 +127,11 @@ public class RegistryResponseType {
 
     /**
      * Ruft den Wert der requestId-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getRequestId() {
         return requestId;
@@ -144,11 +139,11 @@ public class RegistryResponseType {
 
     /**
      * Legt den Wert der requestId-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setRequestId(String value) {
         this.requestId = value;

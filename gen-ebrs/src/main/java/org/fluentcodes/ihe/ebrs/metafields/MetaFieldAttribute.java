@@ -1,12 +1,11 @@
 package org.fluentcodes.ihe.ebrs.metafields;
 
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
-import org.fluentcodes.ihe.ebrs.IheException;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
 public abstract class MetaFieldAttribute extends MetaFieldCommon<String> {
-    public MetaFieldAttribute(RegistryObject parentObject) {
-        super(parentObject);
+    public MetaFieldAttribute( final RegistryObject parentRO) {
+        super(parentRO);
     }
     private String value;
     public String get() {

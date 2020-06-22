@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.query._3;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java-Klasse für PersonQueryType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="PersonQueryType"&gt;
  *   &lt;complexContent&gt;
@@ -29,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PersonQueryType", propOrder = {
@@ -57,25 +53,25 @@ public class PersonQueryType
 
     /**
      * Gets the value of the addressFilter property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the addressFilter property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getAddressFilter().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link FilterType }
-     * 
-     * 
+     *
+     *
      */
     public List<FilterType> getAddressFilter() {
         if (addressFilter == null) {
@@ -86,11 +82,11 @@ public class PersonQueryType
 
     /**
      * Ruft den Wert der personNameFilter-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link FilterType }
-     *     
+     *
      */
     public FilterType getPersonNameFilter() {
         return personNameFilter;
@@ -98,11 +94,11 @@ public class PersonQueryType
 
     /**
      * Legt den Wert der personNameFilter-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link FilterType }
-     *     
+     *
      */
     public void setPersonNameFilter(FilterType value) {
         this.personNameFilter = value;
@@ -110,25 +106,25 @@ public class PersonQueryType
 
     /**
      * Gets the value of the telephoneNumberFilter property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the telephoneNumberFilter property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getTelephoneNumberFilter().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link FilterType }
-     * 
-     * 
+     *
+     *
      */
     public List<FilterType> getTelephoneNumberFilter() {
         if (telephoneNumberFilter == null) {
@@ -139,25 +135,25 @@ public class PersonQueryType
 
     /**
      * Gets the value of the emailAddressFilter property.
-     * 
+     *
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the emailAddressFilter property.
-     * 
+     *
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getEmailAddressFilter().add(newItem);
      * </pre>
-     * 
-     * 
+     *
+     *
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link FilterType }
-     * 
-     * 
+     *
+     *
      */
     public List<FilterType> getEmailAddressFilter() {
         if (emailAddressFilter == null) {

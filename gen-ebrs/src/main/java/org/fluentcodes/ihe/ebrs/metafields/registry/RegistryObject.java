@@ -1,27 +1,25 @@
 package org.fluentcodes.ihe.ebrs.metafields.registry;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.gson.annotations.Expose;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.fluentcodes.ihe.ebrs.IheException;
-import org.fluentcodes.ihe.ebrs.metafields.MetaField;
-import org.fluentcodes.ihe.ebrs.metafields.MetaFieldNamed;
-import org.fluentcodes.ihe.ebrs.metafields.MetaFieldProperties;
-import org.fluentcodes.ihe.ebrs.metafields.MetaFieldProperty;
-import org.fluentcodes.ihe.ebrs.metafields.classifications.Classification;
-import org.fluentcodes.ihe.ebrs.metafields.classifications.ClassificationWrapper;
-import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.ExternalIdentifier;
-import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.ExternalIdentifierWrapper;
-import org.fluentcodes.ihe.ebrs.metafields.slots.SlotList;
+import org.fluentcodes.ihe.ebrs.exceptions.EbXmlException;
+import org.fluentcodes.ihe.ebrs.metafields.*;
+import org.fluentcodes.ihe.ebrs.metafields.classifications.ClassificationMetaCommon;
+import org.fluentcodes.ihe.ebrs.metafields.classifications.ClassificationRO;
+import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.ExternalIdentifierMetaList;
+import org.fluentcodes.ihe.ebrs.metafields.externalidentifiers.ExternalIdentifierRO;
+import org.fluentcodes.ihe.ebrs.metafields.slots.SlotMetaCommon;
 import org.fluentcodes.ihe.ebrs.metafields.slots.SlotWrapper;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
-public class RegistryObject {
+public abstract class RegistryObject<TYPE extends RegistryObjectType> extends ErrorListWrapper implements Element<TYPE> {
     private static final Logger LOG = LogManager.getLogger(RegistryObject.class);
-    private static final MetaFieldProperties properties = new MetaFieldProperties();
     private static final String HOME = "home";
     private static final String ID = "id";
     private static final String LID = "lid";
@@ -31,72 +29,133 @@ public class RegistryObject {
     private static final String OBJECT_TYPE = "objectType";
     private static final String VERSION_INFO = "versionInfo";
 
-    @Expose(serialize = false, deserialize = false)
-    Map<String, MetaField> metaFields = new LinkedHashMap<>();
+    private MetaField metaField;
 
+    @JsonIgnore
+    private Map<String, MetaField> metaFields = new LinkedHashMap<>();
 
     public RegistryObject() {
+        super();
     }
 
-    public RegistryObject(RegistryObjectType parentObject) {
-        List<MetaFieldProperty> propertiesList = properties.getMetaFieldProperties(this);
-        for (MetaFieldProperty property: propertiesList) {
-            setMetaField(property, parentObject);
+    public RegistryObject(MetaFieldROList metaField) {
+        super();
+        this.metaField = metaField;
+        setId(metaField.getName() + "_" + metaField.getEntries().size());
+    }
+
+    @JsonIgnore
+    public boolean isStrict() {
+        return false;
+    }
+
+    public void addFromParentType(TYPE parentType, MetaField meta) {
+        this.metaField = meta;
+        if (meta!=null) {
+            if (meta instanceof MetaFieldROList) {
+                ((MetaFieldROList) meta).add(this);
+            }
+            else if (meta instanceof MetaFieldContainerList) {
+                ((MetaFieldContainerList) meta).add(this);
+            }
         }
-        this.checkType(parentObject);
+        List<MetaFieldProperty> properties = Properties.list.getMetaFieldProperties(this);
+        for (MetaFieldProperty property : properties) {
+            addFromParentType(property, parentType);
+        }
+        if (parentType.getClassification() != null) {
+            for (ClassificationType type : parentType.getClassification()) {
+                new ClassificationRO(type, this);
+            }
+        }
+        if (parentType.getExternalIdentifier() != null) {
+            for (ExternalIdentifierType type : parentType.getExternalIdentifier()) {
+                new ExternalIdentifierRO(type, this);
+            }
+        }
+        if (parentType.getSlot() != null) {
+            for (SlotType1 type : parentType.getSlot()) {
+                new SlotWrapper(type, this);
+            }
+        }
     }
 
-    private static final Map<String, Class<? extends MetaField>> init() {
-        Map<String, Class<? extends MetaField>> metaFieldClasses  = new LinkedHashMap<>();
-        metaFieldClasses.put("id", ID.class);
-        return metaFieldClasses;
+    private void addFromParentType(final MetaFieldProperty property, final RegistryObjectType parent) {
+        getMetaField(property.getName()).addFromParentType(parent);
     }
 
-    protected boolean hasMetaField (final String key) {
+    @JsonIgnore
+    public MetaField getMetaField() {
+        return metaField;
+    }
+
+    @JsonIgnore
+    public String getMetaIdentifier() {
+        if (metaField == null) {
+            return null;
+        }
+        return metaField.getIdentifier();
+    }
+
+    @JsonIgnore
+    public String getMetaName() {
+        if (metaField == null) {
+            return null;
+        }
+        return metaField.getName();
+    }
+
+    public boolean hasParentObject() {
+        return getParentObject() != null;
+    }
+
+    @JsonIgnore
+    public RegistryObjectInterface<TYPE> getParentObject() {
+        if (metaField == null) {
+            return null;
+        }
+        return (RegistryObjectInterface<TYPE>)metaField.getParentObject();
+    }
+
+    public boolean hasMetaField (final String key) {
         return metaFields.containsKey(key);
     }
 
-    protected boolean hasMetaField (final MetaFieldProperty property) {
-        return metaFields.containsKey(property.getIdentifier());
-    }
-
-    private MetaField addMetaField(final String identifier) {
-        return addMetaField(identifier, true);
-    }
-
-    private MetaField addMetaField(final String identifier, final boolean check) {
-        if (metaFields.containsKey(identifier)) {
-            return metaFields.get(identifier);
+    public MetaField addMetaField(final MetaField metaField) {
+        if (metaFields.containsKey(metaField.getName())) {
+            return metaFields.get(metaField.getName());
         }
-        try {
-            MetaFieldProperty property = properties.findProperty(identifier);
-            MetaField metaField = property.createMetaField(this);
-            if (metaField instanceof MetaFieldNamed) {
-                ((MetaFieldNamed) metaField).setIdentifier(identifier);
+        metaFields.put(metaField.getName(), metaField);
+        return metaField;
+    }
+
+    public MetaField getMetaField(final String name) {
+        return getMetaField(name, RODefaultTypes.SLOT);
+    }
+
+    public MetaField getMetaField(final String name, final RODefaultTypes metaType) {
+        if (metaFields.containsKey(name)) {
+            return metaFields.get(name);
+        }
+        MetaField metaField = null;
+        if (Properties.list.isMetaFieldProperty(name, this)) {
+            metaField = Properties.list.createMetaField(name, this);
+        }
+        else {
+            if(isStrict()) {
+                throw new EbXmlException("No name '" + name + "' found for parent class '" + this.getClass().getSimpleName() + "'");
             }
-            metaFields.put(property.getIdentifier(), metaField);
-            return metaField;
+            metaField = metaType.createMetaField(name, this);
         }
-        catch (IheException e) {
-            //if (check) {
-                throw new IheException("No property found for '" + identifier + "'.");
-            //}
-        }
-    }
-
-    private MetaField getMetaField(final String identifier) {
-        if (metaFields.containsKey(identifier)) {
-            return metaFields.get(identifier);
-        }
-        return addMetaField(identifier);
+        return metaField;
     }
 
     protected Object getMetaFieldValue(final String identifier) {
         try {
             return getMetaField(identifier).get();
         }
-        catch (IheException e) {
-            LOG.error("Could set value on a metafield without entry properties.", e);
+        catch (EbXmlException e) {
+            LOG.error("Could get value on a metafield without entry properties.", e);
             return null;
         }
     }
@@ -105,13 +164,9 @@ public class RegistryObject {
         try {
             getMetaField(identifier).set(value);
         }
-        catch (IheException e) {
+        catch (EbXmlException e) {
             LOG.error("Could set value on a metafield without entry properties.", e);
         }
-    }
-
-    private void setMetaField(final MetaFieldProperty property, final RegistryObjectType parent) {
-        getMetaField(property.getIdentifier()).addFromParentType(parent);
     }
 
     public boolean hasName() {
@@ -132,12 +187,13 @@ public class RegistryObject {
 
     @JsonIgnore
     public VersionInfoType getVersionInfo() {
-        return (VersionInfoType) getMetaField(VERSION_INFO);
+        return null;
+        //return (VersionInfoType) getMetaField(VERSION_INFO);
     }
 
     @JsonIgnore
     public RegistryObject setVersionInfo(VersionInfoType versionInfo) {
-        setMetaFieldValue(VERSION_INFO, versionInfo);
+        //setMetaFieldValue(VERSION_INFO, versionInfo);
         return this;
     }
 
@@ -148,6 +204,24 @@ public class RegistryObject {
 
     public RegistryObject setName(List<LocalizedStringType> name) {
         setMetaFieldValue(NAME, name);
+        return this;
+    }
+
+    public RegistryObject addName(LocalizedStringType entry) {
+        List<LocalizedStringType> list = getName();
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        list.add(entry);
+        setMetaFieldValue(NAME, list);
+        return this;
+    }
+
+    @JsonIgnore
+    public RegistryObject setName(String name) {
+        LocalizedStringType localizedStringType = new LocalizedStringType();
+        localizedStringType.setValue(name);
+        addName(localizedStringType);
         return this;
     }
 
@@ -196,49 +270,7 @@ public class RegistryObject {
         return this;
     }
 
-    private void checkType(RegistryObjectType parentType) {
-        if (parentType.getClassification()!=null) {
-            for (ClassificationType classificationType : parentType.getClassification()) {
-                String identifier = classificationType.getClassificationScheme();
-                if (identifier == null) {
-                    identifier = classificationType.getClassificationNode();
-                }
-                if (identifier == null) {
-                    identifier = "NOT_SPECIFIED";
-                }
-                if (properties.isMetaFieldProperty(this, identifier)) {
-                    continue;
-                }
-                addClassification(identifier, new ClassificationWrapper(classificationType));
-            }
-        }
-        if (parentType.getExternalIdentifier()!=null) {
-            for (ExternalIdentifierType externalIdentifier : parentType.getExternalIdentifier()) {
-                String identifier = externalIdentifier.getIdentificationScheme();
-                if (identifier == null) {
-                    identifier = "NOT_SPECIFIED";
-                }
-                if (properties.isMetaFieldProperty(this, identifier)) {
-                    continue;
-                }
-                addExternalIdentifier(identifier, new ExternalIdentifierWrapper(externalIdentifier));
-            }
-        }
-        if (parentType.getSlot()!=null ) {
-            for (SlotType1 slotType1 : parentType.getSlot()) {
-                String identifier = slotType1.getName();
-                if (identifier == null) {
-                    identifier = "NOT_SPECIFIED";
-                }
-                if (properties.isMetaFieldProperty(this, identifier)) {
-                    continue;
-                }
-                addSlot(identifier, new SlotWrapper(slotType1));
-            }
-        }
-    }
-
-    public RegistryObject addClassification(ClassificationWrapper classification) {
+    public RegistryObject addClassification(ClassificationRO classification) {
         String identifier = classification.getClassificationScheme();
         if (identifier == null) {
             identifier = classification.getClassificationNode();
@@ -246,65 +278,28 @@ public class RegistryObject {
         if (identifier == null) {
             identifier = "NOT_SPECIFIED";
         }
-        addClassification(identifier, classification);
+        ((ClassificationMetaCommon)getMetaField(identifier, RODefaultTypes.CLASSIFICATION)).add(classification);
         return this;
     }
 
-    protected RegistryObject addClassification(final String identifier, final ClassificationWrapper classification) {
-        if (!hasMetaField(identifier)) {  // already set by properties..
-            Classification untypedClassification = new Classification(this);
-            untypedClassification.setIdentifier(identifier);
-            metaFields.put(identifier, untypedClassification);
-        }
-        ((Classification)getMetaField(identifier)).add(classification);
-        return this;
-    }
-
-    public RegistryObject addExternalIdentifier(ExternalIdentifierWrapper externalIdentifier) {
+    public RegistryObject addExternalIdentifier(ExternalIdentifierRO externalIdentifier) {
         String identifier = externalIdentifier.getIdentificationScheme();
         if (identifier == null) {
             identifier = "NOT_SPECIFIED";
         }
-        addExternalIdentifier(identifier, externalIdentifier);
-        return this;
-    }
-
-    protected RegistryObject addExternalIdentifier(final String identifier, final ExternalIdentifierWrapper externalIdentifier) {
-        if (!hasMetaField(identifier)) {  // already set by properties..
-            ExternalIdentifier untypedExternalIdentifier = new ExternalIdentifier(this);
-            untypedExternalIdentifier.setIdentifier(identifier);
-            metaFields.put(identifier, untypedExternalIdentifier);
-        }
-        ((ExternalIdentifier)getMetaField(identifier)).add(externalIdentifier);
+        ((ExternalIdentifierMetaList)getMetaField(identifier, RODefaultTypes.EXTERNAL_IDENTIFIER)).add(externalIdentifier);
         return this;
     }
 
     public RegistryObject addSlot(final SlotWrapper slot) {
-        String identifier = slot.getName();
-        if (identifier == null) {
-            identifier = "NOT_SPECIFIED";
-        }
-        addSlot(identifier, slot);
+        String identifier = slot.getMetaIdentifier();
+        ((SlotMetaCommon) getMetaField(identifier)).add(slot);
         return this;
     }
 
-    protected RegistryObject addSlot(final String identifier, final SlotWrapper slot) {
-        if (!hasMetaField(identifier)) {
-            SlotList untypedSlot = new SlotList(this);
-            untypedSlot.setIdentifier(identifier);
-            metaFields.put(identifier, untypedSlot);
-        }
-        ((SlotList)addMetaField(identifier, false)).add(slot);
-        return this;
-    }
-
-    public void addToParentType(RegistryObjectType parentType) {
+    public void addToParentType(TYPE parentType) {
         for (MetaField metaField: metaFields.values()) {
             metaField.addToParentType(parentType);
         }
-    }
-
-    public RegistryObjectType createType() {
-        throw new IheException("Should be overwritten");
     }
 }

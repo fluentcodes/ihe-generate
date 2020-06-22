@@ -1,19 +1,14 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rs._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java-Klasse für anonymous complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;simpleContent&gt;
@@ -26,8 +21,8 @@ import javax.xml.bind.annotation.XmlValue;
  *   &lt;/simpleContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -49,11 +44,11 @@ public class RegistryError {
 
     /**
      * Ruft den Wert der value-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getValue() {
         return value;
@@ -61,11 +56,11 @@ public class RegistryError {
 
     /**
      * Legt den Wert der value-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(String value) {
         this.value = value;
@@ -73,11 +68,11 @@ public class RegistryError {
 
     /**
      * Ruft den Wert der codeContext-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getCodeContext() {
         return codeContext;
@@ -85,11 +80,11 @@ public class RegistryError {
 
     /**
      * Legt den Wert der codeContext-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setCodeContext(String value) {
         this.codeContext = value;
@@ -97,11 +92,11 @@ public class RegistryError {
 
     /**
      * Ruft den Wert der errorCode-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getErrorCode() {
         return errorCode;
@@ -109,11 +104,11 @@ public class RegistryError {
 
     /**
      * Legt den Wert der errorCode-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setErrorCode(String value) {
         this.errorCode = value;
@@ -121,11 +116,11 @@ public class RegistryError {
 
     /**
      * Ruft den Wert der severity-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getSeverity() {
         if (severity == null) {
@@ -137,11 +132,11 @@ public class RegistryError {
 
     /**
      * Legt den Wert der severity-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setSeverity(String value) {
         this.severity = value;
@@ -149,11 +144,11 @@ public class RegistryError {
 
     /**
      * Ruft den Wert der location-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getLocation() {
         return location;
@@ -161,11 +156,11 @@ public class RegistryError {
 
     /**
      * Legt den Wert der location-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setLocation(String value) {
         this.location = value;

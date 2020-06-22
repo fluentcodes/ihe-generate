@@ -2,20 +2,17 @@ package org.fluentcodes.ihe.ebrs.metafields.tags;
 
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1;
-import org.fluentcodes.ihe.ebrs.IheHelper;
-import org.fluentcodes.ihe.ebrs.metafields.MetaFieldRegistryObjectList;
+import org.fluentcodes.ihe.ebrs.EbXmlHelper;
+import org.fluentcodes.ihe.ebrs.metafields.MetaFieldROList;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
-import org.fluentcodes.ihe.ebrs.metafields.slots.SlotWrapper;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class InternationalStringCommon<RESULT> extends MetaFieldRegistryObjectList<LocalizedStringWrapper, RESULT> {
-    public InternationalStringCommon(RegistryObject parentObject) {
-        super(parentObject);
+public abstract class InternationalStringCommon<RESULT> extends MetaFieldROList<RESULT, LocalizedStringWrapper, LocalizedStringType> {
+
+    public InternationalStringCommon(final RegistryObject parentRO) {
+        super(parentRO);
     }
 
     public void setValues(List<LocalizedStringType> values) {
@@ -36,22 +33,22 @@ public abstract class InternationalStringCommon<RESULT> extends MetaFieldRegistr
         }
     }
 
-    public void setFromParentType(InternationalStringType parentObject) {
+    public void setFromParentType(InternationalStringType parentRO) {
         reset();
-        addFromParentType(parentObject);
+        addFromParentType(parentRO);
     }
 
-    public void addToParentType(InternationalStringType parentObject) {
-        if (parentObject.getLocalizedString() == null) {
+    public void addToParentType(InternationalStringType parentType) {
+        if (parentType.getLocalizedString() == null) {
             return;
         }
         for (LocalizedStringWrapper wrapper: getEntries()) {
-            parentObject.getLocalizedString().add(wrapper.getValues());
+            parentType.getLocalizedString().add(wrapper.getValues());
         }
     }
 
     public InternationalStringType createType (){
-        InternationalStringType type = IheHelper.OF_RIM.createInternationalStringType();
+        InternationalStringType type = EbXmlHelper.OF_RIM.createInternationalStringType();
         for (LocalizedStringWrapper wrapper: getEntries()) {
             type.getLocalizedString().add(wrapper.getValues());
         }

@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
  * <p>Java-Klasse für LocalizedStringType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="LocalizedStringType"&gt;
  *   &lt;complexContent&gt;
@@ -26,8 +22,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "LocalizedStringType")
@@ -45,11 +41,11 @@ public class LocalizedStringType {
 
     /**
      * Ruft den Wert der lang-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getLang() {
         if (lang == null) {
@@ -61,11 +57,11 @@ public class LocalizedStringType {
 
     /**
      * Legt den Wert der lang-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setLang(String value) {
         this.lang = value;
@@ -73,11 +69,11 @@ public class LocalizedStringType {
 
     /**
      * Ruft den Wert der charset-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getCharset() {
         if (charset == null) {
@@ -89,11 +85,11 @@ public class LocalizedStringType {
 
     /**
      * Legt den Wert der charset-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setCharset(String value) {
         this.charset = value;
@@ -101,11 +97,11 @@ public class LocalizedStringType {
 
     /**
      * Ruft den Wert der value-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getValue() {
         return value;
@@ -113,11 +109,11 @@ public class LocalizedStringType {
 
     /**
      * Legt den Wert der value-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setValue(String value) {
         this.value = value;

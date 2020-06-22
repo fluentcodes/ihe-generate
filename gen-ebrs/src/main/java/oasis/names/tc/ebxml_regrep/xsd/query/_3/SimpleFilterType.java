@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.query._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
  * <p>Java-Klasse für SimpleFilterType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="SimpleFilterType"&gt;
  *   &lt;complexContent&gt;
@@ -38,8 +34,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SimpleFilterType")
@@ -62,11 +58,11 @@ public abstract class SimpleFilterType
 
     /**
      * Ruft den Wert der domainAttribute-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getDomainAttribute() {
         return domainAttribute;
@@ -74,11 +70,11 @@ public abstract class SimpleFilterType
 
     /**
      * Legt den Wert der domainAttribute-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setDomainAttribute(String value) {
         this.domainAttribute = value;
@@ -86,11 +82,11 @@ public abstract class SimpleFilterType
 
     /**
      * Ruft den Wert der comparator-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getComparator() {
         return comparator;
@@ -98,11 +94,11 @@ public abstract class SimpleFilterType
 
     /**
      * Legt den Wert der comparator-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setComparator(String value) {
         this.comparator = value;

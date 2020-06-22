@@ -1,18 +1,18 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.query._3;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import java.math.BigInteger;
 
 
 /**
  * <p>Java-Klasse für IntegerFilterType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="IntegerFilterType"&gt;
  *   &lt;complexContent&gt;
@@ -22,8 +22,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IntegerFilterType")
@@ -36,11 +36,11 @@ public class IntegerFilterType
 
     /**
      * Ruft den Wert der value-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public BigInteger getValue() {
         return value;
@@ -48,11 +48,11 @@ public class IntegerFilterType
 
     /**
      * Legt den Wert der value-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *     
+     *
      */
     public void setValue(BigInteger value) {
         this.value = value;

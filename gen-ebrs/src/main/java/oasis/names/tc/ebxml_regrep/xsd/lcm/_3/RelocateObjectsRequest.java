@@ -1,21 +1,18 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.lcm._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType;
 
+import javax.xml.bind.annotation.*;
+
 
 /**
  * <p>Java-Klasse für anonymous complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -31,8 +28,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -60,11 +57,11 @@ public class RelocateObjectsRequest
 
     /**
      * Ruft den Wert der adhocQuery-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link AdhocQueryType }
-     *     
+     *
      */
     public AdhocQueryType getAdhocQuery() {
         return adhocQuery;
@@ -72,11 +69,11 @@ public class RelocateObjectsRequest
 
     /**
      * Legt den Wert der adhocQuery-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link AdhocQueryType }
-     *     
+     *
      */
     public void setAdhocQuery(AdhocQueryType value) {
         this.adhocQuery = value;
@@ -84,11 +81,11 @@ public class RelocateObjectsRequest
 
     /**
      * Ruft den Wert der sourceRegistry-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public ObjectRefType getSourceRegistry() {
         return sourceRegistry;
@@ -96,11 +93,11 @@ public class RelocateObjectsRequest
 
     /**
      * Legt den Wert der sourceRegistry-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public void setSourceRegistry(ObjectRefType value) {
         this.sourceRegistry = value;
@@ -108,11 +105,11 @@ public class RelocateObjectsRequest
 
     /**
      * Ruft den Wert der destinationRegistry-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public ObjectRefType getDestinationRegistry() {
         return destinationRegistry;
@@ -120,11 +117,11 @@ public class RelocateObjectsRequest
 
     /**
      * Legt den Wert der destinationRegistry-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public void setDestinationRegistry(ObjectRefType value) {
         this.destinationRegistry = value;
@@ -132,11 +129,11 @@ public class RelocateObjectsRequest
 
     /**
      * Ruft den Wert der ownerAtSource-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public ObjectRefType getOwnerAtSource() {
         return ownerAtSource;
@@ -144,11 +141,11 @@ public class RelocateObjectsRequest
 
     /**
      * Legt den Wert der ownerAtSource-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public void setOwnerAtSource(ObjectRefType value) {
         this.ownerAtSource = value;
@@ -156,11 +153,11 @@ public class RelocateObjectsRequest
 
     /**
      * Ruft den Wert der ownerAtDestination-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public ObjectRefType getOwnerAtDestination() {
         return ownerAtDestination;
@@ -168,11 +165,11 @@ public class RelocateObjectsRequest
 
     /**
      * Legt den Wert der ownerAtDestination-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link ObjectRefType }
-     *     
+     *
      */
     public void setOwnerAtDestination(ObjectRefType value) {
         this.ownerAtDestination = value;

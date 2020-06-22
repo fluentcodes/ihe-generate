@@ -1,33 +1,21 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rs._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.cms._3.ContentManagementServiceRequestType;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.AcceptObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.ApproveObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.DeprecateObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.RelocateObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.RemoveObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.UndeprecateObjectsRequest;
-import oasis.names.tc.ebxml_regrep.xsd.lcm._3.UpdateObjectsRequest;
+import oasis.names.tc.ebxml_regrep.xsd.lcm._3.*;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
  * Base type for all ebXML Registry requests
- * 
+ *
  * <p>Java-Klasse für RegistryRequestType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="RegistryRequestType"&gt;
  *   &lt;complexContent&gt;
@@ -41,8 +29,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RegistryRequestType", propOrder = {
@@ -72,11 +60,11 @@ public class RegistryRequestType {
 
     /**
      * Ruft den Wert der requestSlotList-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link SlotListType }
-     *     
+     *
      */
     public SlotListType getRequestSlotList() {
         return requestSlotList;
@@ -84,11 +72,11 @@ public class RegistryRequestType {
 
     /**
      * Legt den Wert der requestSlotList-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link SlotListType }
-     *     
+     *
      */
     public void setRequestSlotList(SlotListType value) {
         this.requestSlotList = value;
@@ -96,11 +84,11 @@ public class RegistryRequestType {
 
     /**
      * Ruft den Wert der id-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getId() {
         return id;
@@ -108,11 +96,11 @@ public class RegistryRequestType {
 
     /**
      * Legt den Wert der id-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setId(String value) {
         this.id = value;
@@ -120,11 +108,11 @@ public class RegistryRequestType {
 
     /**
      * Ruft den Wert der comment-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getComment() {
         return comment;
@@ -132,11 +120,11 @@ public class RegistryRequestType {
 
     /**
      * Legt den Wert der comment-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setComment(String value) {
         this.comment = value;

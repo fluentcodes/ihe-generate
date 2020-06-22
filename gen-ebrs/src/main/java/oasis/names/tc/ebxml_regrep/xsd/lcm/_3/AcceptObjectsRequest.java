@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.lcm._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType;
+
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java-Klasse für anonymous complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -24,8 +20,8 @@ import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
@@ -40,11 +36,11 @@ public class AcceptObjectsRequest
 
     /**
      * Ruft den Wert der correlationId-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getCorrelationId() {
         return correlationId;
@@ -52,11 +48,11 @@ public class AcceptObjectsRequest
 
     /**
      * Legt den Wert der correlationId-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setCorrelationId(String value) {
         this.correlationId = value;

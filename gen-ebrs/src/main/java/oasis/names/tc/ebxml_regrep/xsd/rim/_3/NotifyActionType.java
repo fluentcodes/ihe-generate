@@ -1,20 +1,16 @@
 
 package oasis.names.tc.ebxml_regrep.xsd.rim._3;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * Abstract Base type for all types of Notify Actions
- * 
+ *
  * <p>Java-Klasse für NotifyActionType complex type.
- * 
+ *
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
- * 
+ *
  * <pre>
  * &lt;complexType name="NotifyActionType"&gt;
  *   &lt;complexContent&gt;
@@ -25,8 +21,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "NotifyActionType")
@@ -42,11 +38,11 @@ public class NotifyActionType
 
     /**
      * Ruft den Wert der notificationOption-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getNotificationOption() {
         if (notificationOption == null) {
@@ -58,11 +54,11 @@ public class NotifyActionType
 
     /**
      * Legt den Wert der notificationOption-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setNotificationOption(String value) {
         this.notificationOption = value;
@@ -70,11 +66,11 @@ public class NotifyActionType
 
     /**
      * Ruft den Wert der endPoint-Eigenschaft ab.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getEndPoint() {
         return endPoint;
@@ -82,11 +78,11 @@ public class NotifyActionType
 
     /**
      * Legt den Wert der endPoint-Eigenschaft fest.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setEndPoint(String value) {
         this.endPoint = value;
