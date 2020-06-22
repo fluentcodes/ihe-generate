@@ -6,8 +6,8 @@
 .settings
 .springBeans
 .sts4-cache
-/ihe-germany
-/gen-cda
+ihe-germany/
+gen-cda/
 ### IntelliJ IDEA ###
 .idea
 *.iws
