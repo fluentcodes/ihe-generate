@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+      
+    <!--
+
+Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.3.0 generiert 
+Siehe <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
+Generiert: 2020.05.25 um 11:41:08 AM CEST 
+
+  -->
+      
+    <bindings xmlns:tns="urn:ihe:iti:xds-b:2007" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="ihe.iti.xds_b._2007"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:ProvideAndRegisterDocumentSetRequestType">
+                  
+            <class ref="ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RetrieveDocumentSetResponseType">
+                  
+            <class ref="ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RetrieveDocumentSetRequestType">
+                  
+            <class ref="ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType"/>
+                
+        </bindings>
+          
+    </bindings>
+      
+    <bindings xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="oasis.names.tc.ebxml_regrep.xsd.rs._3"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryRequestType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryRequestType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RegistryErrorList">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RegistryError">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryResponseType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType"/>
+                
+        </bindings>
+          
+    </bindings>
+      
+    <bindings xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="oasis.names.tc.ebxml_regrep.xsd.rim._3"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:InternationalStringType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:LocalizedStringType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SlotType1">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ValueListType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SlotListType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:IdentifiableType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.IdentifiableType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ObjectRefListType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ObjectRefType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryObjectType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryObjectListType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AssociationType1">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.AssociationType1"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AuditableEventType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.AuditableEventType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ClassificationType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ClassificationNodeType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationNodeType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ClassificationSchemeType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationSchemeType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ExternalIdentifierType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ExternalLinkType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalLinkType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ExtrinsicObjectType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:PostalAddressType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:OrganizationType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.OrganizationType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:PersonNameType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonNameType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:EmailAddressType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.EmailAddressType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryPackageType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ServiceType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ServiceType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ServiceBindingType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ServiceBindingType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SpecificationLinkType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.SpecificationLinkType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:TelephoneNumberType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:PersonType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:UserType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.UserType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:FederationType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.FederationType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AdhocQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:QueryExpressionType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.QueryExpressionType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:NotificationType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.NotificationType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ActionType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.ActionType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SubscriptionType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.SubscriptionType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:NotifyActionType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.NotifyActionType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:VersionInfoType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.VersionInfoType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:TelephoneNumberListType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberListType"/>
+                
+        </bindings>
+          
+    </bindings>
+      
+    <bindings xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="oasis.names.tc.ebxml_regrep.xsd.lcm._3"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="tns:SubmitObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:UpdateObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.UpdateObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:ApproveObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.ApproveObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:DeprecateObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.DeprecateObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:UndeprecateObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.UndeprecateObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RemoveObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.RemoveObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:RelocateObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.RelocateObjectsRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:AcceptObjectsRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.lcm._3.AcceptObjectsRequest"/>
+                
+        </bindings>
+          
+    </bindings>
+      
+    <bindings xmlns:tns="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" if-exists="true" scd="x-schema::tns">
+            
+        <schemaBindings map="false">
+                  
+            <package name="oasis.names.tc.ebxml_regrep.xsd.query._3"/>
+                
+        </schemaBindings>
+            
+        <bindings if-exists="true" scd="~tns:ResponseOptionType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ResponseOptionType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:AdhocQueryRequest">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="tns:AdhocQueryResponse">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryObjectQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AssociationQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.AssociationQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AuditableEventQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.AuditableEventQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ClassificationQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ClassificationNodeQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ClassificationSchemeQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ExternalIdentifierQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalIdentifierQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ExternalLinkQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalLinkQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ExtrinsicObjectQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ExtrinsicObjectQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:OrganizationQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.OrganizationQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryPackageQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryPackageQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ServiceQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:ServiceBindingQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceBindingQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SpecificationLinkQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.SpecificationLinkQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:PersonQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.PersonQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:UserQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.UserQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:RegistryQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:FederationQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.FederationQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:AdhocQueryQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:NotificationQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.NotificationQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SubscriptionQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.SubscriptionQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:FilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.FilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:CompoundFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.CompoundFilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:BooleanFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.BooleanFilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:IntegerFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.IntegerFilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:FloatFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.FloatFilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:DateTimeFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.DateTimeFilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:StringFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.StringFilterType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:FilterQueryType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.FilterQueryType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:BranchType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.BranchType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:InternationalStringBranchType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SlotBranchType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.SlotBranchType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:QueryExpressionBranchType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.QueryExpressionBranchType"/>
+                
+        </bindings>
+            
+        <bindings if-exists="true" scd="~tns:SimpleFilterType">
+                  
+            <class ref="oasis.names.tc.ebxml_regrep.xsd.query._3.SimpleFilterType"/>
+                
+        </bindings>
+          
+    </bindings>
+    
+</bindings>
