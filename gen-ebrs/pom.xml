@@ -6,10 +6,10 @@
 
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>contracts-ebRS</artifactId>
-	<version>3.1.0</version>
+	<version>0.2.0</version>
 
-	<name>contracts ebXML</name>
-	<description>Jaxb generated sources from ebRS 3.0 schema files from 2005 https://docs.oasis-open.org/regrep/v3.0/specs/regrep-rim-3.0-os.pdf</description>
+	<name>ebXML: Classes and Wrapper</name>
+	<description>ebXML: jaxb generated sources  from ebRS 3.0 schema files fand anonym Wrapper classes 2005 https://docs.oasis-open.org/regrep/v3.0/specs/regrep-rim-3.0-os.pdf</description>
 
 	<parent>
 		<groupId>org.fluentcodes.ihe</groupId>

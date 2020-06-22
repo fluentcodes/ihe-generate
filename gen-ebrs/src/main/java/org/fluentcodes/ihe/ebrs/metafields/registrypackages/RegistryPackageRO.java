@@ -9,7 +9,7 @@ import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
-public class RegistryPackageRO extends RegistryObject {
+public class RegistryPackageRO extends RegistryObject<RegistryPackageType> {
     public RegistryPackageRO() {
         super();
     }

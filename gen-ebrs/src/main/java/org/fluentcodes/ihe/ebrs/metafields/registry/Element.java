@@ -1,15 +1,16 @@
 package org.fluentcodes.ihe.ebrs.metafields.registry;
 
+import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
 import org.fluentcodes.ihe.ebrs.metafields.MetaField;
 
-public interface Element<PARENT_TYPE, TYPE> {
+public interface Element< TYPE> {
     String getMetaIdentifier();
     boolean isStrict();
 
     RegistryObjectInterface getParentObject();
     boolean hasParentObject();
 
-    void addFromParentType(PARENT_TYPE parentType, MetaField meta);
-    void addToParentType(PARENT_TYPE parentType);
+    void addFromParentType(RegistryObjectType parentType, MetaField meta);
+    void addToParentType(RegistryObjectType parentType);
     TYPE createType();
 }

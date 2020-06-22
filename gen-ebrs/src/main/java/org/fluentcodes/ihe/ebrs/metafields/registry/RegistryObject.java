@@ -18,7 +18,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class RegistryObject<TYPE extends RegistryObjectType> extends ErrorListWrapper implements Element<TYPE> {
+public abstract class RegistryObject<TYPE extends RegistryObjectType> extends ErrorListWrapper implements RegistryObjectInterface<TYPE> {
     private static final Logger LOG = LogManager.getLogger(RegistryObject.class);
     private static final String HOME = "home";
     private static final String ID = "id";
@@ -49,7 +49,7 @@ public abstract class RegistryObject<TYPE extends RegistryObjectType> extends Er
         return false;
     }
 
-    public void addFromParentType(TYPE parentType, MetaField meta) {
+    public void addFromParentType(RegistryObjectType parentType, MetaField meta) {
         this.metaField = meta;
         if (meta!=null) {
             if (meta instanceof MetaFieldROList) {
@@ -80,7 +80,7 @@ public abstract class RegistryObject<TYPE extends RegistryObjectType> extends Er
         }
     }
 
-    private void addFromParentType(final MetaFieldProperty property, final RegistryObjectType parent) {
+    public void addFromParentType(final MetaFieldProperty property, final RegistryObjectType parent) {
         getMetaField(property.getName()).addFromParentType(parent);
     }
 
@@ -110,11 +110,11 @@ public abstract class RegistryObject<TYPE extends RegistryObjectType> extends Er
     }
 
     @JsonIgnore
-    public RegistryObjectInterface<TYPE> getParentObject() {
+    public RegistryObjectInterface getParentObject() {
         if (metaField == null) {
             return null;
         }
-        return (RegistryObjectInterface<TYPE>)metaField.getParentObject();
+        return (RegistryObjectInterface)metaField.getParentObject();
     }
 
     public boolean hasMetaField (final String key) {
@@ -297,7 +297,7 @@ public abstract class RegistryObject<TYPE extends RegistryObjectType> extends Er
         return this;
     }
 
-    public void addToParentType(TYPE parentType) {
+    public void addToParentType(RegistryObjectType parentType) {
         for (MetaField metaField: metaFields.values()) {
             metaField.addToParentType(parentType);
         }

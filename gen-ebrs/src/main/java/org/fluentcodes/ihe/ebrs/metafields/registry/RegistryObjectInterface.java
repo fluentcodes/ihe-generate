@@ -8,9 +8,7 @@ import org.fluentcodes.ihe.ebrs.metafields.slots.SlotWrapper;
 
 import java.util.List;
 
-public interface RegistryObjectInterface<PARENT_TYPE, TYPE> extends Identifiable<PARENT_TYPE, TYPE> {
-    boolean isStrict();
-
+public interface RegistryObjectInterface<TYPE> extends Identifiable<TYPE> {
     RegistryObjectInterface addClassification(ClassificationRO classification);
     RegistryObjectInterface addExternalIdentifier(ExternalIdentifierRO externalIdentifier);
 

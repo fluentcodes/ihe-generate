@@ -8,7 +8,7 @@ import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 import javax.xml.bind.JAXBElement;
 import javax.xml.namespace.QName;
 
-public class AssociationRO extends RegistryObject {
+public class AssociationRO extends RegistryObject<AssociationType1> {
     public static final String TARGET_OBJECT = "targetObject";
     public static final String SOURCE_OBJECT = "sourceObject";
     public static final String ASSOCIATION_TYPE = "associationType";

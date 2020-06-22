@@ -7,7 +7,7 @@ import org.fluentcodes.ihe.ebrs.metafields.Properties;
 import org.fluentcodes.ihe.ebrs.metafields.RODefaultTypes;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 
-public class ClassificationRO extends RegistryObject {
+public class ClassificationRO extends RegistryObject<ClassificationType> {
     public static final String OBJECT_TYPE = "urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification";
 
     public final static String CLASSIFICATION_NODE = "classificationNode";

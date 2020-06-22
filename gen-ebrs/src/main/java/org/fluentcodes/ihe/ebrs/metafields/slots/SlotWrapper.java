@@ -8,13 +8,14 @@ import org.fluentcodes.ihe.ebrs.metafields.*;
 import org.fluentcodes.ihe.ebrs.metafields.registry.Element;
 import org.fluentcodes.ihe.ebrs.metafields.registry.NamedElement;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
+import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObjectInterface;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class SlotWrapper extends ErrorListWrapper implements Element<RegistryObjectType, SlotType1>, NamedElement {
+public class SlotWrapper extends ErrorListWrapper implements Element<SlotType1>, NamedElement {
     private List<String> values;
     private MetaField metaField;
 
@@ -99,18 +100,18 @@ public class SlotWrapper extends ErrorListWrapper implements Element<RegistryObj
         return metaField.getIdentifier();
     }
     public String getMetaName() {
-        getMetaIdentifier();
+        return getMetaIdentifier();
     }
 
     public boolean hasParentObject() {
         return getParentObject() != null;
     }
 
-    public RegistryObjectType getParentObject() {
+    public RegistryObjectInterface getParentObject() {
         if (metaField == null) {
             return null;
         }
-        return (RegistryObject)metaField.getParentObject();
+        return (RegistryObjectInterface) metaField.getParentObject();
     }
 
     public SlotType1 createType (){
