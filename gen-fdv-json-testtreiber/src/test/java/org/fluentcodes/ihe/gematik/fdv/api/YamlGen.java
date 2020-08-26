@@ -1,22 +1,11 @@
 package org.fluentcodes.ihe.gematik.fdv.api;
 
-import org.fluentcodes.tools.xpect.IORuntimeException;
-import org.fluentcodes.tools.xpect.IOString;
-import org.fluentcodes.tools.xpect.XpectSnake;
-import org.junit.Test;
-import org.yaml.snakeyaml.Yaml;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.*;
-
 public class YamlGen {
+/*
     @Test
     public void readModelsYaml() throws Exception {
         try {
-            List<String> propertyNames = List.of("objectName", "fieldName", "required", "type", "item", "minLength", "maxLength","default","enum","format","maxItems","minItems","description","example");
+            List<String> propertyNames = Arrays.asList(new String[]{"objectName", "fieldName", "required", "type", "item", "minLength", "maxLength","default","enum","format","maxItems","minItems","description","example"});
             Map<String, Object> obj = new Yaml().load(new FileInputStream(new File("schema/testtreiber_fdv.yaml")));
             List<Map<String,Object>> objectList = new ArrayList<>();
             Map<String, Object> components = (Map<String, Object>) obj.get("components");
@@ -106,6 +95,8 @@ public class YamlGen {
         }
     }
 
+
+
     private String extractRef(Map<String, Object> input) {
         Map<String, Object> defaultMap = (Map<String, Object>) input.get("default");
         if (defaultMap != null) {
@@ -130,7 +121,7 @@ public class YamlGen {
     @Test
     public void readPaths() throws Exception {
         try {
-            List<String> propertyNames = List.of("path", "request", "response","tags", "summary", "operationId", "description","example");
+            List<String> propertyNames = Arrays.asList(new String[]{"path", "request", "response", "tags", "summary", "operationId", "description", "example"});
             Map<String, Object> obj = new Yaml().load(new FileInputStream(new File("schema/testtreiber_fdv.yaml")));
             List<Map<String,Object>> objectList = new ArrayList<>();
             Map<String, Object> paths = (Map<String, Object>) obj.get("paths");
@@ -194,4 +185,6 @@ public class YamlGen {
             throw new RuntimeException(new File("schema/testtreiber_fdv.yaml").getAbsolutePath(), e);
         }
     }
+
+ */
 }

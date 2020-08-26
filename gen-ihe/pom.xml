@@ -6,15 +6,15 @@
 
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>gen-ihe</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 
 	<name>IHE: Jaxb Generated Classes and Wrapper</name>
-	<description>Jaxb generated sources from IHE schema files and Wrapper for parts of it.</description>
+	<description>Jaxb generated sources from IHE schema files and Wrapper for parts of it. Using Java 8 instead of the initial Java 11.</description>
 
 	<parent>
 		<groupId>org.fluentcodes.ihe</groupId>
 		<artifactId>ihe-generate</artifactId>
-		<version>0.2.0</version>
+		<version>0.2.1</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>org.fluentcodes.ihe</groupId>
 			<artifactId>contracts-ebRS</artifactId>
-			<version>3.1.0</version>
+			<version>0.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -44,13 +44,13 @@
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-gson</artifactId>
-			<version>0.6.0</version>
+			<version>0.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-jaxb</artifactId>
-			<version>0.6.0</version>
+			<version>0.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
@@ -66,21 +66,6 @@
 	<id>gen</id>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>11</source>
-					<target>11</target>
-					<excludes>
-						<exclude>**/org/fluentcodes/**</exclude>
-					</excludes>
-					<testExcludes>
-						<exclude>**/org/fluentcodes/**</exclude>
-					</testExcludes>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.jvnet.jaxb2.maven2</groupId>
 				<artifactId>maven-jaxb23-plugin</artifactId>

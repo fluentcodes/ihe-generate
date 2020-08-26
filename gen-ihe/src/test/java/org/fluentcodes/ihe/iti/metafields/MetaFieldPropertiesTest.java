@@ -7,13 +7,14 @@ import org.fluentcodes.ihe.iti.metafields.extrinsicobjects.DocumentEntryRO;
 import org.fluentcodes.tools.xpect.IOJsonJackson;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class MetaFieldPropertiesTest {
     @Test
     public void testReadFromClassPath() {
         List<MetaFieldProperty> properties = new IOJsonJackson<List<MetaFieldProperty>>()
-                .setMappingClasses(List.of(List.class, MetaFieldProperty.class))
+                .setMappingClasses(Arrays.asList(new Class[]{List.class, MetaFieldProperty.class}))
                 .setFileName(MetaFieldProperties.FILE_NAME)
                 .readList();
         Assertions.assertThat(properties).isNotNull();

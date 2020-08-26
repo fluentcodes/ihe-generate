@@ -67,8 +67,8 @@ public class IVLPPDTS
      * <p>
      * Sie rufen diese "catch-all"-Eigenschaft aus folgendem Grund ab: 
      * Der Feldname "High" wird von zwei verschiedenen Teilen eines Schemas verwendet. Siehe: 
-     * Zeile 454 von file:/C:/Users/wdi/dev/ihe/gen-hl7/schema/coreschemas/datatypes.xsd
-     * Zeile 445 von file:/C:/Users/wdi/dev/ihe/gen-hl7/schema/coreschemas/datatypes.xsd
+     * Zeile 454 von file:/Users/werner.diwischek/dev/ihe-generate/gen-hl7/schema/coreschemas/datatypes.xsd
+     * Zeile 445 von file:/Users/werner.diwischek/dev/ihe-generate/gen-hl7/schema/coreschemas/datatypes.xsd
      * <p>
      * Um diese Eigenschaft zu entfernen, wenden Sie eine Eigenschaftenanpassung für eine
      * der beiden folgenden Deklarationen an, um deren Namen zu ändern: 

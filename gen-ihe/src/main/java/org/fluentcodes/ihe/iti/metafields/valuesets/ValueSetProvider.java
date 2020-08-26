@@ -19,10 +19,7 @@ import org.fluentcodes.tools.xpect.IOJsonJackson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ValueSetProvider {
     private static final Logger LOG = LoggerFactory.getLogger(ValueSetProvider.class);
@@ -37,7 +34,7 @@ public class ValueSetProvider {
         valueSetMap = new HashMap<>();
         try {
             List<CodedValueDto> readedFromJson = (List<CodedValueDto>)new IOJsonJackson<List<CodedValueDto>>()
-                .setMappingClasses(List.of(List.class, CodedValueDto.class))
+                .setMappingClasses(Arrays.asList(new Class[]{List.class, CodedValueDto.class}))
                     .setFileName(valueKey + ".json")
                     .readList();
             for (CodedValueDto value : readedFromJson) {

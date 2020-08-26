@@ -16,10 +16,7 @@ import org.fluentcodes.ihe.ebrs.metafields.tags.NameList;
 import org.fluentcodes.tools.xpect.IOJsonJackson;
 import org.fluentcodes.tools.xpect.IORuntimeException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MetaFieldProperties {
@@ -56,7 +53,7 @@ public class MetaFieldProperties {
         metaFieldProperties.add(new MetaFieldProperty("mimeType", MimeType.class, ExtrinsicObjectRO.class));
         try {
             List<MetaFieldPropertyDTO> properties = new IOJsonJackson<List<MetaFieldProperty>>()
-                    .setMappingClasses(List.of(List.class, MetaFieldPropertyDTO.class))
+                    .setMappingClasses(Arrays.asList(new Class[]{List.class, MetaFieldPropertyDTO.class}))
                     .setFileName(FILE_NAME)
                     .readList();
             if (properties != null) {

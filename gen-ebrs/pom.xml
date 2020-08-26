@@ -6,15 +6,15 @@
 
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>contracts-ebRS</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 
 	<name>ebXML: Classes and Wrapper</name>
-	<description>ebXML: jaxb generated sources  from ebRS 3.0 schema files fand anonym Wrapper classes 2005 https://docs.oasis-open.org/regrep/v3.0/specs/regrep-rim-3.0-os.pdf</description>
+	<description>ebXML: jaxb generated sources  from ebRS 3.0 schema files fand anonym Wrapper classes 2005 https://docs.oasis-open.org/regrep/v3.0/specs/regrep-rim-3.0-os.pdf. Using Java 8 instead of the initial Java 11.</description>
 
 	<parent>
 		<groupId>org.fluentcodes.ihe</groupId>
 		<artifactId>ihe-generate</artifactId>
-		<version>0.2.0</version>
+		<version>0.2.1</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 
@@ -39,18 +39,18 @@
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-jackson</artifactId>
-			<version>0.6.0</version>
+			<version>0.7.0</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-gson</artifactId>
-			<version>0.6.0</version>
+			<version>0.7.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.fluentcodes.tools</groupId>
 			<artifactId>xpect-jaxb</artifactId>
-			<version>0.6.0</version>
+			<version>0.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
@@ -66,21 +66,6 @@
 			<id>gen</id>
 			<build>
 				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.8.1</version>
-						<configuration>
-							<source>11</source>
-							<target>11</target>
-							<excludes>
-								<exclude>**/org/fluentcodes/**</exclude>
-							</excludes>
-							<testExcludes>
-								<exclude>**/org/fluentcodes/**</exclude>
-							</testExcludes>
-						</configuration>
-					</plugin>
 					<plugin>
 						<groupId>org.jvnet.jaxb2.maven2</groupId>
 						<artifactId>maven-jaxb23-plugin</artifactId>

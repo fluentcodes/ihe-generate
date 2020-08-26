@@ -11,6 +11,7 @@ import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObject;
 import org.fluentcodes.ihe.ebrs.metafields.registry.RegistryObjectInterface;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -66,7 +67,7 @@ public class SlotWrapper extends ErrorListWrapper implements Element<SlotType1>,
     }
 
     public SlotWrapper(final String name, String value) {
-       this(name, List.of(value));
+       this(name, Arrays.asList(new String[]{value}));
     }
 
     public SlotWrapper(final String name, Set<String> value) {

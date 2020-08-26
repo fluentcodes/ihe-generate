@@ -6,6 +6,7 @@ import org.fluentcodes.tools.xpect.XpectJackson;
 import org.fluentcodes.tools.xpect.XpectJaxb;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class AuthorROTest {
@@ -17,7 +18,7 @@ public class AuthorROTest {
         AuthorMetaSingle author = new AuthorMetaSingle(document);
         AuthorRO authorRO = new AuthorRO();
         authorRO.setId("test");
-        authorRO.setAuthorInstitution(List.of("institution1", "institution2"));
+        authorRO.setAuthorInstitution(Arrays.asList(new String[]{"institution1", "institution2"}));
         author.set(authorRO);
         Assertions.assertThat(author.get().getId()).isEqualTo("test");
         new XpectJackson<>().compareAsString(authorRO);
