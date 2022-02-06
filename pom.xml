@@ -37,12 +37,9 @@
 
 	<modules>
 		<module>gen-hl7</module>
-		<!--module>gen-cda</module-->
-		<!--module>gen-xacml</module-->
 		<module>gen-fdv-json-testtreiber</module>
 		<module>gen-ebrs</module>
 		<module>gen-ihe</module>
-		<!--module>ihe-germany</module-->
 	</modules>
 
 	<properties>
@@ -68,7 +65,7 @@
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>4.12</version>
+				<version>4.13.2</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>
