@@ -5,13 +5,6 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PermissionRepresentativeDTO  {
@@ -20,9 +13,9 @@ public class PermissionRepresentativeDTO  {
   @Valid
   private Login account;
 
-  @ApiModelProperty(required = true, value = "Versicherten-ID des Vertreters (unveraenderliche Teil der KVNR)")
+  @ApiModelProperty(required = true, value = "Versicherten-ID des Vertreters (unveränderliche Teil der KVNR)")
  /**
-   * Versicherten-ID des Vertreters (unveraenderliche Teil der KVNR)
+   * Versicherten-ID des Vertreters (unveränderliche Teil der KVNR)
   **/
   private String representativeInsurantId;
 
@@ -32,9 +25,9 @@ public class PermissionRepresentativeDTO  {
   **/
   private String representativeName;
 
-  @ApiModelProperty(required = true, value = "Benachrichtigungsadresse (E-Mail) fuer die Geraeteautorisierung")
+  @ApiModelProperty(required = true, value = "Benachrichtigungsadresse (E-Mail) für die Geräteautorisierung")
  /**
-   * Benachrichtigungsadresse (E-Mail) fuer die Geraeteautorisierung
+   * Benachrichtigungsadresse (E-Mail) für die Geräteautorisierung
   **/
   private String representativeNotificationInfo;
  /**
@@ -57,7 +50,7 @@ public class PermissionRepresentativeDTO  {
   }
 
  /**
-   * Versicherten-ID des Vertreters (unveraenderliche Teil der KVNR)
+   * Versicherten-ID des Vertreters (unveränderliche Teil der KVNR)
    * @return representativeInsurantId
   **/
   @JsonProperty("representativeInsurantId")
@@ -95,7 +88,7 @@ public class PermissionRepresentativeDTO  {
   }
 
  /**
-   * Benachrichtigungsadresse (E-Mail) fuer die Geraeteautorisierung
+   * Benachrichtigungsadresse (E-Mail) für die Geräteautorisierung
    * @return representativeNotificationInfo
   **/
   @JsonProperty("representativeNotificationInfo")
@@ -131,7 +124,7 @@ public class PermissionRepresentativeDTO  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

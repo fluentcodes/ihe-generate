@@ -7,13 +7,6 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DocumentsRequestDTO  {
@@ -22,8 +15,11 @@ public class DocumentsRequestDTO  {
   @Valid
   private Login account;
 
-  @ApiModelProperty(required = true, value = "")
-  private List<String> documentIds = new ArrayList<>();
+  @ApiModelProperty(required = true, value = "Liste von UniqueIDs von DocumentEntries")
+ /**
+   * Liste von UniqueIDs von DocumentEntries
+  **/
+  private List<String> documentUniqueIds = new ArrayList<>();
  /**
    * Get account
    * @return account
@@ -44,26 +40,26 @@ public class DocumentsRequestDTO  {
   }
 
  /**
-   * Get documentIds
-   * @return documentIds
+   * Liste von UniqueIDs von DocumentEntries
+   * @return documentUniqueIds
   **/
-  @JsonProperty("documentIds")
+  @JsonProperty("documentUniqueIds")
   @NotNull
-  public List<String> getDocumentIds() {
-    return documentIds;
+  public List<String> getDocumentUniqueIds() {
+    return documentUniqueIds;
   }
 
-  public void setDocumentIds(List<String> documentIds) {
-    this.documentIds = documentIds;
+  public void setDocumentUniqueIds(List<String> documentUniqueIds) {
+    this.documentUniqueIds = documentUniqueIds;
   }
 
-  public DocumentsRequestDTO documentIds(List<String> documentIds) {
-    this.documentIds = documentIds;
+  public DocumentsRequestDTO documentUniqueIds(List<String> documentUniqueIds) {
+    this.documentUniqueIds = documentUniqueIds;
     return this;
   }
 
-  public DocumentsRequestDTO addDocumentIdsItem(String documentIdsItem) {
-    this.documentIds.add(documentIdsItem);
+  public DocumentsRequestDTO addDocumentUniqueIdsItem(String documentUniqueIdsItem) {
+    this.documentUniqueIds.add(documentUniqueIdsItem);
     return this;
   }
 
@@ -74,7 +70,7 @@ public class DocumentsRequestDTO  {
     sb.append("class DocumentsRequestDTO {\n");
     
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    documentIds: ").append(toIndentedString(documentIds)).append("\n");
+    sb.append("    documentUniqueIds: ").append(toIndentedString(documentUniqueIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -83,7 +79,7 @@ public class DocumentsRequestDTO  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

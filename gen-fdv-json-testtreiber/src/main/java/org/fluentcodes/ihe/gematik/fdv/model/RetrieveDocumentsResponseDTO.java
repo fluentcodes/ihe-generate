@@ -7,13 +7,6 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RetrieveDocumentsResponseDTO  {
@@ -22,11 +15,11 @@ public class RetrieveDocumentsResponseDTO  {
   private Boolean success;
 
   @ApiModelProperty(value = "")
-  private String error;
+  private String statusMessage;
 
   @ApiModelProperty(value = "")
   @Valid
-  private List<Document> docs = null;
+  private List<Document> documents = null;
  /**
    * Get success
    * @return success
@@ -47,43 +40,43 @@ public class RetrieveDocumentsResponseDTO  {
   }
 
  /**
-   * Get error
-   * @return error
+   * Get statusMessage
+   * @return statusMessage
   **/
-  @JsonProperty("error")
-  public String getError() {
-    return error;
+  @JsonProperty("statusMessage")
+  public String getStatusMessage() {
+    return statusMessage;
   }
 
-  public void setError(String error) {
-    this.error = error;
+  public void setStatusMessage(String statusMessage) {
+    this.statusMessage = statusMessage;
   }
 
-  public RetrieveDocumentsResponseDTO error(String error) {
-    this.error = error;
+  public RetrieveDocumentsResponseDTO statusMessage(String statusMessage) {
+    this.statusMessage = statusMessage;
     return this;
   }
 
  /**
-   * Get docs
-   * @return docs
+   * Get documents
+   * @return documents
   **/
-  @JsonProperty("docs")
-  public List<Document> getDocs() {
-    return docs;
+  @JsonProperty("documents")
+  public List<Document> getDocuments() {
+    return documents;
   }
 
-  public void setDocs(List<Document> docs) {
-    this.docs = docs;
+  public void setDocuments(List<Document> documents) {
+    this.documents = documents;
   }
 
-  public RetrieveDocumentsResponseDTO docs(List<Document> docs) {
-    this.docs = docs;
+  public RetrieveDocumentsResponseDTO documents(List<Document> documents) {
+    this.documents = documents;
     return this;
   }
 
-  public RetrieveDocumentsResponseDTO addDocsItem(Document docsItem) {
-    this.docs.add(docsItem);
+  public RetrieveDocumentsResponseDTO addDocumentsItem(Document documentsItem) {
+    this.documents.add(documentsItem);
     return this;
   }
 
@@ -94,8 +87,8 @@ public class RetrieveDocumentsResponseDTO  {
     sb.append("class RetrieveDocumentsResponseDTO {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    docs: ").append(toIndentedString(docs)).append("\n");
+    sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -104,7 +97,7 @@ public class RetrieveDocumentsResponseDTO  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

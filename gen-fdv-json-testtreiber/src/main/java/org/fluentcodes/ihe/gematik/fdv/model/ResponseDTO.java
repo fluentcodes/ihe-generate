@@ -4,13 +4,6 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ResponseDTO  {
@@ -19,7 +12,7 @@ public class ResponseDTO  {
   private Boolean success;
 
   @ApiModelProperty(value = "")
-  private String error;
+  private String statusMessage;
  /**
    * Get success
    * @return success
@@ -40,20 +33,20 @@ public class ResponseDTO  {
   }
 
  /**
-   * Get error
-   * @return error
+   * Get statusMessage
+   * @return statusMessage
   **/
-  @JsonProperty("error")
-  public String getError() {
-    return error;
+  @JsonProperty("statusMessage")
+  public String getStatusMessage() {
+    return statusMessage;
   }
 
-  public void setError(String error) {
-    this.error = error;
+  public void setStatusMessage(String statusMessage) {
+    this.statusMessage = statusMessage;
   }
 
-  public ResponseDTO error(String error) {
-    this.error = error;
+  public ResponseDTO statusMessage(String statusMessage) {
+    this.statusMessage = statusMessage;
     return this;
   }
 
@@ -64,7 +57,7 @@ public class ResponseDTO  {
     sb.append("class ResponseDTO {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -73,7 +66,7 @@ public class ResponseDTO  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

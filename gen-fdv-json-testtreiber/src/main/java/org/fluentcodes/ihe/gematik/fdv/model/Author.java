@@ -8,24 +8,17 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
-  * Inhalte fuer Metadaten fuer author gemaess A_14760; entspricht fuer ein DocumentEntry dem Autor; entspricht fuer ein Submission Set der einstellenden Person oder einstellendem System
+  * Inhalte für Metadaten für author; entspricht für ein DocumentEntry dem Autor; entspricht für ein Submission Set der einstellenden Person oder einstellendem System
  **/
-@ApiModel(description="Inhalte fuer Metadaten fuer author gemaess A_14760; entspricht fuer ein DocumentEntry dem Autor; entspricht fuer ein Submission Set der einstellenden Person oder einstellendem System")
+@ApiModel(description="Inhalte für Metadaten für author; entspricht für ein DocumentEntry dem Autor; entspricht für ein Submission Set der einstellenden Person oder einstellendem System")
 public class Author  {
   
-  @ApiModelProperty(example = "165746304", value = "authorPerson, fuer Leistungserbringer Lebenslange Identifikationsnummer eines Arztes, fuer Versicherte Versicherten-ID (unveraenderliche Teil der KVNR)")
+  @ApiModelProperty(example = "165746304", value = "authorPerson, für Leistungserbringer Lebenslange Identifikationsnummer eines Arztes, für Versicherte Versicherten-ID (unveränderliche Teil der KVNR)")
  /**
-   * authorPerson, fuer Leistungserbringer Lebenslange Identifikationsnummer eines Arztes, fuer Versicherte Versicherten-ID (unveraenderliche Teil der KVNR)
+   * authorPerson, für Leistungserbringer Lebenslange Identifikationsnummer eines Arztes, für Versicherte Versicherten-ID (unveränderliche Teil der KVNR)
   **/
   private String identifier;
 
@@ -72,7 +65,7 @@ public class Author  {
   @ApiModelProperty(value = "")
   private List<String> authorTelecommunication = null;
  /**
-   * authorPerson, fuer Leistungserbringer Lebenslange Identifikationsnummer eines Arztes, fuer Versicherte Versicherten-ID (unveraenderliche Teil der KVNR)
+   * authorPerson, für Leistungserbringer Lebenslange Identifikationsnummer eines Arztes, für Versicherte Versicherten-ID (unveränderliche Teil der KVNR)
    * @return identifier
   **/
   @JsonProperty("identifier")
@@ -295,7 +288,7 @@ public class Author  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

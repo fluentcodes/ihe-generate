@@ -7,6 +7,6 @@ You find here the generated sources from testtreiber_fdv.yaml.
 Like other sources you find here the intention is to deliver 
 the sources as libraries on mvn central, so you don't need to generate the code within your project. 
 
-The version 1.1.1 is the most actual version which could be found in the link below. 
+The version 2.0.4 is the most actual version which could be found in the link below.
 
-* https://fachportal.gematik.de/fileadmin/user_upload/fachportal/files/Spezifikationen/Produktivbetrieb/Schemata_WDSL/OPB3.1_R3.1.3_Schemadateien_20200302.zip
+* https://github.com/gematik/api-ePA

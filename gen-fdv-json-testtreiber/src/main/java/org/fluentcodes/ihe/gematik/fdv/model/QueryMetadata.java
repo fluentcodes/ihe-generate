@@ -8,43 +8,48 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
-  * Metadaten Parameter fuer die Suche nach SubmissionSets und Dokumenten
+  * Metadaten Parameter für die Suche nach Dokumenten, Ordner, Submission Sets und Verknüpfungen
  **/
-@ApiModel(description="Metadaten Parameter fuer die Suche nach SubmissionSets und Dokumenten")
-public class FindDocumentMetaData  {
+@ApiModel(description="Metadaten Parameter für die Suche nach Dokumenten, Ordner, Submission Sets und Verknüpfungen")
+public class QueryMetadata  {
   
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Liste von EntryUUIDs von SubmissionSets")
+ /**
+   * Liste von EntryUUIDs von SubmissionSets
+  **/
   private List<String> xdSSubmissionSetEntryUUID = null;
 
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Liste von uniqueIDs von SubmissionSets")
+ /**
+   * Liste von uniqueIDs von SubmissionSets
+  **/
   private List<String> xdSSubmissionSetUniqueId = null;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSSubmissionSetSubmissionTimeFrom;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "XDSDocumentEntryCreationTimeTo, Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "XDSDocumentEntryCreationTimeTo, Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * XDSDocumentEntryCreationTimeTo, Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * XDSDocumentEntryCreationTimeTo, Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSSubmissionSetSubmissionTimeTo;
 
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Liste von EntryUUIDs von Dokumenten")
+ /**
+   * Liste von EntryUUIDs von Dokumenten
+  **/
   private List<String> xdSDocumentEntryEntryUUID = null;
 
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Liste von uniqueIds von Dokumenten")
+ /**
+   * Liste von uniqueIds von Dokumenten
+  **/
   private List<String> xdSDocumentEntryUniqueId = null;
 
   @ApiModelProperty(value = "")
@@ -53,39 +58,39 @@ public class FindDocumentMetaData  {
   @ApiModelProperty(value = "")
   private List<String> xdSDocumentEntryPracticeSettingCode = null;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSDocumentEntryCreationTimeFrom;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSDocumentEntryCreationTimeTo;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSDocumentEntryServiceStartTimeFrom;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSDocumentEntryServiceStartTimeTo;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSDocumentEntryServiceStopTimeFrom;
 
-  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6")
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6")
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
   **/
   private Instant xdSDocumentEntryServiceStopTimeTo;
 
@@ -112,8 +117,50 @@ public class FindDocumentMetaData  {
 
   @ApiModelProperty(value = "")
   private List<String> xdSDocumentEntryAuthorInstitution = null;
+
+  @ApiModelProperty(value = "Status des Dokumentes")
  /**
-   * Get xdSSubmissionSetEntryUUID
+   * Status des Dokumentes
+  **/
+  private String xdSDocumentEntryStatus;
+
+  @ApiModelProperty(value = "Folder Unique Id")
+ /**
+   * Folder Unique Id
+  **/
+  private String xdSFolderUniqueId;
+
+  @ApiModelProperty(value = "Status der Ordner; nur anwendbar mit FindFolders")
+ /**
+   * Status der Ordner; nur anwendbar mit FindFolders
+  **/
+  private String xdSFolderStatus;
+
+  @ApiModelProperty(value = "Liste von Codes (z.B. 'childrecord', 'patientdoc')")
+ /**
+   * Liste von Codes (z.B. 'childrecord', 'patientdoc')
+  **/
+  private List<String> xdSFolderCodeList = null;
+
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6; nur anwendbar mit FindFolders")
+ /**
+   * Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6; nur anwendbar mit FindFolders
+  **/
+  private Instant xdSFolderLastUpdateTimeFrom;
+
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6; nur anwendbar mit FindFolders")
+ /**
+   * Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6; nur anwendbar mit FindFolders
+  **/
+  private Instant xdSFolderLastUpdateTimeTo;
+
+  @ApiModelProperty(value = "Folder UUID")
+ /**
+   * Folder UUID
+  **/
+  private String xdSFolderEntryUUID;
+ /**
+   * Liste von EntryUUIDs von SubmissionSets
    * @return xdSSubmissionSetEntryUUID
   **/
   @JsonProperty("XDSSubmissionSetEntryUUID")
@@ -125,18 +172,18 @@ public class FindDocumentMetaData  {
     this.xdSSubmissionSetEntryUUID = xdSSubmissionSetEntryUUID;
   }
 
-  public FindDocumentMetaData xdSSubmissionSetEntryUUID(List<String> xdSSubmissionSetEntryUUID) {
+  public QueryMetadata xdSSubmissionSetEntryUUID(List<String> xdSSubmissionSetEntryUUID) {
     this.xdSSubmissionSetEntryUUID = xdSSubmissionSetEntryUUID;
     return this;
   }
 
-  public FindDocumentMetaData addXdSSubmissionSetEntryUUIDItem(String xdSSubmissionSetEntryUUIDItem) {
+  public QueryMetadata addXdSSubmissionSetEntryUUIDItem(String xdSSubmissionSetEntryUUIDItem) {
     this.xdSSubmissionSetEntryUUID.add(xdSSubmissionSetEntryUUIDItem);
     return this;
   }
 
  /**
-   * Get xdSSubmissionSetUniqueId
+   * Liste von uniqueIDs von SubmissionSets
    * @return xdSSubmissionSetUniqueId
   **/
   @JsonProperty("XDSSubmissionSetUniqueId")
@@ -148,18 +195,18 @@ public class FindDocumentMetaData  {
     this.xdSSubmissionSetUniqueId = xdSSubmissionSetUniqueId;
   }
 
-  public FindDocumentMetaData xdSSubmissionSetUniqueId(List<String> xdSSubmissionSetUniqueId) {
+  public QueryMetadata xdSSubmissionSetUniqueId(List<String> xdSSubmissionSetUniqueId) {
     this.xdSSubmissionSetUniqueId = xdSSubmissionSetUniqueId;
     return this;
   }
 
-  public FindDocumentMetaData addXdSSubmissionSetUniqueIdItem(String xdSSubmissionSetUniqueIdItem) {
+  public QueryMetadata addXdSSubmissionSetUniqueIdItem(String xdSSubmissionSetUniqueIdItem) {
     this.xdSSubmissionSetUniqueId.add(xdSSubmissionSetUniqueIdItem);
     return this;
   }
 
  /**
-   * Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSSubmissionSetSubmissionTimeFrom
   **/
   @JsonProperty("XDSSubmissionSetSubmissionTimeFrom")
@@ -171,13 +218,13 @@ public class FindDocumentMetaData  {
     this.xdSSubmissionSetSubmissionTimeFrom = xdSSubmissionSetSubmissionTimeFrom;
   }
 
-  public FindDocumentMetaData xdSSubmissionSetSubmissionTimeFrom(Instant xdSSubmissionSetSubmissionTimeFrom) {
+  public QueryMetadata xdSSubmissionSetSubmissionTimeFrom(Instant xdSSubmissionSetSubmissionTimeFrom) {
     this.xdSSubmissionSetSubmissionTimeFrom = xdSSubmissionSetSubmissionTimeFrom;
     return this;
   }
 
  /**
-   * XDSDocumentEntryCreationTimeTo, Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * XDSDocumentEntryCreationTimeTo, Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSSubmissionSetSubmissionTimeTo
   **/
   @JsonProperty("XDSSubmissionSetSubmissionTimeTo")
@@ -189,13 +236,13 @@ public class FindDocumentMetaData  {
     this.xdSSubmissionSetSubmissionTimeTo = xdSSubmissionSetSubmissionTimeTo;
   }
 
-  public FindDocumentMetaData xdSSubmissionSetSubmissionTimeTo(Instant xdSSubmissionSetSubmissionTimeTo) {
+  public QueryMetadata xdSSubmissionSetSubmissionTimeTo(Instant xdSSubmissionSetSubmissionTimeTo) {
     this.xdSSubmissionSetSubmissionTimeTo = xdSSubmissionSetSubmissionTimeTo;
     return this;
   }
 
  /**
-   * Get xdSDocumentEntryEntryUUID
+   * Liste von EntryUUIDs von Dokumenten
    * @return xdSDocumentEntryEntryUUID
   **/
   @JsonProperty("XDSDocumentEntryEntryUUID")
@@ -207,18 +254,18 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryEntryUUID = xdSDocumentEntryEntryUUID;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryEntryUUID(List<String> xdSDocumentEntryEntryUUID) {
+  public QueryMetadata xdSDocumentEntryEntryUUID(List<String> xdSDocumentEntryEntryUUID) {
     this.xdSDocumentEntryEntryUUID = xdSDocumentEntryEntryUUID;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryEntryUUIDItem(String xdSDocumentEntryEntryUUIDItem) {
+  public QueryMetadata addXdSDocumentEntryEntryUUIDItem(String xdSDocumentEntryEntryUUIDItem) {
     this.xdSDocumentEntryEntryUUID.add(xdSDocumentEntryEntryUUIDItem);
     return this;
   }
 
  /**
-   * Get xdSDocumentEntryUniqueId
+   * Liste von uniqueIds von Dokumenten
    * @return xdSDocumentEntryUniqueId
   **/
   @JsonProperty("XDSDocumentEntryUniqueId")
@@ -230,12 +277,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryUniqueId = xdSDocumentEntryUniqueId;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryUniqueId(List<String> xdSDocumentEntryUniqueId) {
+  public QueryMetadata xdSDocumentEntryUniqueId(List<String> xdSDocumentEntryUniqueId) {
     this.xdSDocumentEntryUniqueId = xdSDocumentEntryUniqueId;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryUniqueIdItem(String xdSDocumentEntryUniqueIdItem) {
+  public QueryMetadata addXdSDocumentEntryUniqueIdItem(String xdSDocumentEntryUniqueIdItem) {
     this.xdSDocumentEntryUniqueId.add(xdSDocumentEntryUniqueIdItem);
     return this;
   }
@@ -253,12 +300,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryClassCode = xdSDocumentEntryClassCode;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryClassCode(List<String> xdSDocumentEntryClassCode) {
+  public QueryMetadata xdSDocumentEntryClassCode(List<String> xdSDocumentEntryClassCode) {
     this.xdSDocumentEntryClassCode = xdSDocumentEntryClassCode;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryClassCodeItem(String xdSDocumentEntryClassCodeItem) {
+  public QueryMetadata addXdSDocumentEntryClassCodeItem(String xdSDocumentEntryClassCodeItem) {
     this.xdSDocumentEntryClassCode.add(xdSDocumentEntryClassCodeItem);
     return this;
   }
@@ -276,18 +323,18 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryPracticeSettingCode = xdSDocumentEntryPracticeSettingCode;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryPracticeSettingCode(List<String> xdSDocumentEntryPracticeSettingCode) {
+  public QueryMetadata xdSDocumentEntryPracticeSettingCode(List<String> xdSDocumentEntryPracticeSettingCode) {
     this.xdSDocumentEntryPracticeSettingCode = xdSDocumentEntryPracticeSettingCode;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryPracticeSettingCodeItem(String xdSDocumentEntryPracticeSettingCodeItem) {
+  public QueryMetadata addXdSDocumentEntryPracticeSettingCodeItem(String xdSDocumentEntryPracticeSettingCodeItem) {
     this.xdSDocumentEntryPracticeSettingCode.add(xdSDocumentEntryPracticeSettingCodeItem);
     return this;
   }
 
  /**
-   * Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSDocumentEntryCreationTimeFrom
   **/
   @JsonProperty("XDSDocumentEntryCreationTimeFrom")
@@ -299,13 +346,13 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryCreationTimeFrom = xdSDocumentEntryCreationTimeFrom;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryCreationTimeFrom(Instant xdSDocumentEntryCreationTimeFrom) {
+  public QueryMetadata xdSDocumentEntryCreationTimeFrom(Instant xdSDocumentEntryCreationTimeFrom) {
     this.xdSDocumentEntryCreationTimeFrom = xdSDocumentEntryCreationTimeFrom;
     return this;
   }
 
  /**
-   * Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSDocumentEntryCreationTimeTo
   **/
   @JsonProperty("XDSDocumentEntryCreationTimeTo")
@@ -317,13 +364,13 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryCreationTimeTo = xdSDocumentEntryCreationTimeTo;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryCreationTimeTo(Instant xdSDocumentEntryCreationTimeTo) {
+  public QueryMetadata xdSDocumentEntryCreationTimeTo(Instant xdSDocumentEntryCreationTimeTo) {
     this.xdSDocumentEntryCreationTimeTo = xdSDocumentEntryCreationTimeTo;
     return this;
   }
 
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSDocumentEntryServiceStartTimeFrom
   **/
   @JsonProperty("XDSDocumentEntryServiceStartTimeFrom")
@@ -335,13 +382,13 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryServiceStartTimeFrom = xdSDocumentEntryServiceStartTimeFrom;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryServiceStartTimeFrom(Instant xdSDocumentEntryServiceStartTimeFrom) {
+  public QueryMetadata xdSDocumentEntryServiceStartTimeFrom(Instant xdSDocumentEntryServiceStartTimeFrom) {
     this.xdSDocumentEntryServiceStartTimeFrom = xdSDocumentEntryServiceStartTimeFrom;
     return this;
   }
 
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis begonnen wurde. Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSDocumentEntryServiceStartTimeTo
   **/
   @JsonProperty("XDSDocumentEntryServiceStartTimeTo")
@@ -353,13 +400,13 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryServiceStartTimeTo = xdSDocumentEntryServiceStartTimeTo;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryServiceStartTimeTo(Instant xdSDocumentEntryServiceStartTimeTo) {
+  public QueryMetadata xdSDocumentEntryServiceStartTimeTo(Instant xdSDocumentEntryServiceStartTimeTo) {
     this.xdSDocumentEntryServiceStartTimeTo = xdSDocumentEntryServiceStartTimeTo;
     return this;
   }
 
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Beginn Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSDocumentEntryServiceStopTimeFrom
   **/
   @JsonProperty("XDSDocumentEntryServiceStopTimeFrom")
@@ -371,13 +418,13 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryServiceStopTimeFrom = xdSDocumentEntryServiceStopTimeFrom;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryServiceStopTimeFrom(Instant xdSDocumentEntryServiceStopTimeFrom) {
+  public QueryMetadata xdSDocumentEntryServiceStopTimeFrom(Instant xdSDocumentEntryServiceStopTimeFrom) {
     this.xdSDocumentEntryServiceStopTimeFrom = xdSDocumentEntryServiceStopTimeFrom;
     return this;
   }
 
  /**
-   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Ende Zeitraum fuer Suche; date-time notation as defined by RFC 3339, section 5.6
+   * Zeitpunkt, an dem das im Dokument dokumentierte (Behandlungs-)Ereignis beendet wurde. Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6
    * @return xdSDocumentEntryServiceStopTimeTo
   **/
   @JsonProperty("XDSDocumentEntryServiceStopTimeTo")
@@ -389,7 +436,7 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryServiceStopTimeTo = xdSDocumentEntryServiceStopTimeTo;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryServiceStopTimeTo(Instant xdSDocumentEntryServiceStopTimeTo) {
+  public QueryMetadata xdSDocumentEntryServiceStopTimeTo(Instant xdSDocumentEntryServiceStopTimeTo) {
     this.xdSDocumentEntryServiceStopTimeTo = xdSDocumentEntryServiceStopTimeTo;
     return this;
   }
@@ -407,12 +454,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryHealthcareFacilityTypeCode = xdSDocumentEntryHealthcareFacilityTypeCode;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryHealthcareFacilityTypeCode(List<String> xdSDocumentEntryHealthcareFacilityTypeCode) {
+  public QueryMetadata xdSDocumentEntryHealthcareFacilityTypeCode(List<String> xdSDocumentEntryHealthcareFacilityTypeCode) {
     this.xdSDocumentEntryHealthcareFacilityTypeCode = xdSDocumentEntryHealthcareFacilityTypeCode;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryHealthcareFacilityTypeCodeItem(String xdSDocumentEntryHealthcareFacilityTypeCodeItem) {
+  public QueryMetadata addXdSDocumentEntryHealthcareFacilityTypeCodeItem(String xdSDocumentEntryHealthcareFacilityTypeCodeItem) {
     this.xdSDocumentEntryHealthcareFacilityTypeCode.add(xdSDocumentEntryHealthcareFacilityTypeCodeItem);
     return this;
   }
@@ -430,12 +477,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryEventCodeList = xdSDocumentEntryEventCodeList;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryEventCodeList(List<String> xdSDocumentEntryEventCodeList) {
+  public QueryMetadata xdSDocumentEntryEventCodeList(List<String> xdSDocumentEntryEventCodeList) {
     this.xdSDocumentEntryEventCodeList = xdSDocumentEntryEventCodeList;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryEventCodeListItem(String xdSDocumentEntryEventCodeListItem) {
+  public QueryMetadata addXdSDocumentEntryEventCodeListItem(String xdSDocumentEntryEventCodeListItem) {
     this.xdSDocumentEntryEventCodeList.add(xdSDocumentEntryEventCodeListItem);
     return this;
   }
@@ -453,12 +500,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryConfidentialityCode = xdSDocumentEntryConfidentialityCode;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryConfidentialityCode(List<String> xdSDocumentEntryConfidentialityCode) {
+  public QueryMetadata xdSDocumentEntryConfidentialityCode(List<String> xdSDocumentEntryConfidentialityCode) {
     this.xdSDocumentEntryConfidentialityCode = xdSDocumentEntryConfidentialityCode;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryConfidentialityCodeItem(String xdSDocumentEntryConfidentialityCodeItem) {
+  public QueryMetadata addXdSDocumentEntryConfidentialityCodeItem(String xdSDocumentEntryConfidentialityCodeItem) {
     this.xdSDocumentEntryConfidentialityCode.add(xdSDocumentEntryConfidentialityCodeItem);
     return this;
   }
@@ -476,12 +523,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryAuthorPerson = xdSDocumentEntryAuthorPerson;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryAuthorPerson(List<String> xdSDocumentEntryAuthorPerson) {
+  public QueryMetadata xdSDocumentEntryAuthorPerson(List<String> xdSDocumentEntryAuthorPerson) {
     this.xdSDocumentEntryAuthorPerson = xdSDocumentEntryAuthorPerson;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryAuthorPersonItem(String xdSDocumentEntryAuthorPersonItem) {
+  public QueryMetadata addXdSDocumentEntryAuthorPersonItem(String xdSDocumentEntryAuthorPersonItem) {
     this.xdSDocumentEntryAuthorPerson.add(xdSDocumentEntryAuthorPersonItem);
     return this;
   }
@@ -499,12 +546,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryFormatCode = xdSDocumentEntryFormatCode;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryFormatCode(List<String> xdSDocumentEntryFormatCode) {
+  public QueryMetadata xdSDocumentEntryFormatCode(List<String> xdSDocumentEntryFormatCode) {
     this.xdSDocumentEntryFormatCode = xdSDocumentEntryFormatCode;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryFormatCodeItem(String xdSDocumentEntryFormatCodeItem) {
+  public QueryMetadata addXdSDocumentEntryFormatCodeItem(String xdSDocumentEntryFormatCodeItem) {
     this.xdSDocumentEntryFormatCode.add(xdSDocumentEntryFormatCodeItem);
     return this;
   }
@@ -522,12 +569,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryTypeCode = xdSDocumentEntryTypeCode;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryTypeCode(List<String> xdSDocumentEntryTypeCode) {
+  public QueryMetadata xdSDocumentEntryTypeCode(List<String> xdSDocumentEntryTypeCode) {
     this.xdSDocumentEntryTypeCode = xdSDocumentEntryTypeCode;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryTypeCodeItem(String xdSDocumentEntryTypeCodeItem) {
+  public QueryMetadata addXdSDocumentEntryTypeCodeItem(String xdSDocumentEntryTypeCodeItem) {
     this.xdSDocumentEntryTypeCode.add(xdSDocumentEntryTypeCodeItem);
     return this;
   }
@@ -545,12 +592,12 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryTitle = xdSDocumentEntryTitle;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryTitle(List<String> xdSDocumentEntryTitle) {
+  public QueryMetadata xdSDocumentEntryTitle(List<String> xdSDocumentEntryTitle) {
     this.xdSDocumentEntryTitle = xdSDocumentEntryTitle;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryTitleItem(String xdSDocumentEntryTitleItem) {
+  public QueryMetadata addXdSDocumentEntryTitleItem(String xdSDocumentEntryTitleItem) {
     this.xdSDocumentEntryTitle.add(xdSDocumentEntryTitleItem);
     return this;
   }
@@ -568,13 +615,144 @@ public class FindDocumentMetaData  {
     this.xdSDocumentEntryAuthorInstitution = xdSDocumentEntryAuthorInstitution;
   }
 
-  public FindDocumentMetaData xdSDocumentEntryAuthorInstitution(List<String> xdSDocumentEntryAuthorInstitution) {
+  public QueryMetadata xdSDocumentEntryAuthorInstitution(List<String> xdSDocumentEntryAuthorInstitution) {
     this.xdSDocumentEntryAuthorInstitution = xdSDocumentEntryAuthorInstitution;
     return this;
   }
 
-  public FindDocumentMetaData addXdSDocumentEntryAuthorInstitutionItem(String xdSDocumentEntryAuthorInstitutionItem) {
+  public QueryMetadata addXdSDocumentEntryAuthorInstitutionItem(String xdSDocumentEntryAuthorInstitutionItem) {
     this.xdSDocumentEntryAuthorInstitution.add(xdSDocumentEntryAuthorInstitutionItem);
+    return this;
+  }
+
+ /**
+   * Status des Dokumentes
+   * @return xdSDocumentEntryStatus
+  **/
+  @JsonProperty("XDSDocumentEntryStatus")
+  public String getXdSDocumentEntryStatus() {
+    return xdSDocumentEntryStatus;
+  }
+
+  public void setXdSDocumentEntryStatus(String xdSDocumentEntryStatus) {
+    this.xdSDocumentEntryStatus = xdSDocumentEntryStatus;
+  }
+
+  public QueryMetadata xdSDocumentEntryStatus(String xdSDocumentEntryStatus) {
+    this.xdSDocumentEntryStatus = xdSDocumentEntryStatus;
+    return this;
+  }
+
+ /**
+   * Folder Unique Id
+   * @return xdSFolderUniqueId
+  **/
+  @JsonProperty("XDSFolderUniqueId")
+  public String getXdSFolderUniqueId() {
+    return xdSFolderUniqueId;
+  }
+
+  public void setXdSFolderUniqueId(String xdSFolderUniqueId) {
+    this.xdSFolderUniqueId = xdSFolderUniqueId;
+  }
+
+  public QueryMetadata xdSFolderUniqueId(String xdSFolderUniqueId) {
+    this.xdSFolderUniqueId = xdSFolderUniqueId;
+    return this;
+  }
+
+ /**
+   * Status der Ordner; nur anwendbar mit FindFolders
+   * @return xdSFolderStatus
+  **/
+  @JsonProperty("XDSFolderStatus")
+  public String getXdSFolderStatus() {
+    return xdSFolderStatus;
+  }
+
+  public void setXdSFolderStatus(String xdSFolderStatus) {
+    this.xdSFolderStatus = xdSFolderStatus;
+  }
+
+  public QueryMetadata xdSFolderStatus(String xdSFolderStatus) {
+    this.xdSFolderStatus = xdSFolderStatus;
+    return this;
+  }
+
+ /**
+   * Liste von Codes (z.B. &#39;childrecord&#39;, &#39;patientdoc&#39;)
+   * @return xdSFolderCodeList
+  **/
+  @JsonProperty("XDSFolderCodeList")
+  public List<String> getXdSFolderCodeList() {
+    return xdSFolderCodeList;
+  }
+
+  public void setXdSFolderCodeList(List<String> xdSFolderCodeList) {
+    this.xdSFolderCodeList = xdSFolderCodeList;
+  }
+
+  public QueryMetadata xdSFolderCodeList(List<String> xdSFolderCodeList) {
+    this.xdSFolderCodeList = xdSFolderCodeList;
+    return this;
+  }
+
+  public QueryMetadata addXdSFolderCodeListItem(String xdSFolderCodeListItem) {
+    this.xdSFolderCodeList.add(xdSFolderCodeListItem);
+    return this;
+  }
+
+ /**
+   * Beginn Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6; nur anwendbar mit FindFolders
+   * @return xdSFolderLastUpdateTimeFrom
+  **/
+  @JsonProperty("XDSFolderLastUpdateTimeFrom")
+  public Instant getXdSFolderLastUpdateTimeFrom() {
+    return xdSFolderLastUpdateTimeFrom;
+  }
+
+  public void setXdSFolderLastUpdateTimeFrom(Instant xdSFolderLastUpdateTimeFrom) {
+    this.xdSFolderLastUpdateTimeFrom = xdSFolderLastUpdateTimeFrom;
+  }
+
+  public QueryMetadata xdSFolderLastUpdateTimeFrom(Instant xdSFolderLastUpdateTimeFrom) {
+    this.xdSFolderLastUpdateTimeFrom = xdSFolderLastUpdateTimeFrom;
+    return this;
+  }
+
+ /**
+   * Ende Zeitraum für Suche; date-time notation as defined by RFC 3339, section 5.6; nur anwendbar mit FindFolders
+   * @return xdSFolderLastUpdateTimeTo
+  **/
+  @JsonProperty("XDSFolderLastUpdateTimeTo")
+  public Instant getXdSFolderLastUpdateTimeTo() {
+    return xdSFolderLastUpdateTimeTo;
+  }
+
+  public void setXdSFolderLastUpdateTimeTo(Instant xdSFolderLastUpdateTimeTo) {
+    this.xdSFolderLastUpdateTimeTo = xdSFolderLastUpdateTimeTo;
+  }
+
+  public QueryMetadata xdSFolderLastUpdateTimeTo(Instant xdSFolderLastUpdateTimeTo) {
+    this.xdSFolderLastUpdateTimeTo = xdSFolderLastUpdateTimeTo;
+    return this;
+  }
+
+ /**
+   * Folder UUID
+   * @return xdSFolderEntryUUID
+  **/
+  @JsonProperty("XDSFolderEntryUUID")
+  public String getXdSFolderEntryUUID() {
+    return xdSFolderEntryUUID;
+  }
+
+  public void setXdSFolderEntryUUID(String xdSFolderEntryUUID) {
+    this.xdSFolderEntryUUID = xdSFolderEntryUUID;
+  }
+
+  public QueryMetadata xdSFolderEntryUUID(String xdSFolderEntryUUID) {
+    this.xdSFolderEntryUUID = xdSFolderEntryUUID;
     return this;
   }
 
@@ -582,7 +760,7 @@ public class FindDocumentMetaData  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FindDocumentMetaData {\n");
+    sb.append("class QueryMetadata {\n");
     
     sb.append("    xdSSubmissionSetEntryUUID: ").append(toIndentedString(xdSSubmissionSetEntryUUID)).append("\n");
     sb.append("    xdSSubmissionSetUniqueId: ").append(toIndentedString(xdSSubmissionSetUniqueId)).append("\n");
@@ -606,6 +784,13 @@ public class FindDocumentMetaData  {
     sb.append("    xdSDocumentEntryTypeCode: ").append(toIndentedString(xdSDocumentEntryTypeCode)).append("\n");
     sb.append("    xdSDocumentEntryTitle: ").append(toIndentedString(xdSDocumentEntryTitle)).append("\n");
     sb.append("    xdSDocumentEntryAuthorInstitution: ").append(toIndentedString(xdSDocumentEntryAuthorInstitution)).append("\n");
+    sb.append("    xdSDocumentEntryStatus: ").append(toIndentedString(xdSDocumentEntryStatus)).append("\n");
+    sb.append("    xdSFolderUniqueId: ").append(toIndentedString(xdSFolderUniqueId)).append("\n");
+    sb.append("    xdSFolderStatus: ").append(toIndentedString(xdSFolderStatus)).append("\n");
+    sb.append("    xdSFolderCodeList: ").append(toIndentedString(xdSFolderCodeList)).append("\n");
+    sb.append("    xdSFolderLastUpdateTimeFrom: ").append(toIndentedString(xdSFolderLastUpdateTimeFrom)).append("\n");
+    sb.append("    xdSFolderLastUpdateTimeTo: ").append(toIndentedString(xdSFolderLastUpdateTimeTo)).append("\n");
+    sb.append("    xdSFolderEntryUUID: ").append(toIndentedString(xdSFolderEntryUUID)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -614,7 +799,7 @@ public class FindDocumentMetaData  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

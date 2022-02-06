@@ -1,15 +1,13 @@
 package org.fluentcodes.ihe.gematik.fdv.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.fluentcodes.ihe.gematik.fdv.model.ProtocolEntry;
+import org.fluentcodes.ihe.gematik.fdv.model.Document;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ProtocolResponseDTO  {
+public class SignedProtocolResponseDTO  {
   
   @ApiModelProperty(required = true, value = "")
   private Boolean success;
@@ -19,7 +17,7 @@ public class ProtocolResponseDTO  {
 
   @ApiModelProperty(value = "")
   @Valid
-  private List<ProtocolEntry> protocolEntries = null;
+  private Document document;
  /**
    * Get success
    * @return success
@@ -34,7 +32,7 @@ public class ProtocolResponseDTO  {
     this.success = success;
   }
 
-  public ProtocolResponseDTO success(Boolean success) {
+  public SignedProtocolResponseDTO success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -52,31 +50,26 @@ public class ProtocolResponseDTO  {
     this.statusMessage = statusMessage;
   }
 
-  public ProtocolResponseDTO statusMessage(String statusMessage) {
+  public SignedProtocolResponseDTO statusMessage(String statusMessage) {
     this.statusMessage = statusMessage;
     return this;
   }
 
  /**
-   * Get protocolEntries
-   * @return protocolEntries
+   * Get document
+   * @return document
   **/
-  @JsonProperty("protocolEntries")
-  public List<ProtocolEntry> getProtocolEntries() {
-    return protocolEntries;
+  @JsonProperty("document")
+  public Document getDocument() {
+    return document;
   }
 
-  public void setProtocolEntries(List<ProtocolEntry> protocolEntries) {
-    this.protocolEntries = protocolEntries;
+  public void setDocument(Document document) {
+    this.document = document;
   }
 
-  public ProtocolResponseDTO protocolEntries(List<ProtocolEntry> protocolEntries) {
-    this.protocolEntries = protocolEntries;
-    return this;
-  }
-
-  public ProtocolResponseDTO addProtocolEntriesItem(ProtocolEntry protocolEntriesItem) {
-    this.protocolEntries.add(protocolEntriesItem);
+  public SignedProtocolResponseDTO document(Document document) {
+    this.document = document;
     return this;
   }
 
@@ -84,11 +77,11 @@ public class ProtocolResponseDTO  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProtocolResponseDTO {\n");
+    sb.append("class SignedProtocolResponseDTO {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
-    sb.append("    protocolEntries: ").append(toIndentedString(protocolEntries)).append("\n");
+    sb.append("    document: ").append(toIndentedString(document)).append("\n");
     sb.append("}");
     return sb.toString();
   }

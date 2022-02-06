@@ -5,24 +5,17 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
-  * Eingangsdaten fuer den Anwendungsfall Login sowie fuer das implizite Login vor weiteren Anwendungsfaellen
+  * Eingangsdaten für den Anwendungsfall Login sowie für das implizite Login vor weiteren Anwendungsfällen
  **/
-@ApiModel(description="Eingangsdaten fuer den Anwendungsfall Login sowie fuer das implizite Login vor weiteren Anwendungsfaellen")
+@ApiModel(description="Eingangsdaten für den Anwendungsfall Login sowie für das implizite Login vor weiteren Anwendungsfällen")
 public class Login  {
   
-  @ApiModelProperty(required = true, value = "referenziert eine Aktensession, in der die Operation ausgefuehrt werden soll; Wenn keine Aktensession besteht, dann muss fuer dieses Aktenkonto (entspricht OwnerInsurantId oder RepresentationXInsurantId in der Konfiguration) eine Aktensession eroeffnet werden (implizites Login).")
+  @ApiModelProperty(required = true, value = "referenziert eine Aktensession, in der die Operation ausgeführt werden soll; Wenn keine Aktensession besteht, dann muss für dieses Aktenkonto (entspricht OwnerInsurantId oder RepresentationXInsurantId in der Konfiguration) eine Aktensession eröffnet werden (implizites Login).")
  /**
-   * referenziert eine Aktensession, in der die Operation ausgefuehrt werden soll; Wenn keine Aktensession besteht, dann muss fuer dieses Aktenkonto (entspricht OwnerInsurantId oder RepresentationXInsurantId in der Konfiguration) eine Aktensession eroeffnet werden (implizites Login).
+   * referenziert eine Aktensession, in der die Operation ausgeführt werden soll; Wenn keine Aktensession besteht, dann muss für dieses Aktenkonto (entspricht OwnerInsurantId oder RepresentationXInsurantId in der Konfiguration) eine Aktensession eröffnet werden (implizites Login).
   **/
   private String account;
 
@@ -32,9 +25,9 @@ public class Login  {
   **/
   private String insurantId;
 
-  @ApiModelProperty(value = "C.CH.AUT-Zertifikat des Nutzers mit private Key im pkcs12 Format; Aus dem C.CH.AUT-Zertifikat wird die Versicherten-ID des Nutzers (Aktenkontoinhaber oder Vertreter) bestimmt.; Mit dem private Key werden die Signaturen bei der Authentisierung und der Schluesselerzeugung (SGD) erstellt")
+  @ApiModelProperty(value = "C.CH.AUT-Zertifikat des Nutzers mit private Key im pkcs12 Format; Aus dem C.CH.AUT-Zertifikat wird die Versicherten-ID des Nutzers (Aktenkontoinhaber oder Vertreter) bestimmt.; Mit dem private Key werden die Signaturen bei der Authentisierung und der Schlüsselerzeugung (SGD) erstellt")
  /**
-   * C.CH.AUT-Zertifikat des Nutzers mit private Key im pkcs12 Format; Aus dem C.CH.AUT-Zertifikat wird die Versicherten-ID des Nutzers (Aktenkontoinhaber oder Vertreter) bestimmt.; Mit dem private Key werden die Signaturen bei der Authentisierung und der Schluesselerzeugung (SGD) erstellt
+   * C.CH.AUT-Zertifikat des Nutzers mit private Key im pkcs12 Format; Aus dem C.CH.AUT-Zertifikat wird die Versicherten-ID des Nutzers (Aktenkontoinhaber oder Vertreter) bestimmt.; Mit dem private Key werden die Signaturen bei der Authentisierung und der Schlüsselerzeugung (SGD) erstellt
   **/
   private byte[] pkcs12;
 
@@ -46,8 +39,26 @@ public class Login  {
 
   @ApiModelProperty(value = "")
   private String passwordKeyStore;
+
+  @ApiModelProperty(value = "Für die Verwendung einer eGK kann die zu verwendende PIN übergeben werden.")
  /**
-   * referenziert eine Aktensession, in der die Operation ausgefuehrt werden soll; Wenn keine Aktensession besteht, dann muss fuer dieses Aktenkonto (entspricht OwnerInsurantId oder RepresentationXInsurantId in der Konfiguration) eine Aktensession eroeffnet werden (implizites Login).
+   * Für die Verwendung einer eGK kann die zu verwendende PIN übergeben werden.
+  **/
+  private Integer pin;
+
+  @ApiModelProperty(value = "Für die Verwendung einer eGK kann die zu verwendende CAN für NFC übergeben werden.")
+ /**
+   * Für die Verwendung einer eGK kann die zu verwendende CAN für NFC übergeben werden.
+  **/
+  private String can;
+
+  @ApiModelProperty(value = "Für die Verwendung einer alvi-Identität kann der zu verwendende Authentisierungstoken übergeben werden.")
+ /**
+   * Für die Verwendung einer alvi-Identität kann der zu verwendende Authentisierungstoken übergeben werden.
+  **/
+  private String token;
+ /**
+   * referenziert eine Aktensession, in der die Operation ausgeführt werden soll; Wenn keine Aktensession besteht, dann muss für dieses Aktenkonto (entspricht OwnerInsurantId oder RepresentationXInsurantId in der Konfiguration) eine Aktensession eröffnet werden (implizites Login).
    * @return account
   **/
   @JsonProperty("account")
@@ -84,7 +95,7 @@ public class Login  {
   }
 
  /**
-   * C.CH.AUT-Zertifikat des Nutzers mit private Key im pkcs12 Format; Aus dem C.CH.AUT-Zertifikat wird die Versicherten-ID des Nutzers (Aktenkontoinhaber oder Vertreter) bestimmt.; Mit dem private Key werden die Signaturen bei der Authentisierung und der Schluesselerzeugung (SGD) erstellt
+   * C.CH.AUT-Zertifikat des Nutzers mit private Key im pkcs12 Format; Aus dem C.CH.AUT-Zertifikat wird die Versicherten-ID des Nutzers (Aktenkontoinhaber oder Vertreter) bestimmt.; Mit dem private Key werden die Signaturen bei der Authentisierung und der Schlüsselerzeugung (SGD) erstellt
    * @return pkcs12
   **/
   @JsonProperty("pkcs12")
@@ -137,6 +148,60 @@ public class Login  {
     return this;
   }
 
+ /**
+   * Für die Verwendung einer eGK kann die zu verwendende PIN übergeben werden.
+   * @return pin
+  **/
+  @JsonProperty("pin")
+  public Integer getPin() {
+    return pin;
+  }
+
+  public void setPin(Integer pin) {
+    this.pin = pin;
+  }
+
+  public Login pin(Integer pin) {
+    this.pin = pin;
+    return this;
+  }
+
+ /**
+   * Für die Verwendung einer eGK kann die zu verwendende CAN für NFC übergeben werden.
+   * @return can
+  **/
+  @JsonProperty("can")
+  public String getCan() {
+    return can;
+  }
+
+  public void setCan(String can) {
+    this.can = can;
+  }
+
+  public Login can(String can) {
+    this.can = can;
+    return this;
+  }
+
+ /**
+   * Für die Verwendung einer alvi-Identität kann der zu verwendende Authentisierungstoken übergeben werden.
+   * @return token
+  **/
+  @JsonProperty("token")
+  public String getToken() {
+    return token;
+  }
+
+  public void setToken(String token) {
+    this.token = token;
+  }
+
+  public Login token(String token) {
+    this.token = token;
+    return this;
+  }
+
 
   @Override
   public String toString() {
@@ -148,6 +213,9 @@ public class Login  {
     sb.append("    pkcs12: ").append(toIndentedString(pkcs12)).append("\n");
     sb.append("    passwordPrivateKey: ").append(toIndentedString(passwordPrivateKey)).append("\n");
     sb.append("    passwordKeyStore: ").append(toIndentedString(passwordKeyStore)).append("\n");
+    sb.append("    pin: ").append(toIndentedString(pin)).append("\n");
+    sb.append("    can: ").append(toIndentedString(can)).append("\n");
+    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -156,7 +224,7 @@ public class Login  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

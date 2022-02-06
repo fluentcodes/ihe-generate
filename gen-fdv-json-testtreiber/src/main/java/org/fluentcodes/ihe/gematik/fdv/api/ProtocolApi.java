@@ -2,6 +2,7 @@ package org.fluentcodes.ihe.gematik.fdv.api;
 
 import org.fluentcodes.ihe.gematik.fdv.model.ProtocolResponseDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.RequestDTO;
+import org.fluentcodes.ihe.gematik.fdv.model.SignedProtocolResponseDTO;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -26,23 +27,37 @@ import javax.validation.Valid;
  * <p>REST Schnittstelle einer Test-App fuer das ePA-Modul FdV
  *
  */
-@Path("/")
+@Path("")
 @Api(value = "/", description = "")
 public interface ProtocolApi  {
 
     /**
-     * Zugriffsprotokoll lesen
+     * Zugriffsprotokolle lesen
      *
-     * Umsetzung Operation I_FdV::getProtocol (A_18062); Liefert alle Eintraege aus dem §291a und Verwaltungsprotokoll fuer das Aktenkonto.
+     * Diese Operation führt den Anwendungsfall \&quot;Zugriffsprotokoll einsehen\&quot; in einer mit insurantId identifizierten Aktensession aus. Die vom Aktensystem gelieferten Protokolleinträge werden aufgearbeitet und zurückgegeben. Liefert alle Einträge aus dem §291a und Verwaltungsprotokoll für das Aktenkonto.
      *
      */
     @POST
     @Path("/protocol")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Zugriffsprotokoll lesen", tags={ "protocol" })
+    @ApiOperation(value = "Zugriffsprotokolle lesen", tags={ "protocol" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = ProtocolResponseDTO.class) })
     public ProtocolResponseDTO getProtocol1(@Valid RequestDTO requestDTO);
-}
 
+    /**
+     * Zugriffsprotokolle mit PAdES-Signatur lesen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;signiertes Zugriffsprotokoll einsehen\&quot; in einer mit insurantId identifizierten Aktensession aus. Die vom Aktensystem gelieferten Protokolleinträge werden aufgearbeitet und zurückgegeben. Liefert alle Einträge aus getSignedAuditEvents für das Aktenkonto.
+     *
+     */
+    @POST
+    @Path("/signedProtocol")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Zugriffsprotokolle mit PAdES-Signatur lesen", tags={ "protocol" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = SignedProtocolResponseDTO.class) })
+    public SignedProtocolResponseDTO getSignedProtocol1(@Valid RequestDTO requestDTO);
+}

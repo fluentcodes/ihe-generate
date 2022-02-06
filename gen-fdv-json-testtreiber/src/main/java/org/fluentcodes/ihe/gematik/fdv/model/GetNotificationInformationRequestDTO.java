@@ -1,34 +1,33 @@
 package org.fluentcodes.ihe.gematik.fdv.model;
 
+import org.fluentcodes.ihe.gematik.fdv.model.Login;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Document  {
+public class GetNotificationInformationRequestDTO  {
   
-  @ApiModelProperty(required = true, value = "Dokument (Base64 kodiert)")
+  @ApiModelProperty(required = true, value = "")
+  @Valid
+  private Login account;
  /**
-   * Dokument (Base64 kodiert)
+   * Get account
+   * @return account
   **/
-  private byte[] document;
- /**
-   * Dokument (Base64 kodiert)
-   * @return document
-  **/
-  @JsonProperty("document")
+  @JsonProperty("account")
   @NotNull
-  public byte[] getDocument() {
-    return document;
+  public Login getAccount() {
+    return account;
   }
 
-  public void setDocument(byte[] document) {
-    this.document = document;
+  public void setAccount(Login account) {
+    this.account = account;
   }
 
-  public Document document(byte[] document) {
-    this.document = document;
+  public GetNotificationInformationRequestDTO account(Login account) {
+    this.account = account;
     return this;
   }
 
@@ -36,9 +35,9 @@ public class Document  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Document {\n");
+    sb.append("class GetNotificationInformationRequestDTO {\n");
     
-    sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("}");
     return sb.toString();
   }

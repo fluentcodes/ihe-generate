@@ -4,8 +4,8 @@ import org.fluentcodes.ihe.gematik.fdv.model.DeletePermissionDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.PermissionHcpoDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.PermissionInsuranceDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.PermissionRepresentativeDTO;
+import org.fluentcodes.ihe.gematik.fdv.model.PermissionsRequestDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.PermissionsResponseDTO;
-import org.fluentcodes.ihe.gematik.fdv.model.RequestDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.ResponseDTO;
 
 import java.io.InputStream;
@@ -31,131 +31,141 @@ import javax.validation.Valid;
  * <p>REST Schnittstelle einer Test-App fuer das ePA-Modul FdV
  *
  */
-@Path("/")
+@Path("")
 @Api(value = "/", description = "")
 public interface PermissionsApi  {
 
     /**
-     * Berechtigung fuer LEI erteilen
+     * Anzeige der auf ein Dokument berechtigten LEI
      *
-     * Umsetzung Operation I_FdV::grantPermissionHcp (A_18049)
-     *
-     */
-    @POST
-    @Path("/permissionHcpo")
-    @Consumes({ "application/json" })
-    @Produces({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer LEI erteilen", tags={ "permissions",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
-    public ResponseDTO addPermissionHcpo1(@Valid PermissionHcpoDTO permissionHcpoDTO);
-
-    /**
-     * Berechtigung fuer einen Kostentraeger erteilen
-     *
-     * Umsetzung Operation I_FdV::grantPermissionInsurance (A_18052)
+     * Diese Operation führt den Anwendungsfall \&quot;Vergebene Berechtigungen eines Dokuments auflisten\&quot; in einer mit insurantId identifizierten Aktensession aus. Der Nutzer erhält Informationen darüber, welche Leistungserbringerinstitutionen auf das Dokument Zugriff haben.
      *
      */
     @POST
-    @Path("/permissionInsurance")
+    @Path("/permissionsForDocument")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer einen Kostentraeger erteilen", tags={ "permissions",  })
+    @ApiOperation(value = "Anzeige der auf ein Dokument berechtigten LEI", tags={ "permissions" })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
-    public ResponseDTO addPermissionInsurance1(@Valid PermissionInsuranceDTO permissionInsuranceDTO);
-
-    /**
-     * Berechtigung fuer einen Vertreter erteilen
-     *
-     * Umsetzung Operation I_FdV::grantPermissionRepresentative (A_18050)
-     *
-     */
-    @POST
-    @Path("/permissionRepresentative")
-    @Consumes({ "application/json" })
-    @Produces({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer einen Vertreter erteilen", tags={ "permissions",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
-    public ResponseDTO addPermissionRepresentative1(@Valid PermissionRepresentativeDTO permissionRepresentativeDTO);
-
-    /**
-     * Berechtigung fuer eine LEI aendern
-     *
-     * Umsetzung Operation I_FdV::changePermissionHcp (A_18054)
-     *
-     */
-    @PUT
-    @Path("/permissionHcpo")
-    @Consumes({ "application/json" })
-    @Produces({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer eine LEI aendern", tags={ "permissions",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
-    public ResponseDTO changePermissionHcpo1(@Valid PermissionHcpoDTO permissionHcpoDTO);
-
-    /**
-     * Berechtigung fuer eine LEI loeschen
-     *
-     * Umsetzung Operation I_FdV::deletePermissionHcp (A_18055)
-     *
-     */
-    @DELETE
-    @Path("/permissionHcpo")
-    @Consumes({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer eine LEI loeschen", tags={ "permissions",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successful operation"),
-        @ApiResponse(code = 400, message = "Invalid ID supplied"),
-        @ApiResponse(code = 404, message = "Entry not found") })
-    public void deletePermissionHcpo1(@Valid DeletePermissionDTO deletePermissionDTO);
-
-    /**
-     * Berechtigung fuer einen Kostentraeger loeschen
-     *
-     * Umsetzung Operation I_FdV::deletePermissionInsurance (A_18057)
-     *
-     */
-    @DELETE
-    @Path("/permissionInsurance")
-    @Consumes({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer einen Kostentraeger loeschen", tags={ "permissions",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successful operation"),
-        @ApiResponse(code = 400, message = "Invalid ID supplied"),
-        @ApiResponse(code = 404, message = "Entry not found") })
-    public void deletePermissionInsurance1(@Valid DeletePermissionDTO deletePermissionDTO);
-
-    /**
-     * Berechtigung fuer einen Vertreter loeschen
-     *
-     * Umsetzung Operation I_FdV::deletePermissionRepresentative (A_18056)
-     *
-     */
-    @DELETE
-    @Path("/permissionRepresentative")
-    @Consumes({ "application/json" })
-    @ApiOperation(value = "Berechtigung fuer einen Vertreter loeschen", tags={ "permissions",  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successful operation"),
-        @ApiResponse(code = 400, message = "Invalid ID supplied"),
-        @ApiResponse(code = 404, message = "Entry not found") })
-    public void deletePermissionRepresentative1(@Valid DeletePermissionDTO deletePermissionDTO);
+        @ApiResponse(code = 200, message = "default response", response = PermissionsResponseDTO.class) })
+    public PermissionsResponseDTO getDocAuthorized1(@Valid PermissionsRequestDTO permissionsRequestDTO);
 
     /**
      * Alle Berechtigungen lesen
      *
-     * Umsetzung Operation I_FdV::getPermissions (A_18053)
+     * Diese Operation führt den Anwendungsfall \&quot;Vergebene Berechtigungen auflisten\&quot; in einer mit insurantId identifizierten Aktensession aus.
      *
      */
-    @POST
+    @GET
     @Path("/permissions")
-    @Consumes({ "application/json" })
     @Produces({ "application/json" })
     @ApiOperation(value = "Alle Berechtigungen lesen", tags={ "permissions" })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "default response", response = PermissionsResponseDTO.class) })
-    public PermissionsResponseDTO getPermissions1(@Valid RequestDTO requestDTO);
-}
+        @ApiResponse(code = 200, message = "Ok", response = PermissionsResponseDTO.class) })
+    public PermissionsResponseDTO getPermissions1();
 
+    /**
+     * Berechtigung für LEI erteilen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Berechtigung für LEI vergeben\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionHcpo/add")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für LEI erteilen", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionHcpoAdd(@Valid PermissionHcpoDTO permissionHcpoDTO);
+
+    /**
+     * Berechtigung für eine LEI löschen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Berechtigung für LEI löschen\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionHcpo/remove")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für eine LEI löschen", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionHcpoRemove(@Valid DeletePermissionDTO deletePermissionDTO);
+
+    /**
+     * Berechtigung für eine LEI ändern
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Berechtigung für LEI ändern\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionHcpo/update")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für eine LEI ändern", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionHcpoUpdate(@Valid PermissionHcpoDTO permissionHcpoDTO);
+
+    /**
+     * Berechtigung für einen Kostenträger erteilen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Berechtigung für Kostenträger vergeben\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionInsurance/add")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für einen Kostenträger erteilen", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionInsuranceAdd(@Valid PermissionInsuranceDTO permissionInsuranceDTO);
+
+    /**
+     * Berechtigung für einen Kostenträger löschen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Berechtigung für Kostenträger löschen\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionInsurance/remove")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für einen Kostenträger löschen", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionInsuranceRemove(@Valid DeletePermissionDTO deletePermissionDTO);
+
+    /**
+     * Berechtigung für einen Vertreter erteilen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Vertretung einrichten\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionRepresentative/add")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für einen Vertreter erteilen", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionRepresentativeAdd(@Valid PermissionRepresentativeDTO permissionRepresentativeDTO);
+
+    /**
+     * Berechtigung für einen Vertreter löschen
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Berechtigung für Vertreter löschen\&quot; in einer mit insurantId identifizierten Aktensession aus.
+     *
+     */
+    @POST
+    @Path("/permissionRepresentative/remove")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Berechtigung für einen Vertreter löschen", tags={ "permissions" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
+    public ResponseDTO permissionRepresentativeRemove(@Valid DeletePermissionDTO deletePermissionDTO);
+}
