@@ -4,13 +4,6 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DirectoryEntry  {
@@ -20,18 +13,6 @@ public class DirectoryEntry  {
    * commonName, vollstaendiger Name
   **/
   private String cn;
-
-  @ApiModelProperty(value = "Vorname, fuer LEI und KTR nicht verwendet")
- /**
-   * Vorname, fuer LEI und KTR nicht verwendet
-  **/
-  private String givenName;
-
-  @ApiModelProperty(value = "Nachname, fuer LEI und KTR nicht verwendet")
- /**
-   * Nachname, fuer LEI und KTR nicht verwendet
-  **/
-  private String sn;
 
   @ApiModelProperty(value = "Anzeigename")
  /**
@@ -61,13 +42,7 @@ public class DirectoryEntry  {
  /**
    * Bundesland
   **/
-  private String stateOrProvienceName;
-
-  @ApiModelProperty(value = "Titel, fuer LEI und KTR nicht verwendet")
- /**
-   * Titel, fuer LEI und KTR nicht verwendet
-  **/
-  private String title;
+  private String stateOrProvinceName;
 
   @ApiModelProperty(value = "Institutionsname")
  /**
@@ -75,27 +50,21 @@ public class DirectoryEntry  {
   **/
   private String organization;
 
-  @ApiModelProperty(value = "Langname")
+  @ApiModelProperty(value = "für LEI: Institution")
  /**
-   * Langname
-  **/
-  private String otherName;
-
-  @ApiModelProperty(value = "fuer LEI: Institution")
- /**
-   * fuer LEI: Institution
+   * für LEI: Institution
   **/
   private String professionOID;
 
-  @ApiModelProperty(value = "fuer LEI: Fachgebiet")
+  @ApiModelProperty(value = "für LEI: Fachgebiet")
  /**
-   * fuer LEI: Fachgebiet
+   * für LEI: Fachgebiet
   **/
   private String specialization;
 
-  @ApiModelProperty(value = "fuer KTR: Kostentraegerkennung")
+  @ApiModelProperty(value = "für KTR: Kostenträgerkennung")
  /**
-   * fuer KTR: Kostentraegerkennung
+   * für KTR: Kostenträgerkennung
   **/
   private String domainID;
 
@@ -119,42 +88,6 @@ public class DirectoryEntry  {
 
   public DirectoryEntry cn(String cn) {
     this.cn = cn;
-    return this;
-  }
-
- /**
-   * Vorname, fuer LEI und KTR nicht verwendet
-   * @return givenName
-  **/
-  @JsonProperty("givenName")
-  public String getGivenName() {
-    return givenName;
-  }
-
-  public void setGivenName(String givenName) {
-    this.givenName = givenName;
-  }
-
-  public DirectoryEntry givenName(String givenName) {
-    this.givenName = givenName;
-    return this;
-  }
-
- /**
-   * Nachname, fuer LEI und KTR nicht verwendet
-   * @return sn
-  **/
-  @JsonProperty("sn")
-  public String getSn() {
-    return sn;
-  }
-
-  public void setSn(String sn) {
-    this.sn = sn;
-  }
-
-  public DirectoryEntry sn(String sn) {
-    this.sn = sn;
     return this;
   }
 
@@ -232,37 +165,19 @@ public class DirectoryEntry  {
 
  /**
    * Bundesland
-   * @return stateOrProvienceName
+   * @return stateOrProvinceName
   **/
-  @JsonProperty("stateOrProvienceName")
-  public String getStateOrProvienceName() {
-    return stateOrProvienceName;
+  @JsonProperty("stateOrProvinceName")
+  public String getStateOrProvinceName() {
+    return stateOrProvinceName;
   }
 
-  public void setStateOrProvienceName(String stateOrProvienceName) {
-    this.stateOrProvienceName = stateOrProvienceName;
+  public void setStateOrProvinceName(String stateOrProvinceName) {
+    this.stateOrProvinceName = stateOrProvinceName;
   }
 
-  public DirectoryEntry stateOrProvienceName(String stateOrProvienceName) {
-    this.stateOrProvienceName = stateOrProvienceName;
-    return this;
-  }
-
- /**
-   * Titel, fuer LEI und KTR nicht verwendet
-   * @return title
-  **/
-  @JsonProperty("title")
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public DirectoryEntry title(String title) {
-    this.title = title;
+  public DirectoryEntry stateOrProvinceName(String stateOrProvinceName) {
+    this.stateOrProvinceName = stateOrProvinceName;
     return this;
   }
 
@@ -285,25 +200,7 @@ public class DirectoryEntry  {
   }
 
  /**
-   * Langname
-   * @return otherName
-  **/
-  @JsonProperty("otherName")
-  public String getOtherName() {
-    return otherName;
-  }
-
-  public void setOtherName(String otherName) {
-    this.otherName = otherName;
-  }
-
-  public DirectoryEntry otherName(String otherName) {
-    this.otherName = otherName;
-    return this;
-  }
-
- /**
-   * fuer LEI: Institution
+   * für LEI: Institution
    * @return professionOID
   **/
   @JsonProperty("professionOID")
@@ -321,7 +218,7 @@ public class DirectoryEntry  {
   }
 
  /**
-   * fuer LEI: Fachgebiet
+   * für LEI: Fachgebiet
    * @return specialization
   **/
   @JsonProperty("specialization")
@@ -339,7 +236,7 @@ public class DirectoryEntry  {
   }
 
  /**
-   * fuer KTR: Kostentraegerkennung
+   * für KTR: Kostenträgerkennung
    * @return domainID
   **/
   @JsonProperty("domainID")
@@ -381,16 +278,12 @@ public class DirectoryEntry  {
     sb.append("class DirectoryEntry {\n");
     
     sb.append("    cn: ").append(toIndentedString(cn)).append("\n");
-    sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
-    sb.append("    sn: ").append(toIndentedString(sn)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
     sb.append("    streetAddress: ").append(toIndentedString(streetAddress)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    localityName: ").append(toIndentedString(localityName)).append("\n");
-    sb.append("    stateOrProvienceName: ").append(toIndentedString(stateOrProvienceName)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
+    sb.append("    stateOrProvinceName: ").append(toIndentedString(stateOrProvinceName)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
-    sb.append("    otherName: ").append(toIndentedString(otherName)).append("\n");
     sb.append("    professionOID: ").append(toIndentedString(professionOID)).append("\n");
     sb.append("    specialization: ").append(toIndentedString(specialization)).append("\n");
     sb.append("    domainID: ").append(toIndentedString(domainID)).append("\n");
@@ -403,7 +296,7 @@ public class DirectoryEntry  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

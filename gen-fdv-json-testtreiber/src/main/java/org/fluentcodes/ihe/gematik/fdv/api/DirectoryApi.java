@@ -26,38 +26,37 @@ import javax.validation.Valid;
  * <p>REST Schnittstelle einer Test-App fuer das ePA-Modul FdV
  *
  */
-@Path("/")
+@Path("")
 @Api(value = "/", description = "")
 public interface DirectoryApi  {
 
     /**
      * Suche nach Leistungserbringerinstitutionen im Verzeichnisdienst
      *
-     * Umsetzung Operation I_FdV::findHcp (A_18048)
+     * Diese Operation führt eine Suchanfrage für Leistungserbringerinstitutionen im Verzeichnisdienst der TI in einer mit insurantId identifizierten Aktensession aus.
      *
      */
     @POST
     @Path("/findHcpos")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Suche nach Leistungserbringerinstitutionen im Verzeichnisdienst", tags={ "directory",  })
+    @ApiOperation(value = "Suche nach Leistungserbringerinstitutionen im Verzeichnisdienst", tags={ "directory" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = FindDirectoryResponseDTO.class) })
     public FindDirectoryResponseDTO findHcpos1(@Valid FindDirectoryRequestDTO findDirectoryRequestDTO);
 
     /**
-     * Suche nach Kostentraegern im Verzeichnisdienst
+     * Suche nach Kostenträgern im Verzeichnisdienst
      *
-     * Umsetzung Operation I_FdV::findInsurance (A_18051)
+     * Diese Operation führt eine Suchanfrage für Kostenträger im Verzeichnisdienst der TI in einer mit insurantId identifizierten Aktensession aus.
      *
      */
     @POST
     @Path("/findInsurances")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Suche nach Kostentraegern im Verzeichnisdienst", tags={ "directory" })
+    @ApiOperation(value = "Suche nach Kostenträgern im Verzeichnisdienst", tags={ "directory" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = FindDirectoryResponseDTO.class) })
     public FindDirectoryResponseDTO findInsurances1(@Valid FindDirectoryRequestDTO findDirectoryRequestDTO);
 }
-

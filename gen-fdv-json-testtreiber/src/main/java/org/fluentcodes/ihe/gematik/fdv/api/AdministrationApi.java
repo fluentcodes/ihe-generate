@@ -1,6 +1,8 @@
 package org.fluentcodes.ihe.gematik.fdv.api;
 
 import org.fluentcodes.ihe.gematik.fdv.model.ChangeProviderRequestDTO;
+import org.fluentcodes.ihe.gematik.fdv.model.GetNotificationInformationRequestDTO;
+import org.fluentcodes.ihe.gematik.fdv.model.GetNotificationInformationResponseDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.NotificationInformationRequestDTO;
 import org.fluentcodes.ihe.gematik.fdv.model.ResponseDTO;
 
@@ -27,38 +29,52 @@ import javax.validation.Valid;
  * <p>REST Schnittstelle einer Test-App fuer das ePA-Modul FdV
  *
  */
-@Path("/")
+@Path("")
 @Api(value = "/", description = "")
 public interface AdministrationApi  {
 
     /**
      * Anbieter wechseln
      *
-     * Umsetzung Operation I_FdV::changeProvicer (A_18047)
+     * Diese Operation führt den Anwendungsfall \&quot;Anbieter wechseln\&quot; in einer mit insurantId identifizierten Aktensession aus.
      *
      */
     @POST
     @Path("/changeProvider")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Anbieter wechseln", tags={ "administration",  })
+    @ApiOperation(value = "Anbieter wechseln", tags={ "administration" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
     public ResponseDTO changeProvider1(@Valid ChangeProviderRequestDTO changeProviderRequestDTO);
 
     /**
-     * Benachrichtigungsadresse fuer Geraeteautorisierung aktualisieren
+     * Hinterlegte Benachrichtigungsadressen abfragen
      *
-     * Umsetzung Operation I_FdV::putNotificationInformation (A_18063); Hinterlegt eine Benachrichtigungsadresse fuer das Aktenkonto.
+     * Diese Operation führt den Anwendungsfall \&quot;Benachrichtigungsadresse für Geräteautorisierung abfragen\&quot; in einer mit insurantId identifizierte Aktensession aus.
      *
      */
     @POST
-    @Path("/NotificationInformation")
+    @Path("/getNotificationInfoList")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Benachrichtigungsadresse fuer Geraeteautorisierung aktualisieren", tags={ "administration" })
+    @ApiOperation(value = "Hinterlegte Benachrichtigungsadressen abfragen", tags={ "administration" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "response", response = GetNotificationInformationResponseDTO.class) })
+    public GetNotificationInformationResponseDTO getNotificationInformation1(@Valid GetNotificationInformationRequestDTO getNotificationInformationRequestDTO);
+
+    /**
+     * Benachrichtigungsadresse für Geräteautorisierung aktualisieren
+     *
+     * Diese Operation führt den Anwendungsfall \&quot;Benachrichtigungsadresse für Geräteautorisierung aktualisieren\&quot; in einer mit insurantId identifizierte Aktensession aus. Hinterlegt eine Benachrichtigungsadresse für das Aktenkonto.
+     *
+     */
+    @POST
+    @Path("/notificationInformation")
+    @Consumes({ "application/json" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "Benachrichtigungsadresse für Geräteautorisierung aktualisieren", tags={ "administration" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
     public ResponseDTO putNotificationInformation1(@Valid NotificationInformationRequestDTO notificationInformationRequestDTO);
 }
-

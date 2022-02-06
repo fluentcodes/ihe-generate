@@ -2,14 +2,13 @@ package org.fluentcodes.ihe.gematik.fdv.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.fluentcodes.ihe.gematik.fdv.model.ProtocolEntry;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ProtocolResponseDTO  {
+public class GetNotificationInformationResponseDTO  {
   
   @ApiModelProperty(required = true, value = "")
   private Boolean success;
@@ -17,9 +16,8 @@ public class ProtocolResponseDTO  {
   @ApiModelProperty(value = "")
   private String statusMessage;
 
-  @ApiModelProperty(value = "")
-  @Valid
-  private List<ProtocolEntry> protocolEntries = null;
+  @ApiModelProperty(required = true, value = "")
+  private List<String> notificationInfoList = new ArrayList<>();
  /**
    * Get success
    * @return success
@@ -34,7 +32,7 @@ public class ProtocolResponseDTO  {
     this.success = success;
   }
 
-  public ProtocolResponseDTO success(Boolean success) {
+  public GetNotificationInformationResponseDTO success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -52,31 +50,32 @@ public class ProtocolResponseDTO  {
     this.statusMessage = statusMessage;
   }
 
-  public ProtocolResponseDTO statusMessage(String statusMessage) {
+  public GetNotificationInformationResponseDTO statusMessage(String statusMessage) {
     this.statusMessage = statusMessage;
     return this;
   }
 
  /**
-   * Get protocolEntries
-   * @return protocolEntries
+   * Get notificationInfoList
+   * @return notificationInfoList
   **/
-  @JsonProperty("protocolEntries")
-  public List<ProtocolEntry> getProtocolEntries() {
-    return protocolEntries;
+  @JsonProperty("notificationInfoList")
+  @NotNull
+  public List<String> getNotificationInfoList() {
+    return notificationInfoList;
   }
 
-  public void setProtocolEntries(List<ProtocolEntry> protocolEntries) {
-    this.protocolEntries = protocolEntries;
+  public void setNotificationInfoList(List<String> notificationInfoList) {
+    this.notificationInfoList = notificationInfoList;
   }
 
-  public ProtocolResponseDTO protocolEntries(List<ProtocolEntry> protocolEntries) {
-    this.protocolEntries = protocolEntries;
+  public GetNotificationInformationResponseDTO notificationInfoList(List<String> notificationInfoList) {
+    this.notificationInfoList = notificationInfoList;
     return this;
   }
 
-  public ProtocolResponseDTO addProtocolEntriesItem(ProtocolEntry protocolEntriesItem) {
-    this.protocolEntries.add(protocolEntriesItem);
+  public GetNotificationInformationResponseDTO addNotificationInfoListItem(String notificationInfoListItem) {
+    this.notificationInfoList.add(notificationInfoListItem);
     return this;
   }
 
@@ -84,11 +83,11 @@ public class ProtocolResponseDTO  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProtocolResponseDTO {\n");
+    sb.append("class GetNotificationInformationResponseDTO {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
-    sb.append("    protocolEntries: ").append(toIndentedString(protocolEntries)).append("\n");
+    sb.append("    notificationInfoList: ").append(toIndentedString(notificationInfoList)).append("\n");
     sb.append("}");
     return sb.toString();
   }

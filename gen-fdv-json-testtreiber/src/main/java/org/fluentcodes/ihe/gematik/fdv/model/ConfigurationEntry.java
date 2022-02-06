@@ -1,25 +1,18 @@
 package org.fluentcodes.ihe.gematik.fdv.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ConfigurationEntry  {
   
-@XmlType(name="ConfigurationEntryIdEnum")
-@XmlEnum(String.class)
 public enum ConfigurationEntryIdEnum {
 
-@XmlEnumValue("OwnerInsurantId") OWNERINSURANTID(String.valueOf("OwnerInsurantId")), @XmlEnumValue("OwnerFqdnProvider") OWNERFQDNPROVIDER(String.valueOf("OwnerFqdnProvider")), @XmlEnumValue("OwnerDeviceName") OWNERDEVICENAME(String.valueOf("OwnerDeviceName")), @XmlEnumValue("Representation1Name") REPRESENTATION1NAME(String.valueOf("Representation1Name")), @XmlEnumValue("Representation1InsurantId") REPRESENTATION1INSURANTID(String.valueOf("Representation1InsurantId")), @XmlEnumValue("Representation1FqdnProvider") REPRESENTATION1FQDNPROVIDER(String.valueOf("Representation1FqdnProvider")), @XmlEnumValue("Representation2Name") REPRESENTATION2NAME(String.valueOf("Representation2Name")), @XmlEnumValue("Representation2InsurantId") REPRESENTATION2INSURANTID(String.valueOf("Representation2InsurantId")), @XmlEnumValue("Representation2FqdnProvider") REPRESENTATION2FQDNPROVIDER(String.valueOf("Representation2FqdnProvider")), @XmlEnumValue("Notifcation") NOTIFCATION(String.valueOf("Notifcation")), @XmlEnumValue("NotificationPeriod") NOTIFICATIONPERIOD(String.valueOf("NotificationPeriod")), @XmlEnumValue("ShowPermissionOnAddDocuments") SHOWPERMISSIONONADDDOCUMENTS(String.valueOf("ShowPermissionOnAddDocuments")), @XmlEnumValue("UseEGK") USEEGK(String.valueOf("UseEGK"));
+OWNERINSURANTID(String.valueOf("OwnerInsurantId")), OWNERFQDNPROVIDER(String.valueOf("OwnerFqdnProvider")), OWNERDEVICEID(String.valueOf("OwnerDeviceId")), OWNERDEVICENAME(String.valueOf("OwnerDeviceName")), OWNERLASTLOGINDATE(String.valueOf("OwnerLastLoginDate")), REPRESENTATION1NAME(String.valueOf("Representation1Name")), REPRESENTATION1INSURANTID(String.valueOf("Representation1InsurantId")), REPRESENTATION1FQDNPROVIDER(String.valueOf("Representation1FqdnProvider")), REPRESENTATION1DEVICEID(String.valueOf("Representation1DeviceId")), REPRESENTATION1LASTLOGINDATE(String.valueOf("Representation1LastLoginDate")), REPRESENTATION2NAME(String.valueOf("Representation2Name")), REPRESENTATION2INSURANTID(String.valueOf("Representation2InsurantId")), REPRESENTATION2FQDNPROVIDER(String.valueOf("Representation2FqdnProvider")), REPRESENTATION2DEVICEID(String.valueOf("Representation2DeviceId")), REPRESENTATION2LASTLOGINDATE(String.valueOf("Representation2LastLoginDate")), NOTIFICATION(String.valueOf("Notification")), NOTIFICATIONPERIOD(String.valueOf("NotificationPeriod")), SHOWPERMISSIONONADDDOCUMENTS(String.valueOf("ShowPermissionOnAddDocuments")), USEEGK(String.valueOf("UseEGK")), SIGNATURESERVICEURL(String.valueOf("SignatureServiceURL")), DEFAULTCONFIDENTIALITYCODE(String.valueOf("DefaultConfidentialityCode"));
 
 
     private String value;
@@ -33,10 +26,12 @@ public enum ConfigurationEntryIdEnum {
     }
 
     @Override
+    @JsonValue
     public String toString() {
         return String.valueOf(value);
     }
 
+    @JsonCreator
     public static ConfigurationEntryIdEnum fromValue(String value) {
         for (ConfigurationEntryIdEnum b : ConfigurationEntryIdEnum.values()) {
             if (b.value.equals(value)) {
@@ -47,19 +42,19 @@ public enum ConfigurationEntryIdEnum {
     }
 }
 
-  @ApiModelProperty(required = true, value = "Schluesselwerte fuer die in A_15292 definierten Parameter, die durch den Nutzer fuer die Konfiguration des FdV eingegeben werden.; OwnerInsurantId - Versicherten-ID des Aktenkontoinhabers, Teil der Akten-ID; OwnerFqdnProvider - FQDN Anbieter ePA-Aktensystem des Aktenkontoinhabers; OwnerDeviceName - Gerätename des GdV; In der Testtreiber-Konfiguration können 2 Vertretungen eingerichtet werden.; Representation1Name - Name des zu Vertretenden; Representation1InsurantId - Versicherten-ID des zu Vertretenden, Teil der Akten-ID; Representation1FqdnProvider - FQDN Anbieter ePA-Aktensystem des zu Vertretenden; Notifcation - Benachrichtigungen aktivieren; NotificationPeriod - Benachrichtigungszeitraum; ShowPermissionOnAddDocuments - Dokumente einstellen Berechtigte anzeigen; UseEGK (boolean) - gibt an, ob fuer die Authentisierung die eGK oder die alternative kryptographische Versichertenidentitaet genutzt wird.")
+  @ApiModelProperty(required = true, value = "Schlüsselwerte für die in A_15292-XX definierten Parameter, die durch den Nutzer für die Konfiguration des FdV eingegeben werden.; OwnerInsurantId - Versicherten-ID des Aktenkontoinhabers, Teil der Akten-ID; OwnerFqdnProvider - FQDN Anbieter ePA-Aktensystem des Aktenkontoinhabers; OwnerDeviceName - Gerätename des GdV; In der Testtreiber-Konfiguration können 2 Vertretungen eingerichtet werden.; Representation1Name - Name des zu Vertretenden; Representation1InsurantId - Versicherten-ID des zu Vertretenden, Teil der Akten-ID; Representation1FqdnProvider - FQDN Anbieter ePA-Aktensystem des zu Vertretenden; Notifcation - Benachrichtigungen aktivieren; NotificationPeriod - Benachrichtigungszeitraum; ShowPermissionOnAddDocuments - Dokumente einstellen Berechtigte anzeigen; UseEGK (boolean) - gibt an, ob für die Authentisierung die eGK oder die alternative kryptographische Versichertenidentität genutzt wird.")
  /**
-   * Schluesselwerte fuer die in A_15292 definierten Parameter, die durch den Nutzer fuer die Konfiguration des FdV eingegeben werden.; OwnerInsurantId - Versicherten-ID des Aktenkontoinhabers, Teil der Akten-ID; OwnerFqdnProvider - FQDN Anbieter ePA-Aktensystem des Aktenkontoinhabers; OwnerDeviceName - Gerätename des GdV; In der Testtreiber-Konfiguration können 2 Vertretungen eingerichtet werden.; Representation1Name - Name des zu Vertretenden; Representation1InsurantId - Versicherten-ID des zu Vertretenden, Teil der Akten-ID; Representation1FqdnProvider - FQDN Anbieter ePA-Aktensystem des zu Vertretenden; Notifcation - Benachrichtigungen aktivieren; NotificationPeriod - Benachrichtigungszeitraum; ShowPermissionOnAddDocuments - Dokumente einstellen Berechtigte anzeigen; UseEGK (boolean) - gibt an, ob fuer die Authentisierung die eGK oder die alternative kryptographische Versichertenidentitaet genutzt wird.
+   * Schlüsselwerte für die in A_15292-XX definierten Parameter, die durch den Nutzer für die Konfiguration des FdV eingegeben werden.; OwnerInsurantId - Versicherten-ID des Aktenkontoinhabers, Teil der Akten-ID; OwnerFqdnProvider - FQDN Anbieter ePA-Aktensystem des Aktenkontoinhabers; OwnerDeviceName - Gerätename des GdV; In der Testtreiber-Konfiguration können 2 Vertretungen eingerichtet werden.; Representation1Name - Name des zu Vertretenden; Representation1InsurantId - Versicherten-ID des zu Vertretenden, Teil der Akten-ID; Representation1FqdnProvider - FQDN Anbieter ePA-Aktensystem des zu Vertretenden; Notifcation - Benachrichtigungen aktivieren; NotificationPeriod - Benachrichtigungszeitraum; ShowPermissionOnAddDocuments - Dokumente einstellen Berechtigte anzeigen; UseEGK (boolean) - gibt an, ob für die Authentisierung die eGK oder die alternative kryptographische Versichertenidentität genutzt wird.
   **/
   private ConfigurationEntryIdEnum configurationEntryId;
 
-  @ApiModelProperty(required = true, value = "Wert fuer den Konfigurationsparameter")
+  @ApiModelProperty(required = true, value = "Wert für den Konfigurationsparameter. für die Parameter Notification, ShowPermissionOnAddDocuments und UseEGK sind nur die Werte \"ja\" und \"nein\" zulässig.")
  /**
-   * Wert fuer den Konfigurationsparameter
+   * Wert für den Konfigurationsparameter. für die Parameter Notification, ShowPermissionOnAddDocuments und UseEGK sind nur die Werte \"ja\" und \"nein\" zulässig.
   **/
   private String configurationEntryValue;
  /**
-   * Schluesselwerte fuer die in A_15292 definierten Parameter, die durch den Nutzer fuer die Konfiguration des FdV eingegeben werden.; OwnerInsurantId - Versicherten-ID des Aktenkontoinhabers, Teil der Akten-ID; OwnerFqdnProvider - FQDN Anbieter ePA-Aktensystem des Aktenkontoinhabers; OwnerDeviceName - Gerätename des GdV; In der Testtreiber-Konfiguration können 2 Vertretungen eingerichtet werden.; Representation1Name - Name des zu Vertretenden; Representation1InsurantId - Versicherten-ID des zu Vertretenden, Teil der Akten-ID; Representation1FqdnProvider - FQDN Anbieter ePA-Aktensystem des zu Vertretenden; Notifcation - Benachrichtigungen aktivieren; NotificationPeriod - Benachrichtigungszeitraum; ShowPermissionOnAddDocuments - Dokumente einstellen Berechtigte anzeigen; UseEGK (boolean) - gibt an, ob fuer die Authentisierung die eGK oder die alternative kryptographische Versichertenidentitaet genutzt wird.
+   * Schlüsselwerte für die in A_15292-XX definierten Parameter, die durch den Nutzer für die Konfiguration des FdV eingegeben werden.; OwnerInsurantId - Versicherten-ID des Aktenkontoinhabers, Teil der Akten-ID; OwnerFqdnProvider - FQDN Anbieter ePA-Aktensystem des Aktenkontoinhabers; OwnerDeviceName - Gerätename des GdV; In der Testtreiber-Konfiguration können 2 Vertretungen eingerichtet werden.; Representation1Name - Name des zu Vertretenden; Representation1InsurantId - Versicherten-ID des zu Vertretenden, Teil der Akten-ID; Representation1FqdnProvider - FQDN Anbieter ePA-Aktensystem des zu Vertretenden; Notifcation - Benachrichtigungen aktivieren; NotificationPeriod - Benachrichtigungszeitraum; ShowPermissionOnAddDocuments - Dokumente einstellen Berechtigte anzeigen; UseEGK (boolean) - gibt an, ob für die Authentisierung die eGK oder die alternative kryptographische Versichertenidentität genutzt wird.
    * @return configurationEntryId
   **/
   @JsonProperty("configurationEntryId")
@@ -81,7 +76,7 @@ public enum ConfigurationEntryIdEnum {
   }
 
  /**
-   * Wert fuer den Konfigurationsparameter
+   * Wert für den Konfigurationsparameter. für die Parameter Notification, ShowPermissionOnAddDocuments und UseEGK sind nur die Werte \&quot;ja\&quot; und \&quot;nein\&quot; zulässig.
    * @return configurationEntryValue
   **/
   @JsonProperty("configurationEntryValue")
@@ -115,7 +110,7 @@ public enum ConfigurationEntryIdEnum {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

@@ -27,21 +27,21 @@ import javax.validation.Valid;
  * <p>REST Schnittstelle einer Test-App fuer das ePA-Modul FdV
  *
  */
-@Path("/")
+@Path("")
 @Api(value = "/", description = "")
 public interface UserApi  {
 
     /**
      * Login Aktensession
      *
-     * Umsetzung Operation I_FdV::login A_18045; Login in zwei Varianten; Falls die insurantID uebergeben wird, dann referenziert die insurantID die AUT-Identitaet des Nutzers, welche ueber eine eGK oder einen Signaturdienst (Konfigurationsparameter UseEGK) verfuegbar ist. Falls keine insurantID übergeben wird, dann wird eine PKCS12-Datei uebergeben. Das C.CH.AUT Zertifikat und der private Schluessel aus der PKCS12-Datei werden im Testtreiber genutzt (bspw. Signatur bei der Authentisierung und der Schluesselerzeugung mit SGD).
+     * Diese Operation führt ein explizites Login für ein Aktenkonto mit dem RecordIdenfier für insurantId aus. Für die Verwendung einer eGK können die zu verwendende PIN sowie die CAN (für NFC) übergeben werden. Für die Verwendung einer alvi-Identität kann der zu verwendende Authentisierungstoken übergeben werden. Falls die insurantID übergeben wird, dann referenziert die insurantID die AUT-identität des Nutzers, welche über eine eGK oder einen Signaturdienst (Konfigurationsparameter UseEGK) verfügbar ist. Falls keine insurantID übergeben wird, dann wird eine PKCS12-Datei übergeben. Das C.CH.AUT Zertifikat und der private Schlüssel aus der PKCS12-Datei werden im Testtreiber genutzt (bspw. Signatur bei der Authentisierung und der Schlüsselerzeugung mit SGD).
      *
      */
     @POST
     @Path("/login")
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Login Aktensession", tags={ "user",  })
+    @ApiOperation(value = "Login Aktensession", tags={ "user" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = ProtocolResponseDTO.class) })
     public ProtocolResponseDTO login1(@Valid RequestDTO requestDTO);
@@ -49,7 +49,7 @@ public interface UserApi  {
     /**
      * Logout Aktensession
      *
-     * Umsetzung Operation I_FdV::logout A_18046; Logout wird fuer eine per InsurantID (KVNR) referenzierte Identitaet ausgeloest.
+     * Diese Operation führt ein Logout für eine mit insurantId identifizierte Aktensession aus.
      *
      */
     @POST
@@ -61,4 +61,3 @@ public interface UserApi  {
         @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
     public ResponseDTO logout1(@Valid RequestDTO requestDTO);
 }
-

@@ -2,15 +2,15 @@ package org.fluentcodes.ihe.gematik.fdv.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.fluentcodes.ihe.gematik.fdv.model.DocumentWithMetadata;
 import org.fluentcodes.ihe.gematik.fdv.model.Login;
+import org.fluentcodes.ihe.gematik.fdv.model.ObjectDTO;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class StoreDocumentRequestDTO  {
+public class ObjectRequestDTO  {
   
   @ApiModelProperty(required = true, value = "")
   @Valid
@@ -18,7 +18,7 @@ public class StoreDocumentRequestDTO  {
 
   @ApiModelProperty(required = true, value = "")
   @Valid
-  private List<DocumentWithMetadata> documentSets = new ArrayList<>();
+  private List<ObjectDTO> objects = new ArrayList<>();
  /**
    * Get account
    * @return account
@@ -33,32 +33,32 @@ public class StoreDocumentRequestDTO  {
     this.account = account;
   }
 
-  public StoreDocumentRequestDTO account(Login account) {
+  public ObjectRequestDTO account(Login account) {
     this.account = account;
     return this;
   }
 
  /**
-   * Get documentSets
-   * @return documentSets
+   * Get objects
+   * @return objects
   **/
-  @JsonProperty("documentSets")
+  @JsonProperty("objects")
   @NotNull
-  public List<DocumentWithMetadata> getDocumentSets() {
-    return documentSets;
+  public List<ObjectDTO> getObjects() {
+    return objects;
   }
 
-  public void setDocumentSets(List<DocumentWithMetadata> documentSets) {
-    this.documentSets = documentSets;
+  public void setObjects(List<ObjectDTO> objects) {
+    this.objects = objects;
   }
 
-  public StoreDocumentRequestDTO documentSets(List<DocumentWithMetadata> documentSets) {
-    this.documentSets = documentSets;
+  public ObjectRequestDTO objects(List<ObjectDTO> objects) {
+    this.objects = objects;
     return this;
   }
 
-  public StoreDocumentRequestDTO addDocumentSetsItem(DocumentWithMetadata documentSetsItem) {
-    this.documentSets.add(documentSetsItem);
+  public ObjectRequestDTO addObjectsItem(ObjectDTO objectsItem) {
+    this.objects.add(objectsItem);
     return this;
   }
 
@@ -66,10 +66,10 @@ public class StoreDocumentRequestDTO  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StoreDocumentRequestDTO {\n");
+    sb.append("class ObjectRequestDTO {\n");
     
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
-    sb.append("    documentSets: ").append(toIndentedString(documentSets)).append("\n");
+    sb.append("    objects: ").append(toIndentedString(objects)).append("\n");
     sb.append("}");
     return sb.toString();
   }

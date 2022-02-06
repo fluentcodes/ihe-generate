@@ -6,29 +6,28 @@ import javax.validation.Valid;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Document  {
+public class ObjectDTO  {
   
-  @ApiModelProperty(required = true, value = "Dokument (Base64 kodiert)")
+  @ApiModelProperty(value = "EntryUUID eines Dokumentes")
  /**
-   * Dokument (Base64 kodiert)
+   * EntryUUID eines Dokumentes
   **/
-  private byte[] document;
+  private String entryUUID;
  /**
-   * Dokument (Base64 kodiert)
-   * @return document
+   * EntryUUID eines Dokumentes
+   * @return entryUUID
   **/
-  @JsonProperty("document")
-  @NotNull
-  public byte[] getDocument() {
-    return document;
+  @JsonProperty("entryUUID")
+  public String getEntryUUID() {
+    return entryUUID;
   }
 
-  public void setDocument(byte[] document) {
-    this.document = document;
+  public void setEntryUUID(String entryUUID) {
+    this.entryUUID = entryUUID;
   }
 
-  public Document document(byte[] document) {
-    this.document = document;
+  public ObjectDTO entryUUID(String entryUUID) {
+    this.entryUUID = entryUUID;
     return this;
   }
 
@@ -36,9 +35,9 @@ public class Document  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Document {\n");
+    sb.append("class ObjectDTO {\n");
     
-    sb.append("    document: ").append(toIndentedString(document)).append("\n");
+    sb.append("    entryUUID: ").append(toIndentedString(entryUUID)).append("\n");
     sb.append("}");
     return sb.toString();
   }

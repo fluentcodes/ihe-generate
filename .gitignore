@@ -13,8 +13,7 @@ gen-cda/
 *.iws
 *.iml
 *.ipr
-gen-fdv-json-testtreiber/.openapi-generator/testtreiber_fdv.yaml.sha256
-**/.openapi-generator**
+**/.openapi-generator/**
 
 
 ### NetBeans ###

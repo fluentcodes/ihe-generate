@@ -1,15 +1,13 @@
 package org.fluentcodes.ihe.gematik.fdv.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.fluentcodes.ihe.gematik.fdv.model.ProtocolEntry;
+import java.time.Instant;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ProtocolResponseDTO  {
+public class UpdateKeysResponseDTO  {
   
   @ApiModelProperty(required = true, value = "")
   private Boolean success;
@@ -17,9 +15,11 @@ public class ProtocolResponseDTO  {
   @ApiModelProperty(value = "")
   private String statusMessage;
 
-  @ApiModelProperty(value = "")
-  @Valid
-  private List<ProtocolEntry> protocolEntries = null;
+  @ApiModelProperty(example = "2017-07-21T17:32:28Z", value = "Ende Zeitraum für die erfolgreiche Umschlüsselung, nach Ablauf wird die Umschlüsselung abgebrochen und die ursprünglichen Schlüssel bleiben weiterhin aktiv; date-time notation as defined by RFC 3339, section 5.6")
+ /**
+   * Ende Zeitraum für die erfolgreiche Umschlüsselung, nach Ablauf wird die Umschlüsselung abgebrochen und die ursprünglichen Schlüssel bleiben weiterhin aktiv; date-time notation as defined by RFC 3339, section 5.6
+  **/
+  private Instant rollbackTime;
  /**
    * Get success
    * @return success
@@ -34,7 +34,7 @@ public class ProtocolResponseDTO  {
     this.success = success;
   }
 
-  public ProtocolResponseDTO success(Boolean success) {
+  public UpdateKeysResponseDTO success(Boolean success) {
     this.success = success;
     return this;
   }
@@ -52,31 +52,26 @@ public class ProtocolResponseDTO  {
     this.statusMessage = statusMessage;
   }
 
-  public ProtocolResponseDTO statusMessage(String statusMessage) {
+  public UpdateKeysResponseDTO statusMessage(String statusMessage) {
     this.statusMessage = statusMessage;
     return this;
   }
 
  /**
-   * Get protocolEntries
-   * @return protocolEntries
+   * Ende Zeitraum für die erfolgreiche Umschlüsselung, nach Ablauf wird die Umschlüsselung abgebrochen und die ursprünglichen Schlüssel bleiben weiterhin aktiv; date-time notation as defined by RFC 3339, section 5.6
+   * @return rollbackTime
   **/
-  @JsonProperty("protocolEntries")
-  public List<ProtocolEntry> getProtocolEntries() {
-    return protocolEntries;
+  @JsonProperty("rollbackTime")
+  public Instant getRollbackTime() {
+    return rollbackTime;
   }
 
-  public void setProtocolEntries(List<ProtocolEntry> protocolEntries) {
-    this.protocolEntries = protocolEntries;
+  public void setRollbackTime(Instant rollbackTime) {
+    this.rollbackTime = rollbackTime;
   }
 
-  public ProtocolResponseDTO protocolEntries(List<ProtocolEntry> protocolEntries) {
-    this.protocolEntries = protocolEntries;
-    return this;
-  }
-
-  public ProtocolResponseDTO addProtocolEntriesItem(ProtocolEntry protocolEntriesItem) {
-    this.protocolEntries.add(protocolEntriesItem);
+  public UpdateKeysResponseDTO rollbackTime(Instant rollbackTime) {
+    this.rollbackTime = rollbackTime;
     return this;
   }
 
@@ -84,11 +79,11 @@ public class ProtocolResponseDTO  {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProtocolResponseDTO {\n");
+    sb.append("class UpdateKeysResponseDTO {\n");
     
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
-    sb.append("    protocolEntries: ").append(toIndentedString(protocolEntries)).append("\n");
+    sb.append("    rollbackTime: ").append(toIndentedString(rollbackTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

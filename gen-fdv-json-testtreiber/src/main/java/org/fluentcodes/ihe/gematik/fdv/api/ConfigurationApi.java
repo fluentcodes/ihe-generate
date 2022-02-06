@@ -26,39 +26,38 @@ import javax.validation.Valid;
  * <p>REST Schnittstelle einer Test-App fuer das ePA-Modul FdV
  *
  */
-@Path("/")
+@Path("/configuration")
 @Api(value = "/", description = "")
 public interface ConfigurationApi  {
 
     /**
      * Gesamte Konfiguration lesen
      *
-     * Umsetzung Operation I_FdV_Management::getConfiguration (A_18067); Liefert alle Konfigurationseintraege, die dem Filter entsprechen. Als Filter ist configurationEntryId moeglich.   Wird kein Filter angegeben, dann werden alle Eintraege aus der Konfiguration zurueckgegeben.
+     * Die Operation liefert eine Liste aller Konfigurationsparameter des FdV mit den eingestellten Werten. Liefert alle Konfigurationseinträge, die dem Filter entsprechen. Als Filter ist configurationEntryId möglich. Wird kein Filter angegeben, dann werden alle Einträge aus der Konfiguration zurückgegeben.
      *
      */
     @GET
-    @Path("/configuration")
+    
     @Produces({ "application/json" })
-    @ApiOperation(value = "Gesamte Konfiguration lesen", tags={ "configuration",  })
+    @ApiOperation(value = "Gesamte Konfiguration lesen", tags={ "configuration" })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successful operation; Es werden alle Konfigurationseintraege zurueckgegeben.; Wenn nach einer uid gesucht wurde, wird genau dieser Eintrag zurueckgegeben.; Falls der Konfigurationseintrag vorab nicht gesetzt wurde, wird ein Leerstring zurückgegeben.", response = ConfigurationEntry.class, responseContainer = "List"),
+        @ApiResponse(code = 200, message = "successful operation; Es werden alle Konfigurationseinträge zurückgegeben.; Wenn nach einer uid gesucht wurde, wird genau dieser Eintrag zurückgegeben.; Falls der Konfigurationseintrag vorab nicht gesetzt wurde, wird ein Leerstring zurückgegeben.", response = ConfigurationEntry.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Invalid ID supplied"),
         @ApiResponse(code = 404, message = "Entry not found") })
-    public List<ConfigurationEntry> getConfigurationEntries1(@QueryParam("uid")  String uid);
+    public List<ConfigurationEntry> getConfigurationEntries1(@QueryParam("uid") String uid);
 
     /**
-     * Konfigurationseintrag aendern
+     * Konfigurationseintrag ändern
      *
-     * Umsetzung Operation I_FdV_Management::setConfiguration (A_18066); Setzt einen Konfigurationseintrag
+     * Diese Operation setzt ein oder mehrere Werte für eine Liste von Konfigurationsparametern sowie für herstellerspezifische Konfigurationsparameter. Die Liste der herstellerspezifischen Konfigurationsparameter sind in der Betriebsdokumentation zu beschreiben.
      *
      */
     @PUT
-    @Path("/configuration")
+    
     @Consumes({ "application/json" })
     @Produces({ "application/json" })
-    @ApiOperation(value = "Konfigurationseintrag aendern", tags={ "configuration" })
+    @ApiOperation(value = "Konfigurationseintrag ändern", tags={ "configuration" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "default response", response = ResponseDTO.class) })
     public ResponseDTO updateConfigurationEntries1(@Valid ConfigurationEntry configurationEntry);
 }
-

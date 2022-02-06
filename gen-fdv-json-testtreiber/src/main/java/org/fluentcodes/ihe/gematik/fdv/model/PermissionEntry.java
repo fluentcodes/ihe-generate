@@ -1,17 +1,10 @@
 package org.fluentcodes.ihe.gematik.fdv.model;
 
-import org.fluentcodes.ihe.gematik.fdv.model.PermissionLeiProp;
+import org.fluentcodes.ihe.gematik.fdv.model.PermissionProp;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PermissionEntry  {
@@ -30,7 +23,7 @@ public class PermissionEntry  {
 
   @ApiModelProperty(value = "")
   @Valid
-  private PermissionLeiProp permissionLeiProperties;
+  private PermissionProp permissionLeiProperties;
  /**
    * Telematik-ID bzw. Versicherten-ID des Berechtigten
    * @return telematikOrInsurantId
@@ -74,15 +67,15 @@ public class PermissionEntry  {
    * @return permissionLeiProperties
   **/
   @JsonProperty("permissionLeiProperties")
-  public PermissionLeiProp getPermissionLeiProperties() {
+  public PermissionProp getPermissionLeiProperties() {
     return permissionLeiProperties;
   }
 
-  public void setPermissionLeiProperties(PermissionLeiProp permissionLeiProperties) {
+  public void setPermissionLeiProperties(PermissionProp permissionLeiProperties) {
     this.permissionLeiProperties = permissionLeiProperties;
   }
 
-  public PermissionEntry permissionLeiProperties(PermissionLeiProp permissionLeiProperties) {
+  public PermissionEntry permissionLeiProperties(PermissionProp permissionLeiProperties) {
     this.permissionLeiProperties = permissionLeiProperties;
     return this;
   }
@@ -104,7 +97,7 @@ public class PermissionEntry  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

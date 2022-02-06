@@ -1,18 +1,11 @@
 package org.fluentcodes.ihe.gematik.fdv.model;
 
 import org.fluentcodes.ihe.gematik.fdv.model.Login;
-import org.fluentcodes.ihe.gematik.fdv.model.PermissionLeiProp;
+import org.fluentcodes.ihe.gematik.fdv.model.PermissionProp;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
 import io.swagger.annotations.ApiModelProperty;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlEnum;
-import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PermissionHcpoDTO  {
@@ -21,27 +14,21 @@ public class PermissionHcpoDTO  {
   @Valid
   private Login account;
 
-  @ApiModelProperty(required = true, value = "Telematik-ID der Leistungserbringerinstitution (LEI)")
+  @ApiModelProperty(value = "Telematik-ID der Leistungserbringerinstitution (LEI)")
  /**
    * Telematik-ID der Leistungserbringerinstitution (LEI)
   **/
   private String hcpoTelematikId;
 
-  @ApiModelProperty(required = true, value = "Name der LEI")
+  @ApiModelProperty(value = "Name der LEI (Common Name aus dem VZD)")
  /**
-   * Name der LEI
+   * Name der LEI (Common Name aus dem VZD)
   **/
   private String hcpoName;
 
-  @ApiModelProperty(required = true, value = "aus dem Verzeichnisdienst ermittelte Zertifikat der LEI (Format DER, Base64 kodiert)")
- /**
-   * aus dem Verzeichnisdienst ermittelte Zertifikat der LEI (Format DER, Base64 kodiert)
-  **/
-  private byte[] certificate;
-
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   @Valid
-  private PermissionLeiProp permissionLeiProperties;
+  private PermissionProp permissionLeiProperties;
  /**
    * Get account
    * @return account
@@ -66,7 +53,6 @@ public class PermissionHcpoDTO  {
    * @return hcpoTelematikId
   **/
   @JsonProperty("hcpoTelematikId")
-  @NotNull
   public String getHcpoTelematikId() {
     return hcpoTelematikId;
   }
@@ -81,11 +67,10 @@ public class PermissionHcpoDTO  {
   }
 
  /**
-   * Name der LEI
+   * Name der LEI (Common Name aus dem VZD)
    * @return hcpoName
   **/
   @JsonProperty("hcpoName")
-  @NotNull
   public String getHcpoName() {
     return hcpoName;
   }
@@ -100,39 +85,19 @@ public class PermissionHcpoDTO  {
   }
 
  /**
-   * aus dem Verzeichnisdienst ermittelte Zertifikat der LEI (Format DER, Base64 kodiert)
-   * @return certificate
-  **/
-  @JsonProperty("certificate")
-  @NotNull
-  public byte[] getCertificate() {
-    return certificate;
-  }
-
-  public void setCertificate(byte[] certificate) {
-    this.certificate = certificate;
-  }
-
-  public PermissionHcpoDTO certificate(byte[] certificate) {
-    this.certificate = certificate;
-    return this;
-  }
-
- /**
    * Get permissionLeiProperties
    * @return permissionLeiProperties
   **/
   @JsonProperty("permissionLeiProperties")
-  @NotNull
-  public PermissionLeiProp getPermissionLeiProperties() {
+  public PermissionProp getPermissionLeiProperties() {
     return permissionLeiProperties;
   }
 
-  public void setPermissionLeiProperties(PermissionLeiProp permissionLeiProperties) {
+  public void setPermissionLeiProperties(PermissionProp permissionLeiProperties) {
     this.permissionLeiProperties = permissionLeiProperties;
   }
 
-  public PermissionHcpoDTO permissionLeiProperties(PermissionLeiProp permissionLeiProperties) {
+  public PermissionHcpoDTO permissionLeiProperties(PermissionProp permissionLeiProperties) {
     this.permissionLeiProperties = permissionLeiProperties;
     return this;
   }
@@ -146,7 +111,6 @@ public class PermissionHcpoDTO  {
     sb.append("    account: ").append(toIndentedString(account)).append("\n");
     sb.append("    hcpoTelematikId: ").append(toIndentedString(hcpoTelematikId)).append("\n");
     sb.append("    hcpoName: ").append(toIndentedString(hcpoName)).append("\n");
-    sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    permissionLeiProperties: ").append(toIndentedString(permissionLeiProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -156,7 +120,7 @@ public class PermissionHcpoDTO  {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private static String toIndentedString(java.lang.Object o) {
+  private static String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }
