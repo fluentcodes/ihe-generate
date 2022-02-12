@@ -6,13 +6,18 @@
 .settings
 .springBeans
 .sts4-cache
-ihe-germany/
+gen-ihe/
+gen-ihe-test/
+gen-ihe-wrapper/
+gen-ihe-wrapper-test/
 gen-cda/
+gen-xacml/
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+.DS_Store
 **/.openapi-generator/**
 
 
@@ -26,6 +31,7 @@ gen-cda/
 nb-configuration.xml
 /nbproject/
 
+/gen-ihe-wrapper/
 **/target/**
 **/out/**
 *.log
