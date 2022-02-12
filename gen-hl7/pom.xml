@@ -6,16 +6,23 @@
 
 	<groupId>org.fluentcodes.ihe</groupId>
 	<artifactId>gen-hl7</artifactId>
-	<version>0.2.1</version>
+	<version>3.1.0</version>
 	<name>IHE: Generated hl7 3.1.0 codes</name>
 	<description>IHE: Jaxb generated sources hl7 v3.1.0. Using Java 8 instead of the initial Java 11.</description>
 
-	<parent>
-		<groupId>org.fluentcodes.ihe</groupId>
-		<artifactId>ihe-generate</artifactId>
-		<version>0.2.1</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<dependency>
@@ -30,6 +37,47 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>maven</id>
+			<url>https://mvnrepository.com/artifact/</url>
+		</repository>
+	</repositories>
+
+	<url>https://github.com/fluentcodes/ihe-generate</url>
+
+	<licenses>
+		<license>
+			<name>Apache License Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>wdi</id>
+			<name>Werner Diwischek</name>
+			<email>fluentcodes@gmail.com</email>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<profiles>
 		<profile>
 			<id>deploy</id>

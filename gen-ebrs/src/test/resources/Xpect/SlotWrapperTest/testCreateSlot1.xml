@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<SlotType1 name="key1" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:ValueList>
-        <ns:Value>value11</ns:Value>
-        <ns:Value>value12</ns:Value>
-        <ns:Value>value13</ns:Value>
-    </ns:ValueList>
-</SlotType1>
