@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<RegistryPackageType id="submissionSet" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:Slot name="submissionTime">
-        <ns:ValueList>
-            <ns:Value>2019010115</ns:Value>
-        </ns:ValueList>
-    </ns:Slot>
-</RegistryPackageType>

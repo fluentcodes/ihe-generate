@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ExtrinsicObjectType id="document" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:ExternalIdentifier registryObject="document" identificationScheme="urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427" value="test" objectType="urn:oasis:names:tc:ebxml1090 regrep:ObjectType:RegistryObject:ExternalIdentifier" id="XDSDocumentEntry.patientId_0">
-        <ns:Name>
-            <ns:LocalizedString value="XDSDocumentEntry.patientId"/>
-        </ns:Name>
-    </ns:ExternalIdentifier>
-</ExtrinsicObjectType>

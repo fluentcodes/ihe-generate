@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ClassificationType id="test" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:Slot name="authorInstitution">
-        <ns:ValueList>
-            <ns:Value>institution1</ns:Value>
-            <ns:Value>institution2</ns:Value>
-        </ns:ValueList>
-    </ns:Slot>
-</ClassificationType>

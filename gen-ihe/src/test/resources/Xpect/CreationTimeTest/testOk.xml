@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ExtrinsicObjectType xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:Slot name="creationTime">
-        <ns:ValueList>
-            <ns:Value>20200621010000</ns:Value>
-        </ns:ValueList>
-    </ns:Slot>
-</ExtrinsicObjectType>

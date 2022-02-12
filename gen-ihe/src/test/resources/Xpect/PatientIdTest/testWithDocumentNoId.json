@@ -1,6 +1,0 @@
-{
-  "id" : "XDSDocumentEntry.patientId_0",
-  "identificationScheme" : "urn:uuid:58a6f841-87b3-4a3e-92fd-a8ffeff98427",
-  "objectType" : "urn:oasis:names:tc:ebxml1090 regrep:ObjectType:RegistryObject:ExternalIdentifier",
-  "value" : "test"
-}

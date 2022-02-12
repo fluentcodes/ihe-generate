@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ExtrinsicObjectType id="id" xmlns:ns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
-    <ns:Slot name="hash">
-        <ns:ValueList>
-            <ns:Value>value</ns:Value>
-        </ns:ValueList>
-    </ns:Slot>
-</ExtrinsicObjectType>
