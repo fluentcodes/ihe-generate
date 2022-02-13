@@ -17,7 +17,7 @@
         <dependency>
             <groupId>org.fluentcodes.ihe</groupId>
             <artifactId>contracts-ebRS</artifactId>
-            <version>3.0</version>
+            <version>3.0_</version>
         </dependency>
     </dependencies>
 
