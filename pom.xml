@@ -14,9 +14,11 @@
 		<module>gen-hl7</module>
 		<module>gen-fdv-json-testtreiber</module>
 		<module>gen-ebrs</module>
-		<!--module>gen-ihe</module>
-		<module>gen-ihe-test</module>
-		<module>gen-ihe-wrapper</module>
-		<module>gen-ihe-wrapper-test</module-->
+		<module>gen-ihe</module>
+		<module>gen-xacml</module>
+		<!--module>ebxml-wrapper</module>
+		<module>ebxml-wrapper-test</module>
+		<module>ihe-wrapper</module>
+		<module>ihe-wrapper-test</module-->
 	</modules>
 </project>

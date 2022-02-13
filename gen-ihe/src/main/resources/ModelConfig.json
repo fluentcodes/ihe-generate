@@ -1,0 +1,34 @@
+{
+  "SlotMap": {
+    "packagePath": "org.fluentcodes.ihe.ebrs.ihe",
+    "fieldKeys": [
+      "slotMap"
+    ],
+    "description": "Store the slot values.",
+    "author": "Werner Diwischek"
+  },
+  "Classification": {
+    "packagePath": "org.fluentcodes.ihe.ebrs.ihe",
+    "fieldKeys": [
+      "classificationMap"
+    ],
+    "description": "Store the classification values.",
+    "author": "Werner Diwischek"
+  },
+  "ClassificationMap": {
+    "packagePath": "org.fluentcodes.ihe.ebrs.ihe",
+    "fieldKeys": [
+      "classificationMap"
+    ],
+    "description": "Store the classification values.",
+    "author": "Werner Diwischek"
+  },
+  "ExternalIdentifierMap": {
+    "packagePath": "org.fluentcodes.ihe.ebrs.ihe",
+    "fieldKeys": [
+      "externalIdentifierMap"
+    ],
+    "description": "Store the external Identifier values.",
+    "author": "Werner Diwischek"
+  }
+}

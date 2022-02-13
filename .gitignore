@@ -6,12 +6,10 @@
 .settings
 .springBeans
 .sts4-cache
-gen-ihe/
-gen-ihe-test/
-gen-ihe-wrapper/
-gen-ihe-wrapper-test/
-gen-cda/
-gen-xacml/
+ihe-wrapper/
+ihe-wrapper-test/
+ebxml-wrapper/
+ebxml-wrapper-test/
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -31,7 +29,6 @@ gen-xacml/
 nb-configuration.xml
 /nbproject/
 
-/gen-ihe-wrapper/
 **/target/**
 **/out/**
 *.log

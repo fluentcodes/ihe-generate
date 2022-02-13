@@ -5,11 +5,19 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.fluentcodes.ihe</groupId>
-	<artifactId>contracts-ebRS</artifactId>
-	<version>3.0</version>
+	<artifactId>ebxml-wrapper-test</artifactId>
+	<version>0.1</version>
 
 	<name>ebXML: Classes and Wrapper</name>
 	<description>ebXML: jaxb generated sources  from ebRS 3.0 schema files fand anonym Wrapper classes 2005 https://docs.oasis-open.org/regrep/v3.0/specs/regrep-rim-3.0-os.pdf. Using Java 8 instead of the initial Java 11.</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -24,14 +32,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>javax.xml.bind</groupId>
-			<artifactId>jaxb-api</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-	</dependencies>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

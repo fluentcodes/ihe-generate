@@ -5,17 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.fluentcodes.ihe</groupId>
-    <artifactId>gen-xacml</artifactId>
-    <version>2.0.0</version>
+    <artifactId>gen-ihe</artifactId>
+    <version>1.0</version>
 
-    <name>Generated Xacml Policies</name>
-    <description>Jaxb generated sources from xacml schema files</description>
+    <name>IHE: Jaxb Generated Classes and Wrapper</name>
+    <description>Jaxb generated sources from IHE schema files and Wrapper for parts of it. Using Java 8 instead of the
+        initial Java 11.
+    </description>
 
     <dependencies>
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.1</version>
+            <groupId>org.fluentcodes.ihe</groupId>
+            <artifactId>contracts-ebRS</artifactId>
+            <version>3.0</version>
         </dependency>
     </dependencies>
 
@@ -125,10 +127,10 @@
                             <generateDirectory>${project.build.sourceDirectory}</generateDirectory>
                             <encoding>${project.build.sourceEncoding}</encoding>
                             <noFileHeader>true</noFileHeader>
-                            <episode>false</episode>
+                            <episode>true</episode>
                             <schemaIncludes>
-                                <include>*.xsd</include>
-                                <include>access-control-xacml-2.0-policy-schema-os.xsd</include>
+                                <include>XDS.b_DocumentRepository.xsd</include>
+                                <include>RMD.xsd</include>
                             </schemaIncludes>
                         </configuration>
                     </plugin>
