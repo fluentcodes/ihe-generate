@@ -23,6 +23,17 @@
 
     <url>https://github.com/fluentcodes/ihe-generate</url>
 
+    <scm>
+        <connection>:git:git://github.com/fluentcodes/ihe-generate.git</connection>
+        <developerConnection>scm:git:ssh://github.com/fluentcodes/ihe-generate.git</developerConnection>
+        <url>https://github.com/fluentcodes/ihe-generate/</url>
+    </scm>
+
+    <issueManagement>
+        <system>Gitlab issues.</system>
+        <url>https://github.com/fluentcodes/ihe-generate/issues</url>
+    </issueManagement>
+
     <licenses>
         <license>
             <name>Apache License Version 2.0</name>
@@ -56,41 +67,59 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.jvnet.jaxb2.maven2</groupId>
-                        <artifactId>maven-jaxb23-plugin</artifactId>
-                        <version>0.14.0</version>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
-                                <id>generate</id>
-                                <phase>generate-sources</phase>
+                                <id>attach-sources</id>
                                 <goals>
-                                    <goal>generate</goal>
+                                    <goal>jar</goal>
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.1.1</version>
                         <configuration>
-                            <args>
-                                <arg>-Xdefault-value</arg>
-                            </args>
-                            <plugins>
-                                <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-default-value</artifactId>
-                                    <version>1.1</version>
-                                </plugin>
-                            </plugins>
-                            <schemaDirectory>${basedir}/schema</schemaDirectory>
-                            <bindingDirectory>${basedir}/src/main/resources</bindingDirectory>
-                            <cleanPackageDirectories>true</cleanPackageDirectories>
-                            <generateDirectory>${basedir}/src/main/java</generateDirectory>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <noFileHeader>true</noFileHeader>
-                            <episode>false</episode>
-                            <schemaIncludes>
-                                <include>coreschemas/*.xsd</include>
-                                <include>multicacheschemas/*.xsd</include>
-                            </schemaIncludes>
+                            <doclint>none</doclint>  <!-- Turnoff all checks -->
                         </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.8</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
